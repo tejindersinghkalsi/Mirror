@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
   resources :stories
   resources :targets
-  root "home#home" 
+  root "welcome#welcome" 
  
   get 'docipedias/', to: 'docipedias#index', as: 'index'
 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 
 
-  get 'welcome/' => 'welcome#welcome', as: 'welcome'
+  get 'home/' => 'home#home', as: 'home'
 
 
    get 'aroundme/' => 'topics#aroundme', as: 'aroundme'
