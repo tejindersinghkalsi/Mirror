@@ -1,0 +1,63 @@
+
+<%= form_with(model: community, local: true) do |form| %>
+  <% if community.errors.any? %>
+  <% if community.errors.any? %>
+    <% community.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
+    <% end %>
+  <% end %>
+  <% end %>
+
+  <h6><b>Instructions:</b></h6>
+  <br/>
+  <table>
+    <tr>
+      <td>1.</td>
+      <td>KB article(s) act as a main source of information for the customers for accessing product related queries.</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>KB article should be created in accordance with the template provided. </td>
+    </tr>
+     <tr>
+      <td>2.</td>
+      <td>KB article should be created in pdf format only.</td>
+    </tr>
+  </table>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div class ="row">
+     <div class="vl"></div>
+    <div class = "col">
+      <div class="field">
+    <%= form.text_field :title, placeholder:"Add a title...", :size => 51 %>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <div class="form-group">
+  <label class = 'btn btn-outline-dark'>
+    SELECT DOCUMENT<%= form.file_field :doc, style: 'display: none;' %>
+  </label>
+  </div>
+</div>
+<div class="vl"></div>
+<div class ="col">
+   <div class="field">
+    <%= form.text_area :body, placeholder:"Add notes...", rows: 6, cols: 55 %>
+  </div>
+</div>
+</div>
+   <br/>
+   <br/>
+   <hr>
+   <br/>
+
+  <div class="actions">
+    <%= form.submit 'ADD ARTICLE', class: 'btn btn-outline-success' %> 
+  </div>
+    
+<% end %>

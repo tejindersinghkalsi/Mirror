@@ -1,0 +1,205 @@
+<%= form_with(model: year, local: true) do |form| %>
+  <% if year.errors.any? %>
+    <% year.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
+    <% end %>
+  <% end %>
+
+  <div class="field">
+    
+    <b><%= form.number_field :name, placeholder:"Add Year" %></b>
+  </div>
+  <br/>
+  <br/>
+  <div class="field">
+     <b><%= form.number_field :limit, placeholder:"Add Money limit for the year..." %></b>
+  </div>
+  <br/>
+  <br/>
+
+
+<hr>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :januaries do |january_form| %>
+  <%= render 'january_fields',f: january_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of January', form, :januaries, class: 'btn btn-success btn-block' %>
+  </div>
+</div>
+</div>
+
+<hr>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :februaries do |february_form| %>
+  <%= render 'february_fields',f: february_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of February', form, :februaries, class: 'btn btn-success btn-block' %>
+  </div>
+</div>
+</div>
+
+<hr>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :marches do |march_form| %>
+  <%= render 'march_fields',f: march_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of March', form, :marches, class: 'btn btn-success btn-block' %>
+  </div>
+</div>
+</div>
+
+<br/>
+<br/>
+<br/>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :aprils do |april_form| %>
+  <%= render 'april_fields',f: april_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of April', form, :aprils, class: 'btn btn-warning btn-block' %>
+  </div>
+</div>
+</div>
+
+<hr>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :mays do |may_form| %>
+  <%= render 'may_fields',f: may_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of May', form, :mays, class: 'btn btn-warning btn-block' %>
+  </div>
+</div>
+</div>
+
+<hr>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :junes do |june_form| %>
+  <%= render 'june_fields',f: june_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of June', form, :junes, class: 'btn btn-warning btn-block' %>
+  </div>
+</div>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :julies do |july_form| %>
+  <%= render 'july_fields',f: july_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of July', form, :julies, class: 'btn btn-info btn-block' %>
+  </div>
+</div>
+</div>
+
+<hr>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :augusts do |august_form| %>
+  <%= render 'august_fields',f: august_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of August', form, :augusts, class: 'btn btn-info btn-block' %>
+  </div>
+</div>
+</div>
+
+<hr>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :septembers do |september_form| %>
+  <%= render 'september_fields',f: september_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of September', form, :septembers, class: 'btn btn-info btn-block' %>
+  </div>
+</div>
+</div>
+
+<br/>
+<br/>
+<br/>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :octobers do |october_form| %>
+  <%= render 'october_fields',f: october_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of October', form, :octobers, class: 'btn btn-dark btn-block' %>
+  </div>
+</div>
+</div>
+
+<hr>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :novembers do |november_form| %>
+  <%= render 'november_fields',f: november_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of November', form, :novembers, class: 'btn btn-dark btn-block' %>
+  </div>
+</div>
+</div>
+
+<hr>
+    <div class="col-md-12">
+
+  <div>
+  <%= form.fields_for :decembers do |december_form| %>
+  <%= render 'december_fields',f: december_form %>
+  <% end %>
+
+  <div>
+    <%= link_to_add_association 'Add Expense(s) for the month of December', form, :decembers, class: 'btn btn-dark btn-block' %>
+  </div>
+</div>
+
+
+
+<br/>
+<br/>
+  
+  <div class="actions">
+    <%= form.submit 'PUBLISH EXPENSE', class: 'btn btn-outline-success' %>
+  </div>
+</div>
+<% end %>
+

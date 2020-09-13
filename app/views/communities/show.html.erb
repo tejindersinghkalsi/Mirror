@@ -1,0 +1,24 @@
+<div class = "container">
+<%= alerts %>
+<br/>
+<br/>
+<p>
+  <strong>Title:</strong>
+  <%= @community.title %>
+</p>
+<br/>
+<br/>
+
+<p>
+  <strong>Body:</strong>
+  <%= @community.body %>
+</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<%= link_to 'BACK', communities_path, class: 'btn btn-outline-primary'%>
+<%= link_to 'EDIT', edit_community_path(@community), class: 'btn btn-outline-primary' %> |
+<%= link_to 'HOME', root_path, class: 'btn btn-outline-primary' %>
+</div>

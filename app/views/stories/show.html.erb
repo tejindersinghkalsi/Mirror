@@ -1,0 +1,38 @@
+
+<div class = "container" >
+   <%= alerts %> 
+    <br/>
+    <br/>
+   
+    <p><strong>Title:</strong><%= @story.title %></p>
+    <hr>
+    <br/>
+    <br/>
+
+    <p><strong>Body:</strong><%= markdown @story.body %></p>
+
+    <!-- Start of comment form -->
+    <%= render 'comments/comment_form' %>
+    <!-- End of comment form -->
+
+
+    <!-- Start of comments -->
+    <div id = "comments" data-story-id="<%= @story.id %>">
+      <%= render @story.comments %>
+    </div>
+    <!-- End of comments -->
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <%= link_to 'BACK', stories_path, class: 'btn btn-outline-primary' %>
+    <%= link_to 'HOME', root_path, class: 'btn btn-outline-primary' %>
+    
+
+ </div>
+
+
+

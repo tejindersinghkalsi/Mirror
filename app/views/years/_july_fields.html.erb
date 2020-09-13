@@ -1,0 +1,46 @@
+<div class="nested-fields">
+
+     <%= link_to_remove_association 'Remove Expense', f, class: 'btn btn-danger'%>
+<br/>
+<br/>
+     <div class="row">
+
+          <div class="col">
+
+                <div class="form-group">
+  
+                  <b><%= f.text_field :name, placeholder:"Add expense name", class: 'form-control' %></b>
+                </div>
+                 <br/>
+                <div class="form-group">
+                 
+                 <b><%= f.number_field :cost, placeholder:"Add cost", class: 'form-control' %></b>
+                 
+                </div>
+                <br/>
+                <div class="form-group">
+                  
+                 <b> <%= f.date_select :occourance%></b>
+                </div>
+         </div>
+
+         <div class="col">
+
+             <div class="form-group ">
+                
+                <b> <%= f.text_area :reason, placeholder:"Add expense description...", class: 'form-control', rows: 10 %></b>
+                </div>
+
+                 
+        </div>
+</div>
+    </div>
+
+
+
+
+
+               
+                
+                 
+

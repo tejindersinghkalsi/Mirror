@@ -1,0 +1,69 @@
+<div class = "container">
+<div class = "row">
+
+<div class = "col-md-4">
+
+  <div class="card">
+  <div class="card-body" id="user_details_display_card">
+    <p id = "identity">Hi, <%= current_user.first_name if current_user %></p>
+    <hr>
+    
+   
+      
+      <p id = "identity_t"><b>Email:</b><%= current_user.email if current_user %></p>
+
+      
+
+      <p id = "identity_t"><b>Joined On:</b><%= current_user.created_at if current_user %></p>
+<hr>
+<br/>
+      
+  
+  <%= link_to "UPDATE PROFILE", edit_user_registration_path(@user), class: 'btn btn-outline-secondary' %>
+
+  </div>
+</div>
+
+</div>
+
+ 
+
+<div class = "col-md-8">
+
+<div class="jumbotron jumbotron-fluid mw-100" id="news_jumbotron">
+  <div class="container">
+    <h1 class="display-4", style="color:red">WORD OF THE DAY</h1>
+    <p>
+  <%= @word.wordtitle %>
+</p>
+
+<p>
+  <%= @word.meaning %>
+</p>
+  </div>
+</div>
+</div>
+<%= alerts %> 
+
+
+</div>
+
+<br/>
+<br/>
+<h5 style="color:navy">TARGET SETTING FREQUENCY</h5>
+<br/>
+<%= line_chart current_user.targets.group_by_day(:created_at).count, colors: ["#49f149"] %>
+<br/>
+<br/>
+<h5 style="color:navy">STORIES CONTRIBUTION</h5>
+<br/>
+<%= line_chart current_user.stories.group_by_day(:created_at).count, colors: ["#a14171"]  %>
+<br/>
+<br/>
+<h5 style="color:navy">MY EXPENDITURE LIMITS</h5>
+<br/>
+<%= column_chart current_user.years.group(:name).sum(:limit), colors: ["#08088A", "#8A0829", "FF00FF"] %>
+<br/>
+
+</div>
+

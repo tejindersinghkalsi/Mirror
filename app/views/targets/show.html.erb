@@ -1,0 +1,78 @@
+<div class="container">
+ <%= alerts %>
+<p><b>GENERAL INFORMATION:</b></p>
+
+<br/>
+
+<table class= "table table-striped" >
+	<tr>
+
+  <td><strong>Target Name:</strong></td>
+  <td><%= @target.name %></td>
+</tr>
+
+<tr>
+  <td><strong>Target Description:</strong></td>
+  <td><%= @target.description %></td>
+</tr>
+
+<tr>
+  <td><strong>Start Date:</strong></td>
+  <td><%= @target.begin %></td>
+</tr>
+
+<tr>
+  <td><strong>End Date:</strong></td>
+  <td><%= @target.end %></td>
+</tr>
+
+    <% if @target.doc.present? %>
+
+	<tr><td><strong>Document:</strong></td>
+	<td><%= link_to("Access Attached Document", @target.doc.url) %></td></tr>
+
+	<% else %>
+	<tr><td><strong>Document:</strong></td>
+    <td><b><p style="color:navy">NO RESOURCE ATTACHED</p></b></td></tr>
+    <% end %>
+
+
+</table>
+<br/>
+<hr>
+<br/>
+<br/>
+<p><b>RELATED TASKS:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>TASK NAME</b></td></b>
+		<td id ="col2"><b>COMPLETION BY</b></td>
+		<td id ="col3"><b>POINTS</b></td>
+		<td id ="col3"><b>COMPLETION</b></td>
+	
+	</thead>
+	
+	<% @target.tasks.each do |t| %>
+
+
+	<tbody>
+		<td id ="col1"><%= t.name %></td>
+		<td id ="col2"><%= t.dateofcompletion %></td>
+		<td id ="col3"><%= t.point %></td>
+		<td id ="col3"><%= t.progress %></td>
+		
+		
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<br/>
+<%= link_to 'EDIT', edit_target_path(@target), class: 'btn btn-outline-primary' %> 
+<%= link_to 'BACK', targets_path, class: 'btn btn-outline-primary' %>
+<%= link_to 'HOME', root_path, class: 'btn btn-outline-primary' %>
+
+</div>

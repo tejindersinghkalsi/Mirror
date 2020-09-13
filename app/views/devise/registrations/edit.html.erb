@@ -1,0 +1,108 @@
+<br/>
+<br/>
+<center>
+<h2 style="color:blue">EDIT CREDENTIALS</h2>
+</center>
+<br/>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class = "container">
+
+  <center>
+  <table>
+  <tr>
+  <div class="field">
+   <td> <%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
+  </div>
+</tr>
+
+<tr>
+  <div class="field">
+   <td> <%= f.label :email %></td>
+    <td><%= f.email_field :email, autofocus: true%></td>
+  </div>
+</tr>
+
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+<tr>
+  <div class="field">
+   <td> <%= f.label :password %>(Leave blank if you don't want to change it.)</td>
+   <td> <%= f.password_field :password, autocomplete: "new-password" %></td>
+    <% if @minimum_password_length %>
+    <% end %>
+  </div>
+</tr>
+
+
+ <tr>
+  <div class="field">
+   <td> <%= f.label :password_confirmation %><br /></td>
+    <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+  </div>
+</tr>
+
+<tr>
+  <div class="field">
+   <td> <%= f.label :current_password %>(We need your current password to confirm your changes.)</td>
+   <td> <%= f.password_field :current_password, autocomplete: "current-password" %></td>
+  </div>
+</tr>
+</center>
+</table>
+<br/>
+<br/>
+<br/>
+<center>
+  <div class="actions">
+    <%= f.submit "UPDATE MY CREDENTIALS", class: 'btn btn-info' %>
+  </div>
+<% end %>
+</center>
+<br/>
+<hr>
+
+<h2 style="color:red">DELETE MY ACCOUNT</h2>
+<br/>
+<br/>
+<p><%= button_to "DELETE", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
+<br/>
+<%= link_to 'HOME', root_path, class: 'btn btn-outline-primary' %>
+<%= link_to 'CONTACT SUPPORT', conversations_path, class: 'btn btn-outline-primary' %>
+<br/>
+<br/>
+(*To contact support, select "<b>Tejinder Kalsi</b>" as the receipent. Support is available 24*7 except on weekends.)
+<br/>
+</div>
+<br/>
+<br/>
+<br/>
+<%= render "shared/footer" %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

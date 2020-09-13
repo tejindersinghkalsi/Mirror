@@ -1,0 +1,48 @@
+<div class = "container">
+<p id="notice"><%= notice %></p>
+
+<h3 style="color:navy">MY EXPENSES</h3>
+<br/>
+<br/>
+
+
+<table>
+ 
+  <tbody>
+    <% @years.each do |year| %>
+
+      <tr style="border-bottom: 1px solid #000;">
+        <td id ="year_name" ><b><%= year.name %></b></td>
+        <td><%= link_to 'Show', year, class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_year_path(year), class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Destroy', year, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+
+      </tr>
+
+       <% end %>
+  </tbody>
+    
+</table>
+
+
+
+
+ 
+<br>
+<br>
+<br>
+<br>
+<br/>
+<div class="flickr_pagination">
+  <%= will_paginate @years, :container => false %>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%= link_to 'ADD NEW EXPENSE', new_year_path, class: 'btn btn-outline-success' %>
+</div>

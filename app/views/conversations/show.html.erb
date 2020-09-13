@@ -1,0 +1,43 @@
+<div class ="container">
+<b><%= @conversation.subject %></b>
+<br/>
+<hr>
+<br/>
+
+<% @conversation.receipts_for(current_user).each do |receipt| %>
+<div>
+
+	<b><p><%= receipt.message.sender.name %></b> commented: </p>
+	<br/>
+	<br/>
+	<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    
+    <p><%= receipt.message.body %></p>
+  </div>
+</div>
+	
+
+</div>
+<% end %>
+<br/>
+<br/>
+<br/>
+<hr>
+<br/>
+<%= form_tag conversation_messages_path(@conversation), method: :post do %>
+
+<div class = "form-group">
+		<%= text_area_tag :body, nil, placeholder: "Type your reply...", "cols" => 20, "rows" => 10, class: "form-control" %>
+	</div>
+<br/>
+<br/>
+<%= submit_tag("SEND REPLY", class: "btn btn-primary") %>
+<%= alerts %> 
+<% end %>
+<br/>
+<br/>
+<br/>
+<%= link_to "BACK", conversations_path, class: 'btn btn-outline-primary' %>
+<%= link_to "HOME", root_path, class: 'btn btn-outline-primary' %>
+</div>

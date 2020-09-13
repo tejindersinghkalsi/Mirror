@@ -1,0 +1,36 @@
+<br/>
+<br/>
+<br/>
+<div class = "container">
+ <%= alerts %>
+<table border="3" id = "docipedia_table">
+
+<tr id = "table_heading_row">
+	<td><p><b>RESOURCE ACCESS LINK</b></p></td>
+	<td><p><b>RESOURCE OWNED BY</b></p></td>
+
+</tr>
+<% @targets.each do |document| %>
+
+<tr>
+	<td><%=link_to "View Resource", document.doc.url %></td>
+
+	<td><%= document.name %> target</td>
+	
+</tr>
+<%= alerts %> 
+<% end %> 
+</table>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="flickr_pagination">
+   <%= will_paginate @targets, :container => false %>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<%= link_to "HOME", root_path, class: 'btn btn-outline-primary' %>
+</div>

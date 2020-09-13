@@ -1,0 +1,440 @@
+
+
+<div class = "container">
+	 <%= alerts %>
+<h1 style="color:green"><strong>YEAR: </strong><%= @year.name %></h1>
+<br/>
+<br/>
+<hr>
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF JANUARY:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.januaries.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @m %></p>
+<br/>
+<br/>
+<hr>
+<!-- JAN END -->
+
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF FEBRUARY:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.februaries.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @n %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- FEB END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF MARCH:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.marches.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @o %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- MAR END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF APRIL:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.aprils.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @p %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- APR END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF MAY:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.mays.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @q %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- MAY END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF JUNE:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.junes.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @r %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- JUNE END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF JULY:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.julies.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @s %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- JULY END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF AUGUST:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.augusts.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @t %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- AUGUST END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF SEPTEMBER:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.septembers.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @u %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- SEPTEMBER END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF OCTOBER:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.octobers.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @v %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- OCTOBER END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF NOVEMBER:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.novembers.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @w %></p>
+<br/>
+<br/>
+<hr>
+
+<!-- NOVEMBER END -->
+<br/>
+<br/>
+<p><b>EXPENSE LIST FOR THE MONTH OF DECEMBER:</b></p>
+<br/>
+<center>
+<table class="table table-hover" id ="target_detailed_info" border="1">
+	<thead>
+		<td id ="col1"><b>DATE</b></td></b>
+		<td id ="col2"><b>EXPENSE NAME</b></td>
+		<td id ="col3"><b>EXPENSE REASON</b></td>
+		<td id ="col4"><b>TOTAL COST</b></td>
+	</thead>
+	
+	<% @year.decembers.each do |month| %>
+
+
+	<tbody>
+		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col2"><%= month.name %></td>
+		<td id ="col3"><%= month.reason %></td>
+		<td id ="col4"><%= month.cost %></td>
+	</tbody>
+	<% end %>
+</table>
+</center>
+<br/>
+<br/>
+<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @x %></p>
+<br/>
+<br/>
+<hr>
+<!-- DEC END -->
+<br/>
+<div class="card" id="total_card">
+ 
+   <h5>TOTAL EXPENSES AS ON <%= Time.now.strftime("%m/%d/%Y") %>:<%= @sum %></h5>
+
+</div>
+<br/>
+<br/>
+<hr>
+<% if @sum < @year.limit %>
+<div class="card" id="total_card_cons">
+ 
+   <h5>CONGRATULATIONS !!! YOU ARE ON TRACK</h5>
+
+</div>
+<% else %>
+<div class="card" id="total_card_conf">
+ 
+   <h5>YOU ARE OFF TRACK, PLEASE DECREASE YOUR EXPENSES</h5>
+
+</div>
+
+<% end %>
+<br/>
+<br/>
+<br/>
+
+<%= link_to 'BACK', years_path, class: 'btn btn-outline-primary' %>
+<%= link_to 'EDIT', edit_year_path(@year), class: 'btn btn-outline-primary' %> 
+<%= link_to 'HOME', years_path, class: 'btn btn-outline-primary' %>
+
+</div>
+
+
+
+  
+    

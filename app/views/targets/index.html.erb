@@ -1,0 +1,45 @@
+<div class="container"id ="target_details">
+	<br/>
+	<br/>
+<p id="link_for_creating_new_target"><%= link_to 'CREATE NEW TARGET', new_target_path, class: 'btn btn-outline-success' %></p>
+<br/>
+<br/>
+<br/>
+<%= render @targets %>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="flickr_pagination">
+    <%= will_paginate @targets, :container => false %>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

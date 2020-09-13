@@ -1,0 +1,37 @@
+   <div class="<%= color %>"> <!-- Local Variable -->
+    <nav class="navbar navbar-expand-lg">
+            <%= link_to "HOME", root_path %>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/targets">TARGETS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/years">EXPENSES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/stories">STORIES</a>
+            </li>
+                   <li class="nav-item">
+              <a class="nav-link" href="/docipedias">DOCIPEDIA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/communities">COMMUNITY</a>
+            </li>
+            
+         
+          </ul>
+        </div>
+        <div class="nav-item">
+
+          <% if current_user %>
+          
+          <%= link_to "INBOX", conversations_path %>
+
+          <%=link_to "ADMINISTRATOR", rails_admin.dashboard_path if logged_in?(:site_admin) %>
+          
+          <%=link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+          <% end %>
+        </div>
+      </nav>  
+    </div>

@@ -1,0 +1,153 @@
+<!--HTML Layout file for the Target controller -->
+
+
+<!DOCTYPE html>
+
+<html>  
+  
+    <head> 
+        
+    <title><%= @page_title %></title> <!--Dynamic title. @page_title is an instance variable whose value changes as per the controller layout -->
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'welcomes', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+      
+    </head>
+
+  
+    <body>
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-info">
+
+      
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <div id = "background"><%= image_tag("welcomeimage.jpg") %> </div>
+        <h1 class="display-4 font-weight-normal">MIRROR</h1>
+        <br/>
+        <h4>SHOWS YOUR REFLECTION</h4>
+        <br/>
+        <a class="btn btn-outline-secondary" href="/login">LOGIN</a>
+        <a class="btn btn-outline-secondary" href="/register">REGISTER</a>
+         <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalLong">
+  ABOUT
+</button>
+
+<!-- Modal -->
+<div class="modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">MIRROR - TECHNICAL INFORMATION</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="tech_details">
+        
+        <b>Version : 2.0</b>
+        <br/>
+        <b>Released: 8-September-2020</b>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+       
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-white overflow-hidden">
+        <div class="my-3 py-3">
+        
+          <h2 class="display-5">MANAGE TARGETS</h2>
+          <br/>
+          <p class="lead">Mirror helps you setting your personal goals which could be anything from personal, health, educational, social, spiritual etc.</p>
+          <br/>
+          <br/>
+          <br/>
+        
+        </div>
+      
+        
+      </div>
+
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">MANAGE EXPENSES</h2>
+          <br/>
+          <p class="lead">Worried about expenditure ? Unable to maintain records ? No worry...Track your day to day expenses.</p>
+          <br/>
+          <br/>
+          <br/>
+   
+        </div>
+     
+      </div>
+    </div>
+
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">BLOG</h2>
+          <br/>
+          <p class="lead">Mirror has a blog feature too !!! Write blogs, spread awareness and showcase your skills !!!</p>
+          <br/>
+          <br/>
+          <br/>
+    
+        </div>
+        
+      </div>
+
+
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-white overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">INTERNAL MESSAGING</h2>
+          <br/>
+          <p class="lead">Say goodbye to other messaging tools/apps when it comes to communication regarding mirror.</p>
+          <br/>
+          <br/>
+          <br/>
+          
+        </div>
+        
+      </div>
+    </div>
+
+  <%= alerts %> 
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+
+
+    <!-- Footer partial --> 
+
+    <%= render "shared/footer" %>
+
+
+
+
+
+    </body>
+</html>
+<!-- End of the Story controller layout -->
+

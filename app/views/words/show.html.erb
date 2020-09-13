@@ -1,0 +1,12 @@
+<p>
+  <strong>Wordtitle:</strong>
+  <%= @word.wordtitle %>
+</p>
+
+<p>
+  <strong>Meaning:</strong>
+  <%= markdown @word.meaning %>
+</p>
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>

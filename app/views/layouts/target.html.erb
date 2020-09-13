@@ -1,0 +1,60 @@
+<!--HTML Layout file for the Target controller -->
+
+
+<!DOCTYPE html>
+
+<html>  
+  
+    <head> 
+        
+    <title><%= @page_title %></title> <!--Dynamic title. @page_title is an instance variable whose value changes as per the controller layout -->
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
+    <%= stylesheet_link_tag    'targets', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      
+    </head>
+
+  
+    <body>
+   
+    <!-- Application heading partial -->
+     
+    <%= render "shared/application_heading" %>
+    
+    <!-- Navbar partial -->   
+    
+    <%= render "shared/nav", color: 'bg-light'%>
+
+    <!--Div which would display logged in user or guest user details -->
+    <div id ="user_details">
+          
+      
+        
+      
+        
+    </div>
+
+
+
+
+
+    <%= yield %>
+  
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <!-- Footer partial --> 
+
+    <%= render "shared/footer" %>
+
+    </body>
+</html>
+<!-- End of the Story controller layout -->
+

@@ -1,0 +1,11 @@
+<h4 class="blog-post-title" style="color:purple"><%= story.title %></h4>
+            <p id = "story_details" class="btn btn-outline-info btn-sm"><b>Posted:</b><%= distance_of_time_in_words(story.created_at, Time.now) %> ago</p>
+            <p id = "story_details" class="btn btn-outline-info btn-sm"><b>Last Edited:</b><%= distance_of_time_in_words(story.updated_at, Time.now) %> ago</p>
+            <p id = "story_details" class="btn btn-outline-info btn-sm"><b>Total Views:</b><%= story.impressionist_count %></p>
+            <br/>
+            <br/>
+            <%= link_to 'READ STORY',  story, class: 'btn btn-outline-success btn-sm' %>
+            <% if story.user_id == current_user.id %>
+            <%= link_to 'UPDATE STORY',edit_story_path(story), class: 'btn btn-outline-warning btn-sm' %>
+            <% end %>
+            <hr>

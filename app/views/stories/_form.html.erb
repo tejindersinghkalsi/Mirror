@@ -1,0 +1,38 @@
+<%= form_with(model: story, local: true) do |form| %>
+  <% if story.errors.any? %>
+    <% story.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
+    <% end %>
+  <% end %>
+
+  <div class="form-group">
+  
+   <%= form.text_field :title, placeholder: 'Story title...', :size => 70, class: 'form-content' %>
+  </div>
+  <br/>
+  <br/>
+
+
+  <div class="form-group">
+   <%= form.label :topic_id %>
+   <%= form.collection_select(:topic_id, Topic.all, :id, :category,
+
+                          {
+                            selected: @story.topic_id,
+                            include_blank: true         #includes a blank field in the dropdownlist.
+                          },
+                          class: "form-control-md"
+                          )%>
+  </div>
+  <br/>
+  <br/>
+  <div class="form-group">
+    <%= form.text_area :body, placeholder: 'Add content...', rows: 10, cols: 90, class: 'form-content' %>
+    
+  </div>
+  <br/>
+  <br/>
+  <div class="actions">
+     <%= form.submit 'PUBLISH STORY', class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+<%= form_for @comment, url: '#' do |f| %>
+ 
+  <div class = "form-group">
+
+  	<%= f.label :content, "Comment" %>
+  	<%= f.text_area :content, placeholder: "Enter your comment (Minimum length : 10 characters)", class: 'form-control' %>
+
+  </div>
+  <br/>
+  <br/>
+  <div class="actions">
+  <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  
+<% end %>

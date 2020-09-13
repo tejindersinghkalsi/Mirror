@@ -1,0 +1,36 @@
+<div class = "container">
+<h2> MY CONVERSATIONS </h2>
+<br/>
+<br/>
+
+<% @conversations.each do |conversation| %>
+
+	
+      
+    
+
+	<p><b>Sent Date:</b> <%= conversation.created_at %>
+	 
+		<%= link_to conversation.subject, conversation_path(conversation), class: 'btn btn-secondary btn-block' %></p>
+
+    
+<% end %>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="flickr_pagination">
+    <%= will_paginate @conversations, :container => false %>
+</div>
+<br/>
+<hr>
+<br/>
+<br/>
+<br/>
+<%= alerts %> 
+<%= link_to "CREATE EMAIL", new_conversation_path, class: 'btn btn-outline-success btn-block'%>
+<br/>
+<br/>
+<br/>
+<%= link_to "HOME", root_path, class: 'btn btn-outline-primary' %>
+</div>

@@ -1,0 +1,260 @@
+<p id="notice"><%= notice %></p>
+
+    <div class="container">
+            <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+        <%= link_to "AROUND ME", aroundme_path %>
+        <%= link_to "TECHNOLOGY", technology_path %>
+        <%= link_to "TRAVEL", travel_path %>
+        <%= link_to "FOOD", food_path %>
+        <%= link_to "CAREER", career_path %>
+        <%= link_to "EXAMINATION", examination_path %>
+        
+        </nav>
+      </div>
+
+      <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-12 px-0">
+          <center>
+          <p class="lead my-3" id="story_home_quote">"Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma - which is living with the results of other people's thinking. "Don't let the noise of others' opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition." - Steve Jobs</p></center>
+        </div>
+      </div>
+      <br/>
+      <br/>
+
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8 blog-main">
+          <h3 class="pb-3 mb-4 font-bold">
+             <h4 style="color:magenta"> TOPIC SELECTED : TECHNOLOGY</h4>
+            <hr id= "aboutafterline" >
+          <div class="blog-post">
+            <% @stories.each do |story| %>
+
+            <h4 class="blog-post-title" style="color:purple"><%= story.title %></h4>
+            <p id = "story_details" class="btn btn-outline-info btn-sm"><b>Posted:</b><%= distance_of_time_in_words(story.created_at, Time.now) %> ago</p>
+            <p id = "story_details" class="btn btn-outline-info btn-sm"><b>Last Edited:</b><%= distance_of_time_in_words(story.updated_at, Time.now) %> ago</p>
+            <p id = "story_details" class="btn btn-outline-info btn-sm"><b>Total Views:</b><%= story.impressionist_count %></p>
+            <br/>
+            <br/>
+            <%= link_to 'READ STORY',  story, class: 'btn btn-outline-success btn-sm' %>
+            <% if story.user_id == current_user.id %>
+            <%= link_to 'UPDATE STORY',edit_story_path(story), class: 'btn btn-outline-warning btn-sm' %>
+            <% end %>
+            <hr>
+
+
+
+
+
+          <% end %>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+          
+            <div class="flickr_pagination">
+                <%= will_paginate @stories, :container => false %>
+            </div>
+            
+      
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+          </div><!-- /.blog-post -->
+          
+
+        </div><!-- /.blog-main -->
+ 
+       
+        <aside class="col-md-4 blog-sidebar">
+
+          <div class="p-3 mb-3 bg-light" >
+            <h4 class="font-bold">About</h4>
+            <p class="mb-0" id="about_info">Mirror Stories can be used to facilitate group working, a number of commentators argue that blogs encourage reflective learning (Chen et al., 2005), they can be used as a diary to keep a record of achievement and of interesting material.</p>
+          </div>
+          <hr id="aboutafterline">
+          <br/>
+          
+           <% @tweets.each do |tweet| %>
+          <div class="card text-black border- mb-1" id ="tweet_card" style="max-width: 18rem;">
+
+            <div class="card-header bg-success " id = "tweetcardinside"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-square-text-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/> 
+            </svg> LATEST TWEETS...
+            </div>
+            <%= twitter_parser tweet %>
+            <div class="card-body">
+          
+            </div>
+            
+          </div>
+          <% end %>
+          
+        </aside><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </main><!-- /.container -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

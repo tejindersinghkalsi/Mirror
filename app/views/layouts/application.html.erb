@@ -1,0 +1,28 @@
+<!-- This file is not like application controller file. No matter how big your app
+is, you cannot have more then one application controller file. However you can have 
+multiple layout files. -->
+<!DOCTYPE html>
+  
+<html>
+  
+
+      <head>
+        
+          <title><%= @page_title %></title> 
+
+          <%= csrf_meta_tags %>
+          <%= csp_meta_tag %>
+          <%= favicon_link_tag 'favicons/favicon.ico' %>
+          <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+          <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      
+      </head>
+     
+      <%= yield %>
+  
+
+    
+
+
+  </body>
+</html>
