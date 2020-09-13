@@ -28,7 +28,7 @@
           
           <%= link_to "INBOX", conversations_path %>
 
-          <%=link_to "ADMINISTRATOR", rails_admin.dashboard_path if logged_in?(:site_admin) %>
+          <%=link_to "ADMINISTRATOR", rails_admin.dashboard_path %>
           
           <%=link_to "LOGOUT", destroy_user_session_path, method: :delete %>
           <% end %>
