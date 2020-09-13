@@ -1,9 +1,9 @@
 class ConversationsController < ApplicationController
     
     layout "conversation"
-
+    before_action :authenticate_user!
 	def index 
-     @conversations = current_user.mailbox.conversations.paginate(page: params[:page], per_page: 5)
+     @conversations = current_user.mailbox.conversations.page(params[:page])
     end
 
 

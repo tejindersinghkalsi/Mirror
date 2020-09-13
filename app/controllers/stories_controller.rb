@@ -1,12 +1,13 @@
 class StoriesController < ApplicationController
   layout "story"
+  before_action :authenticate_user!
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
   before_action :user_signed_in?
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.recent.paginate(page: params[:page], per_page: 5)
+    @stories = Story.recent.page(params[:page])
     @tweets = SocialTool.twitter_search
     @topics = Topic.all
   end

@@ -25,12 +25,10 @@
 <br/>
 <br/>
 <br/>
-<div class="flickr_pagination">
-   <%= will_paginate @targets, :container => false %>
-</div>
+<%= paginate @targets, :container => false %>
 <br/>
 <br/>
 <br/>
 <br/>
-<%= link_to "HOME", root_path, class: 'btn btn-outline-primary' %>
+<%= link_to "HOME", home_path, class: 'btn btn-outline-primary' %>
 </div>

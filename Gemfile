@@ -48,7 +48,7 @@ gem 'chartkick', '~> 3.4'
 gem 'gritter', '~> 1.2'
 gem 'redcarpet', '~> 3.5'
 gem 'coderay', '~> 1.1', '>= 1.1.3'
-gem 'will_paginate', '~> 3.3'
+gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'groupdate', '~> 5.2', '>= 5.2.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

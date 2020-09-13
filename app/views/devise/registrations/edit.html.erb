@@ -4,11 +4,11 @@
 <h2 style="color:blue">EDIT CREDENTIALS</h2>
 </center>
 <br/>
+ <div class = "container">
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <div class = "container">
-
+<%= render "devise/shared/error_messages", resource: resource %>
+ 
   <center>
   <table>
   <tr>
@@ -72,11 +72,11 @@
 <br/>
 <p><%= button_to "DELETE", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
 <br/>
-<%= link_to 'HOME', root_path, class: 'btn btn-outline-primary' %>
+<%= link_to 'HOME', home_path, class: 'btn btn-outline-primary' %>
 <%= link_to 'CONTACT SUPPORT', conversations_path, class: 'btn btn-outline-primary' %>
 <br/>
 <br/>
-(*To contact support, select "<b>Tejinder Kalsi</b>" as the receipent. Support is available 24*7 except on weekends.)
+(*To contact support, select "<b>Tejinder Kalsi</b>" as the receipent.)
 <br/>
 </div>
 <br/>

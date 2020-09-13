@@ -1,11 +1,12 @@
 class TargetsController < ApplicationController
   layout "target"
+  before_action :authenticate_user!
   before_action :set_target, only: [:show, :edit, :update, :destroy]
 
   # GET /targets
   # GET /targets.json
   def index
-    @targets = Target.where(user_id: current_user.id).paginate(page: params[:page], per_page: 5)
+    @targets = Target.where(user_id: current_user.id).page(params[:page])
     
   end
 

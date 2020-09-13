@@ -1,11 +1,12 @@
 class YearsController < ApplicationController
    layout "year"
+  before_action :authenticate_user!
   before_action :set_year, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
   # GET /years
   def index
-    @years = Year.where(user_id: current_user.id).paginate(page: params[:page], per_page: 5)
+    @years = Year.where(user_id: current_user.id).page(params[:page])
   end
 
   # GET /years/1

@@ -1,11 +1,12 @@
 class CommunitiesController < ApplicationController
   layout "community"
+  before_action :authenticate_user!
   before_action :set_community, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
   # GET /communities
   def index
-    @communities = Community.paginate(page: params[:page], per_page:5)
+    @communities = Community.page(params[:page])
   end
 
   # GET /communities/1
