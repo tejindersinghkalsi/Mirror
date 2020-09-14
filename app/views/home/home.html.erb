@@ -3,30 +3,46 @@
 
 <div class = "col-md-4">
 
-  <div class="card">
-  <div class="card-body" id="user_details_display_card">
-    <p id = "identity">Hi, <%= current_user.first_name if current_user %></p>
-    <hr>
+      <div class="card">
+            <div class="card-body" id="user_details_display_card">
+                
+                <p id = "identity">Hi, <%= current_user.first_name if current_user %></p>
+                <hr>
     
    
       
-      <p id = "identity_t"><b>Email:</b><%= current_user.email if current_user %></p>
+                <p id = "identity_t"><b>Email:</b><%= current_user.email if current_user %></p>
 
       
 
-      <p id = "identity_t"><b>Joined On:</b><%= current_user.created_at if current_user %></p>
-<hr>
-<br/>
+                 <p id = "identity_t"><b>Joined On:</b><%= current_user.created_at if current_user %></p>
+                 <hr>
+                 <br/>
       
   
-  <%= link_to "UPDATE PROFILE", edit_user_registration_path(@user), class: 'btn btn-outline-secondary' %>
+                  <%= link_to "UPDATE PROFILE", edit_user_registration_path(@user), class: 'btn btn-outline-warning' %>
 
+          </div>
+      </div>
+
+</div>
+
+<div class = "col-md-8">
+
+<div class="jumbotron jumbotron-fluid mw-100" id="news_jumbotron">
+  <div class="container">
+    <h1 class="display-4", style="color:red">WORD OF THE DAY</h1>
+    <hr>
+    <p>
+  <h4 style="color:navy"><b><%= @word.wordtitle %></b></h4>
+</p>
+
+<p>
+  <%= @word.meaning %>
+</p>
   </div>
 </div>
-
 </div>
-
- 
 
 <%= alerts %> 
 
