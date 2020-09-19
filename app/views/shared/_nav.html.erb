@@ -22,16 +22,29 @@
          
           </ul>
         </div>
-        <div class="nav-item">
+        <div class="nav-item dropdown">
 
           <% if current_user %>
           
-          <%= link_to "INBOX", conversations_path %>
-
-          <%=link_to "ADMINISTRATOR", rails_admin.dashboard_path if logged_in?(:site_admin)%>
-          
-          <%=link_to "LOGOUT", destroy_user_session_path, method: :delete %>
-          <% end %>
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">OPTIONS</a>
+    
+                <div class="dropdown-menu">
+                
+                  <%= link_to "INBOX", conversations_path, class: "dropdown-item" %>
+                  <%= link_to "FEEDBACK", new_feedback_path, class: "dropdown-item" %>
+                  
+                 
+                </div>
+         <% end %>
         </div>
-      </nav>  
-    </div>
+        <div class ="nav-item">
+
+           <%=link_to "ADMINISTRATOR", rails_admin.dashboard_path if logged_in?(:site_admin)%>
+
+           <%=link_to "LOGOUT", destroy_user_session_path, method: :delete %>
+        </div>
+
+      </div>
+    </nav>  
+  </div>
+ 

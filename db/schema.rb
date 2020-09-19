@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_12_160935) do
+ActiveRecord::Schema.define(version: 2020_09_18_160715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,19 @@ ActiveRecord::Schema.define(version: 2020_09_12_160935) do
     t.datetime "updated_at", null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_februaries_on_year_id"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.date "date"
+    t.integer "uipoints"
+    t.integer "usability"
+    t.integer "improvement"
+    t.text "comments"
+    t.text "addfeatures"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
   create_table "impressions", force: :cascade do |t|
@@ -338,6 +351,7 @@ ActiveRecord::Schema.define(version: 2020_09_12_160935) do
   add_foreign_key "comments", "users"
   add_foreign_key "decembers", "years"
   add_foreign_key "februaries", "years"
+  add_foreign_key "feedbacks", "users"
   add_foreign_key "januaries", "years"
   add_foreign_key "julies", "years"
   add_foreign_key "junes", "years"

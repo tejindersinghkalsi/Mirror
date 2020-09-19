@@ -1,6 +1,7 @@
-// Place all the styles related to the Access controller here.
+// Place all the styles related to the Feedbacks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 
 @import "bootstrap";
 @import "gritter";
@@ -12,56 +13,12 @@
   font-size: 30px;
   margin-bottom:0px;
   color:white;
-
 }
 .alert {
   margin-bottom: 1px;
   height: 30px;
   line-height:30px;
   padding:0px 15px;
-}
-#word_b
-{
-  background-color: purple;
-}
-#details_row
-{
-  width:70px;
-}
-#identity
-{
-  font-size: 25px;
-  color:navy;
-}
-
-#chart_jumbo
-{
-  padding-top: 5px;
-}
-
-.container
-{
-  word-wrap:break-word;
-}
-
-
-#identity_t
-{
-  font-size: 12px;
-  color:navy;
-}
-#user_details_display_card
-{
-  padding:2px;
-  margin:2px;
-}
-
-#news_jumbotron
-{
-	
-    height:100%;
-    margin:0px;
-    padding:0px;
 }
 
   #footer
@@ -70,11 +27,11 @@
     background-color:navy;
     margin-bottom:0px;
     padding-bottom:0px;
-    margin-top: 180px;
+      margin-top: 180px;
+
   }
 
-
-  #footer_text
+   #footer_text
   {
   text-align:right;
   padding-right:5px;
@@ -83,6 +40,40 @@
   padding-top:5px;
   color:white;
 
+
   }
+ #form_container 
+ {
+ border:3px solid navy;
+ background-color: blue;
+ width:70%;
+ margin-left: 5%;
+ padding:15px;
+ }
+#ques
+{
+  width:75%;
+}
+#stats_container
+{
+  margin-left: 5%;
+  padding:0px;
+}
+#feedback_form
+ {
+  border-collapse: separate;
+  border-spacing: 0 70px;
+  border:1px solid navy;
+  align:center;
+  width: 95%;
+}
 
+#feedback_results
+{
+  height:100px;
+}
 
+#my_feedback_count
+{
+  width: 75%;
+}

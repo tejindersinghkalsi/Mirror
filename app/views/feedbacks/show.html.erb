@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @feedback.date %>
+</p>
+
+<p>
+  <strong>Uipoints:</strong>
+  <%= @feedback.uipoints %>
+</p>
+
+<p>
+  <strong>Usability:</strong>
+  <%= @feedback.usability %>
+</p>
+
+<p>
+  <strong>Improvement:</strong>
+  <%= @feedback.improvement %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @feedback.comments %>
+</p>
+
+<p>
+  <strong>Addfeatures:</strong>
+  <%= @feedback.addfeatures %>
+</p>
+
+<%= link_to 'Edit', edit_feedback_path(@feedback) %> |
+<%= link_to 'Back', feedbacks_path %>

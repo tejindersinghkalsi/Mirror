@@ -1,0 +1,74 @@
+<%= form_with(model: feedback, local: true) do |form| %>
+  <% if feedback.errors.any? %>
+  
+  <% end %>
+  
+
+    
+   
+          <div class="form-group">
+            <%= form.date_select :date, :size => 70, class: 'form-content' %>
+          </div>
+          <br/>
+          <br/>
+          <hr id ="feedback_form">
+          <div class="form-group">
+            <div class="alert alert-primary" role="alert" id = "ques">
+             How did you like Mirror UI ? 
+            </div>
+            <br/>
+          <%= form.number_field :uipoints, placeholder: 'UI Points(Rate on a scale of 5)', :size => 70, class: 'form-content' %>
+          </div>
+           <br/>
+           <br/>
+           <hr id ="feedback_form">
+    
+          <div class="form-group">
+          <div class="alert alert-primary" role="alert" id = "ques">
+             Is Mirror configurable so that you can set it per your eaxct requirement ? 
+            </div>
+            <br/>
+          <%= form.number_field :usability, placeholder: 'Usability(Rate on a scale of 5)', :size => 70, class: 'form-content' %>
+          </div>
+           <br/>
+          <br/>
+          <hr id ="feedback_form">
+   
+          <div class="form-group">
+             <div class="alert alert-primary" role="alert" id = "ques">
+             How is you overall experience ? 
+            </div>
+            <br/>
+            <%= form.number_field :improvement, placeholder: 'Overall(Rate on a scale of 5)', :size => 70, class: 'form-content'%>
+          </div>
+           <br/>
+          <br/>
+          <hr id ="feedback_form">
+     
+          <div class="form-group">
+             <div class="alert alert-primary" role="alert" id = "ques">
+             Mention your comments, if any
+            </div>
+            <br/>
+            <%= form.text_area :comments, placeholder: 'Add Comments...', rows: 10, cols: 90, class: 'form-content' %>
+          </div>
+           <br/>
+          <br/>
+          <hr id ="feedback_form">
+    
+          <div class="form-group">
+           <div class="alert alert-primary" role="alert" id = "ques">
+             Suggest features/functionalities 
+            </div>
+            <br/>
+          <%= form.text_area :addfeatures, placeholder: 'Suggestions...', rows: 10, cols: 90, class: 'form-content' %>
+          </div>
+          <br/>
+          <br/>
+          <hr id ="feedback_form">
+          <div class="actions">
+           <%= form.submit 'SUBMIT FEEDBACK', class: 'btn btn-success' %>
+          </div>
+          <br/>
+          <h6><b>Signed:</b><%= current_user.name %></h6>
+<% end %>

@@ -1,0 +1,45 @@
+<br/>
+<br/>
+<br/>
+	<div class ="container" id="stats_container">
+<button type="button" class="btn btn-outline-danger" id="feedback_results">
+  TOTAL USERS<span class="badge badge-light"><%= @users.count %></span>
+</button>
+<button type="button" class="btn btn-outline-danger" id="feedback_results">
+  FEEDBACKS RECEIVED <span class="badge badge-light"><%= @feedbacks.count %></span>
+</button>
+<button type="button" class="btn btn-outline-danger" id="feedback_results">
+  AVERAGE SCORE (UI)<span class="badge badge-light"><%= @averageui %></span>
+</button>
+<button type="button" class="btn btn-outline-danger" id="feedback_results">
+  AVERAGE SCORE (USABILITY)<span class="badge badge-light"><%= @averageusability %></span>
+</button>
+<button type="button" class="btn btn-outline-danger" id="feedback_results">
+  AVERAGE SCORE (OVERALL) <span class="badge badge-light"><%= @averageimprovement %></span>
+</button>
+<br/>
+<br/>
+<br/>
+<div class="alert alert-success" role="alert" id="my_feedback_count">
+  MY FEEDBACKS TILL DATE: <%= @c.count%>
+</div>
+<br/>
+<br/>
+</div>
+<br/>
+<div class = "container" id ="form_container">
+<center>
+<h2>FEEDBACK FORM</h2>
+</center>
+<br/>
+<br/>
+<%= render 'form', feedback: @feedback %>
+<br/>
+
+</div>
+<br/>
+<br/>
+<br/>
+<center>
+<%= link_to 'CANCEL', home_path, class: 'btn btn-outline-primary' %>
+</center>

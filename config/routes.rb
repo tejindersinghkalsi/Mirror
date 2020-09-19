@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :feedbacks
   devise_for :admins
   resources :words
   resources :communities
@@ -8,17 +9,18 @@ Rails.application.routes.draw do
   resources :stories
   resources :targets
   root "welcome#welcome" 
- 
+  
   get 'docipedias/', to: 'docipedias#index', as: 'index'
 
   resources :conversations do
    resources :messages
   end
 
+  
 
 
   get 'home/' => 'home#home', as: 'home'
-
+  
 
    get 'aroundme/' => 'topics#aroundme', as: 'aroundme'
    get 'technology/' => 'topics#technology', as: 'technology'
@@ -32,5 +34,3 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
-
-
