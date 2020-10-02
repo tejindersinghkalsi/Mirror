@@ -20,10 +20,37 @@
   line-height:30px;
   padding:0px 15px;
 }
+a:hover, a:active, a:focus 
+{
+  outline: 0;
+}
+
+#comment_hr
+{
+  background-color: navy;
+  height: 2px;
+}
 
 .container
 {
   word-wrap:break-word;
+}
+
+#story_hr
+{
+  background-color: navy;
+}
+
+#story_title_section
+{
+  background-color: purple;
+  color: white;
+  border-radius: 0px;
+}
+
+#story_title_card
+{
+  border-radius: 0px;
 }
 
 

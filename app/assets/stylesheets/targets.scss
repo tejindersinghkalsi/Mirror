@@ -24,6 +24,10 @@
 {
   align:left;
 }
+a:hover, a:active, a:focus 
+{
+  outline: 0;
+}
 #mem_buttons
 {
   float: left;

@@ -7,11 +7,10 @@
 					<%= gravatar_helper comment.user %>
 				</div>
 
-				<div class = "col-md-10">
+				<div class = "col-md-11">
 					<%= comment.content %>
-					<br/>
-					<br/>
-					 <b>Comment By: </b><%= comment.user.first_name %>,  Posted <%= distance_of_time_in_words(comment.created_at, Time.now)%> ago
+					<hr id = "comment_hr">
+					 <i>Comment By: </i><%= comment.user.first_name %>,<br/> <i>Posted:</i> <%= distance_of_time_in_words(comment.created_at, Time.now)%> ago
 				</div>
 			</div>
               <div>
