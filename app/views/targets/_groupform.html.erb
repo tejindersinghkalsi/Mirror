@@ -1,0 +1,137 @@
+<%= form_with(model: target, local: true) do |form| %>
+  <% if target.errors.any? %>
+      <% if target.errors.any? %>
+    <% target.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
+    <% end %>
+  <% end %>
+  <% end %>
+
+<div class ="row">
+<div class ="col">
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, :size => 30 %>
+  </div>
+<br/>
+<br/>
+<br/>
+
+<table> 
+  <tr>
+
+  <div class="field">
+  <td>  <%= form.label :begin %></td>
+  <td></td>
+   <td> <%= form.date_select :begin %></td>
+  </div>
+
+</tr>
+<tr>
+
+  <div class="field">
+  <td>  <%= form.label :end %></td>
+  <td></td>
+  <td>  <%= form.date_select :end %></td>
+  </div> 
+
+</tr>
+
+</table>
+
+<br/>
+
+<div class="form-group">
+  <label class = 'btn btn-info'>
+    Upload Document<%= form.file_field :doc, style: 'display: none;' %>
+  </label>
+
+  </div>
+
+</div>
+
+<div class="col">
+
+  <div class="field">
+    <%= form.text_area :description, placeholder:"Add Group Target Description...", rows: 10, cols: 70 %>
+  </div>
+
+</div>
+</div>
+
+<br/>
+  <p style="color:navy"><b>Note:</b> Mirror uses AWS for document upload.</p>
+<hr>
+<div class="alert alert-warning" role="alert">
+<b>USERS:</b>
+</div>
+</br>
+<div class="form-group">
+  <table id="member">
+    <tr>
+<td id="mem_row"><b><%= form.label :member %></b></td>
+  <td> <%= form.collection_select(:member, User.all, :id, :email, 
+                          {
+                            
+                            
+                             selected: @target.member,
+
+                            include_hidden: false
+                          },
+                          {
+                            :multiple => true
+                          }
+                          
+                          )%></td></tr>
+</div>
+<br/>
+<div class="field">
+   <td id="mem_row"> <b><%= form.label :lead %></b></td>
+   <td> <%= form.collection_select(:lead, User.all, :id, :name, 
+                          {
+                            
+                            
+                             selected: @target.lead,
+                            
+                          },
+                          
+                          )%></td></table>
+  </div>
+<br/>
+<hr>
+<div class="alert alert-success" role="alert">
+  <b>RESOURCES</b>
+</div>
+<br/>
+<div class="field">
+    <input name="target[res][]" type="text"/>
+  </div>
+
+<div class="col-md-12">
+
+  <div>
+    <%= form.fields_for :tasks do |task_form| %>
+    <%= render "task_fields",f: task_form %>
+    <% end %>
+  </div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+
+<div>
+  <%= link_to_add_association 'Add Task(s)', form, :tasks, class: 'btn btn-outline-primary' %>
+</div>
+  
+<br/>
+<center>
+<div class="actions">
+  <%= form.submit 'PUBLISH TARGET', class: 'btn btn-success btn-block' %>
+</div>
+</center>
+
+
+<% end %>

@@ -13,12 +13,20 @@ class TargetsController < ApplicationController
   # GET /targets/1
   # GET /targets/1.json
   def show
+
   end
 
   # GET /targets/new
   def new
     @target = Target.new
+
   end
+
+  def groupnew
+    @target = Target.new
+  end
+
+
 
   # GET /targets/1/edit
   def edit
@@ -28,7 +36,7 @@ class TargetsController < ApplicationController
   # POST /targets.json
   def create
     @target = Target.new(target_params.merge(user_id: current_user.id))
-
+    
     respond_to do |format|
       if @target.save
         format.html { redirect_to @target, notice: 'Target was successfully created.' }
@@ -72,6 +80,6 @@ class TargetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def target_params
-      params.require(:target).permit(:name, :description, :begin, :end, :doc, tasks_attributes: [:id, :name, :point, :dateofcompletion, :_destroy])
+      params.require(:target).permit(:name, :description, :begin, :end, :doc, {:member => []}, {:res => []}, :owner, :lead, tasks_attributes: [:id, :name, :point, :dateofcompletion, :_destroy])
     end
 end

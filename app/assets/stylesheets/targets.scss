@@ -20,6 +20,14 @@
   line-height:30px;
   padding:0px 15px;
 }
+#newgrouptarget
+{
+  align:left;
+}
+#mem_buttons
+{
+  float: left;
+}
   #footer
   {
     height:30px;
@@ -29,6 +37,14 @@
     margin-top: 180px;
 
   }
+  #member {
+    border-collapse: separate;
+    border-spacing: 0 3em;
+}
+#mem_row
+{
+  width: 50px;
+}
 #t_table
 {
   background-color: navy;

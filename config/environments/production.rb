@@ -97,4 +97,7 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default :charset => "utf-8"
+
+config.action_cable.allowed_request_origins = ['https://mirror-self-development-tool.herokuapp.com', 'http://mirror-self-development-tool.herokuapp.com']
+config.action_cable.url = "wss://mirror-self-development-tool.herokuapp.com/cable"
 end

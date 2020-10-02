@@ -20,7 +20,8 @@ Rails.application.routes.draw do
 
 
   get 'home/' => 'home#home', as: 'home'
-  
+  get 'groupnew/' => 'targets#groupnew', as: 'groupnew'
+
 
    get 'aroundme/' => 'topics#aroundme', as: 'aroundme'
    get 'technology/' => 'topics#technology', as: 'technology'

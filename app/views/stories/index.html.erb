@@ -1,3 +1,5 @@
+<br/>
+<br/>
     <div class="container">
       <%= alerts %> 
             <div class="nav-scroller py-1 mb-2">
@@ -15,7 +17,7 @@
       <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div class="col-md-12 px-0">
           <center>
-          <p class="lead my-3" id="story_home_quote">"Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma - which is living with the results of other people's thinking. "Don't let the noise of others' opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition." - Steve Jobs</p></center>
+          <p class="lead my-3" id="story_home_quote">When I do something, its all about self discovery. I want to learn and discover my own limits - Larry Ellison</p></center>
         </div>
       </div>
       <br/>
@@ -25,9 +27,9 @@
       <div class="row">
         <div class="col-md-8 blog-main">
           <h3 class="pb-3 mb-4 font-bold">
-            <% if logged_in?(:site_admin) %>
+            
             <h5><%= link_to 'New Story', new_story_path , class: 'btn btn-outline-secondary' %></h5>
-            <% end %>
+         
             <hr id= "aboutafterline" >
           <div class="blog-post">
             <%= render @stories %>

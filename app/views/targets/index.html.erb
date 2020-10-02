@@ -1,7 +1,15 @@
+
 <div class="container"id ="target_details">
 	<br/>
 	<br/>
-<p id="link_for_creating_new_target"><%= link_to 'CREATE NEW TARGET', new_target_path, class: 'btn btn-outline-success' %></p>
+<table>
+	<tr>
+<td><p id="link_for_creating_new_target"><%= link_to 'CREATE PERSONAL TARGET', new_target_path, class: 'btn btn-outline-success' %></p></td>
+<% if logged_in?(:site_admin) %>
+<td><p id="link_for_creating_new_target"><%= link_to 'CREATE GROUP TARGET', groupnew_path, class: 'btn btn-outline-warning' %></p></td>
+<% end %>
+</tr>
+</table>
 <br/>
 <br/>
 <br/>
