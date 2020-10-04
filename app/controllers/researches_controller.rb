@@ -36,7 +36,7 @@ class ResearchesController < ApplicationController
   # PATCH/PUT /researches/1
   def update
     if @research.update(research_params)
-      redirect_to @research, notice: 'Research was successfully updated.'
+      redirect_to researches_path, notice: 'Research was successfully updated.'
     else
       render :edit
     end

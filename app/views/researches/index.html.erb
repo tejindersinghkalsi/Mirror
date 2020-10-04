@@ -20,7 +20,7 @@
     <hr id = "r_body_begin">
     <br/>
 
-    <p lang="en"><%= research.body %></p>
+    <p lang="en"><%= markdown(research.body) %></p>
 
     <hr id ="r_body_ends">
     <%= link_to 'UPDATE', edit_research_path(research) %>
