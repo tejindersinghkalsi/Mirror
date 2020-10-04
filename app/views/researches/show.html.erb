@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mainheading:</strong>
+  <%= @research.mainheading %>
+</p>
+
+<p>
+  <strong>Subheading:</strong>
+  <%= @research.subheading %>
+</p>
+
+<p>
+  <strong>Contributed:</strong>
+  <%= @research.contributed %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @research.body %>
+</p>
+
+<%= link_to 'Edit', edit_research_path(@research) %> |
+<%= link_to 'Back', researches_path %>

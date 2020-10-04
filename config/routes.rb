@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :researches
   resources :feedbacks
   devise_for :admins
   resources :words

@@ -1,0 +1,38 @@
+<%= form_with(model: research, local: true) do |form| %>
+ <% if research.errors.any? %>
+    <% research.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
+    <% end %>
+  <% end %>
+
+  <div class="form-group">
+  
+   <%= form.text_field :mainheading, placeholder: 'Heading...', :size => 70, class: 'form-content' %>
+  </div>
+  <br/>
+  <br/>
+
+  <div class="form-group">
+  
+   <%= form.text_field :subheading, placeholder: 'Tags/Topic/Related information...', :size => 70, class: 'form-content' %>
+  </div>
+
+   <br/>
+  <br/>
+
+  <div class="field">
+    <%= form.label :contributed %>
+    <%= form.date_select :contributed %>
+  </div>
+   <br/>
+  <br/>
+   <div class="form-group">
+    <%= form.text_area :body, placeholder: 'Add content...', rows: 10, cols: 90, class: 'form-content' %>
+    
+  </div>
+  <br/>
+  <br/>
+  <div class="actions">
+     <%= form.submit 'PUBLISH ARTICLE', class: 'btn btn-primary' %>
+  </div>
+<% end %>

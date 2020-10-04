@@ -1,0 +1,91 @@
+<br/>
+<br/>
+<div class = "container">
+
+  <h1>|| MIRROR RESEARCH ||</h1>
+  <br/>
+  <div class="time">
+    
+    <%= link_to 'NEW', new_research_path, class: 'btn btn-outline-info' %>
+  </div>
+
+
+    <% @researches.each do |research| %>
+    <h2><%= research.mainheading %></h2>
+    <br/>
+    <h6><%= research.subheading %></h6>
+    <br/>
+    <%= research.contributed %>
+    <br/>
+    <hr id = "r_body_begin">
+    <br/>
+
+    <p lang="en"><%= research.body %></p>
+
+    <hr id ="r_body_ends">
+    <%= link_to 'UPDATE', edit_research_path(research) %>
+    <hr id ="r_body_ends">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <% end %>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
