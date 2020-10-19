@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+#Ruby version.
 ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -50,6 +51,7 @@ gem 'redcarpet', '~> 3.5'
 gem 'coderay', '~> 1.1', '>= 1.1.3'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'groupdate', '~> 5.2', '>= 5.2.1'
+gem 'social-share-button'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -4,6 +4,7 @@
 
 @import "bootstrap";
 @import "gritter";
+@import "social-share-button";
 
   #application_name
 {
@@ -12,6 +13,13 @@
   font-size: 30px;
   margin-bottom:0px;
   color:white;
+}
+.social-share-button {
+  .ssb-icon {
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+  }
 }
 
 .alert {
