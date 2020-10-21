@@ -80,6 +80,6 @@ class TargetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def target_params
-      params.require(:target).permit(:name, :description, :begin, :end, :doc, {:member => []}, {:res => []}, :owner, :lead, tasks_attributes: [:id, :name, :point, :dateofcompletion, :_destroy])
+      params.require(:target).permit(:name, :description, :begin, :end, :doc, {:member => []}, {:res => []}, :owner, :lead, tasks_attributes: [:id, :name, :point, :progress, :dateofcompletion, :_destroy])
     end
 end

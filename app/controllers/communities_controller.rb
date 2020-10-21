@@ -6,7 +6,8 @@ class CommunitiesController < ApplicationController
 
   # GET /communities
   def index
-    @communities = Community.page(params[:page])
+    @communities = (Community.where.not(doc: nil)).page(params[:page])
+
   end
 
   # GET /communities/1
