@@ -1,14 +1,10 @@
-<!--HTML Layout file for the Target controller -->
-
-
 <!DOCTYPE html>
 
 <html>  
   
-    <head> 
+  <head> 
         
-    <title><%= @page_title %></title> <!--Dynamic title. @page_title is an instance variable whose value changes as per the controller layout -->
-
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,29 +12,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
       
-    </head>
+  </head>
 
   
-    <body>
+  <body>
 
     <%= video_tag( 'prodvid.mp4', id:'background', autoplay: true, loop: true, muted: true) %>
-
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
-
-      
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        
-        <h1 class="display-3 font-weight-normal" id ="prod_head">MIRROR</h1>
-        <br/>
-        <h4 id ="prod_sub"><b>SHOWS YOUR REFLECTION</b></h4>
-        <br/>
-        <a class="btn btn-outline-secondary" href="/login">LOGIN</a>
-        <%= link_to "EXPLORE", @manual, class: "btn btn-outline-secondary" %>
-      
-         <!-- Button trigger modal -->
-<button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalLong">
-  ABOUT
-</button>
+    <div class="col-md-7 p-lg-5 mx-auto my-5">
+      <h1 class="display-3 font-weight-normal" id ="prod_head">MIRROR</h1>
+      <br/>
+      <h2 id ="prod_sub"><b>SHOWS YOUR REFLECTION</b></h2>
+      <br/>
+      <a class="btn btn-outline-secondary" href="/login">LOGIN</a>
+      <%= link_to "EXPLORE", @manual, class: "btn btn-outline-secondary" %>
+    <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalLong">
+   ABOUT
+   </button>
 
 <!-- Modal -->
 <div class="modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -66,7 +56,8 @@
       </div>
 
     </div>
-
+<br/>
+<br/>
     <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
        
       <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-white overflow-hidden">
@@ -133,12 +124,7 @@
     <br/>
     <br/>
     <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+  
 
 
 
