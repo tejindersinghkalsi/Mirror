@@ -1,8 +1,23 @@
 <br/>
 <br/>
 <div class="container" id="new_target">
+<%if @target.lead.nil?%>
+<u><h4>EDIT PERSONAL TARGET</h4></u>
+<br/>
+<div class="alert alert-danger" role="alert">
+<b>GENERAL:</b>
+</div>
+<br/>
 <%= render 'form', target: @target %>
-
+<%else%>
+<u><h4>EDIT GROUP TARGET</h4></u>
+<br/>
+<div class="alert alert-danger" role="alert">
+<b>GENERAL:</b>
+</div>
+<br/>
+<%= render 'groupform', target: @target %>
+<%end%>
 <br/>
 <br/>
 <br/>

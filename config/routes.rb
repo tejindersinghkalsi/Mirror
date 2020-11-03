@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get 'home/' => 'home#home', as: 'home'
   get 'groupnew/' => 'targets#groupnew', as: 'groupnew'
+  get 'groupindex/' => 'targets#groupindex', as: 'groupindex'
 
 
    get 'aroundme/' => 'topics#aroundme', as: 'aroundme'

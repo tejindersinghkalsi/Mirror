@@ -6,16 +6,41 @@ class TargetsController < ApplicationController
   # GET /targets
   # GET /targets.json
   def index
-    @targets = Target.where(user_id: current_user.id).page(params[:page])
-    
+    @personal_targets = (Target.where(user_id: current_user.id) and Target.where(lead: nil)).page(params[:page])
   end
 
   # GET /targets/1
   # GET /targets/1.json
   def show
+    
+     @target.tasks.each do |g|
+     @count = 0
+     @v = 0
+     @w = 0
+     @n = 0
+     y = g.updated_at
+     c = Time.now
+     if(@r = ((c-y)/24.hours).to_i >2)
+     @count =+1
+     end
+     if g.progress.between?(0,24)
+      @v =+ 1
+     end
+     if g.progress.between?(75,100)
+      @n =+ 1
+     end
+
+     
+   end
+   @g = (@target.tasks.count)*100
+   @j =  @target.tasks.sum(:progress)
+     @x = @g - @j
+
+
+
+
 
   end
-
   # GET /targets/new
   def new
     @target = Target.new
@@ -26,6 +51,10 @@ class TargetsController < ApplicationController
     @target = Target.new
   end
 
+ def groupindex
+    @group_targets = (Target.where(":user_id = ANY(member)", user_id: current_user.id )).page(params[:page])
+
+  end
 
 
   # GET /targets/1/edit
@@ -80,6 +109,6 @@ class TargetsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def target_params
-      params.require(:target).permit(:name, :description, :begin, :end, :doc, {:member => []}, {:res => []}, :owner, :lead, tasks_attributes: [:id, :name, :point, :progress, :dateofcompletion, :_destroy])
+      params.require(:target).permit(:name, :description, :begin, :end, :doc, {:member => []}, :lead, tasks_attributes: [:id, :name, :point, :owner, :progress, :dateofcompletion, :_destroy])
     end
 end

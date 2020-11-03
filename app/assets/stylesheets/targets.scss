@@ -5,6 +5,10 @@
 @import "bootstrap";
 @import "gritter";
 
+#total_resources
+{
+  border-radius: 0px;
+}
 
  #application_name
 {
@@ -24,6 +28,16 @@
 {
   align:left;
 }
+#lead_color
+{
+  background-color:navy;
+  color: white;
+}
+#member_color
+{
+  background-color:blue;
+  color:black;
+}
 a:hover, a:active, a:focus 
 {
   outline: 0;
@@ -32,6 +46,23 @@ a:hover, a:active, a:focus
 {
   float: left;
 }
+#col6
+{
+  background-color:navy;
+}
+#col7
+{
+  background-color:orange;
+}
+#col8
+{
+  background-color:green;
+}
+#col9
+{
+  background-color:red;
+}
+
   #footer
   {
     height:30px;
@@ -52,6 +83,11 @@ a:hover, a:active, a:focus
 #t_table
 {
   background-color: navy;
+}
+
+#t_group_table
+{
+  background-color: darkgreen;
 }
 
 #t_table_r
@@ -90,6 +126,17 @@ a:hover, a:active, a:focus
   background-color: blue;
 }
 
+#target_g
+{
+  width:30%;
+  background-color: chartreuse;
+}
+#target_with_lead
+{
+  width:30%;
+  background-color: yellow;
+}
+
 #target_index_row
 {
   height: 2em;
@@ -102,23 +149,35 @@ a:hover, a:active, a:focus
 }
 #col1
 {
-  width:65%;
+  width:55%;
+}
+#col99
+{
+  width:20%;
 }
 #col2
 {
-  width:15%;
+  width:17%;
 }
 #col3
 {
-  width:10%;
+  width:4%;
 }
 #col4
 {
   width:10%;
 }
+#group_target_hr
+{
+  background-color: purple;
+}
 #new_target
 {
-  width:55%;
+  width:100%;
+}
+#target_type_heading
+{
+  background-color: yellow;
 }
 
   #target_details
@@ -129,6 +188,7 @@ a:hover, a:active, a:focus
   #link_for_creating_new_target
   {
     text-align:left;
+
   }
 
   #colwidth

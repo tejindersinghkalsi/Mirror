@@ -5,20 +5,32 @@
 <table>
 	<tr>
 <td><p id="link_for_creating_new_target"><%= link_to 'CREATE PERSONAL TARGET', new_target_path, class: 'btn btn-outline-success' %></p></td>
-<% if logged_in?(:site_admin) %>
 <td><p id="link_for_creating_new_target"><%= link_to 'CREATE GROUP TARGET', groupnew_path, class: 'btn btn-outline-warning' %></p></td>
-<% end %>
+<td><p id="link_for_creating_new_target"><%= link_to 'MY GROUP TARGETS', groupindex_path, class: 'btn btn-outline-info' %></p></td>
 </tr>
 </table>
 <br/>
 <br/>
+<hr id = "target_type_heading">
+<h4>MY PERSONAL TARGETS</h4>
+<hr id = "target_type_heading">
 <br/>
-<%= render @targets %>
+<% @personal_targets.each do |personal_target| %>
+<table class="table table-hover" id ="t_table">
+    <tr id="target_index_row" id = "t_table_r">
+      <td id="target_h"><h4 style="color:black"><%= personal_target.name %></h4></td>
+      <td id="target_options"><%= link_to 'Review/', personal_target %>
+          <%= link_to 'Edit/', edit_target_path(personal_target) %>
+          <%= link_to 'Delete', personal_target, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+          
+    </tr>
+    <%end%>
+</table>
+<br/>
+<%= paginate @personal_targets %>
 <br/>
 <br/>
 <br/>
-<br/>
-    <%= paginate @targets, :container => false %>
 </div>
 <br/>
 <br/>

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-	
-	include DeviseWhitelist
 
+	include DeviseWhitelist
+    
 def after_sign_in_path_for(resource)
     home_path
 end
