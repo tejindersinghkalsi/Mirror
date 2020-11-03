@@ -6,7 +6,7 @@ class TargetsController < ApplicationController
   # GET /targets
   # GET /targets.json
   def index
-    @personal_targets = (Target.where(user_id: current_user.id) and Target.where(lead: nil)).page(params[:page])
+    @personal_targets = (Target.where(user_id: current_user.id)).page(params[:page])
   end
 
   # GET /targets/1
