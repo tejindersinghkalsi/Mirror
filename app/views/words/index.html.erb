@@ -12,6 +12,7 @@
   </thead>
 
   <tbody>
+    <%if @words.present? %>
     <% @words.each do |word| %>
       <tr>
         <td><%= word.wordtitle %></td>
@@ -21,6 +22,7 @@
         <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    <%end%>
   </tbody>
 </table>
 

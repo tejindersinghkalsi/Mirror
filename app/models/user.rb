@@ -24,6 +24,7 @@ class User < ApplicationRecord
   has_many :years, dependent: :destroy
   has_many :stories, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
+  has_many :researches, dependent: :destroy
 
   acts_as_messageable
 

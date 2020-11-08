@@ -151,3 +151,84 @@ h3 {
   align: left;
 
 }
+#note_three
+{
+  height: 100%;
+}
+#udet
+{
+  color: navy;
+  font-size: 10px;
+  padding-left: 5px;
+}
+#udett
+{
+  font-size: 10px;
+  padding-left: 5px;
+  
+}
+.vl {
+  border-left: 2px solid grey;
+  height: 700px;
+   padding-right: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+#research_jumbo
+{
+  padding-right:1px;
+   margin-right: 1px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   margin-bottom: 0px;
+   background-color: white;
+}
+#journal_con
+{
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+   margin-bottom: 0px;
+}
+
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: purple;
+    color: white;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}
+

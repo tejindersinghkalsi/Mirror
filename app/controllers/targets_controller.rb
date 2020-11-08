@@ -7,7 +7,40 @@ class TargetsController < ApplicationController
   # GET /targets.json
   def index
     @personal_targets = (Target.where(user_id: current_user.id)).page(params[:page])
+
+              @stale_personal_targets = (Target.where(user_id: current_user.id))
+
+               @p = []
+               @h = []
+
+
+               @stale_personal_targets.each do |target|
+
+      
+     
+                    target.tasks.each do |task|
+
+
+                      
+         
+                       q = Date.today
+                       m = task.updated_at.to_date
+                       
+           
+
+                        if (@flag = ((q - m).to_i >= 3))
+                          if (task.owner == current_user.id)
+                             
+                             @p << task.target_id
+                             @h << task.name
+                          end
+                         end 
+                    end
+              end
+     @j = 0
   end
+
+
 
   # GET /targets/1
   # GET /targets/1.json
@@ -18,9 +51,9 @@ class TargetsController < ApplicationController
      @v = 0
      @w = 0
      @n = 0
-     y = g.updated_at
-     c = Time.now
-     if(@r = ((c-y)/24.hours).to_i >2)
+     y = g.updated_at.to_date
+     c = Date.today
+     if(@r = ((c-y).to_i >=3))
      @count =+1
      end
      if g.progress.between?(0,24)
@@ -53,7 +86,38 @@ class TargetsController < ApplicationController
 
  def groupindex
     @group_targets = (Target.where(":user_id = ANY(member)", user_id: current_user.id )).page(params[:page])
+    
 
+      @stale_personal_targets = (Target.where(":user_id = ANY(member)", user_id: current_user.id ))
+
+               @e = []
+               @u = []
+
+
+               @stale_personal_targets.each do |target|
+
+      
+     
+                    target.tasks.each do |task|
+
+
+                      
+         
+                       q = Date.today
+                       m = task.updated_at.to_date
+                       
+           
+
+                        if (@flag = ((q - m).to_i >= 3))
+
+                           if (task.owner == current_user.id)  
+                             @e << task.target_id
+                             @u << task.name
+                            end
+                         end 
+                    end
+              end
+     @b = 0
   end
 
 
@@ -112,3 +176,4 @@ class TargetsController < ApplicationController
       params.require(:target).permit(:name, :description, :begin, :end, :doc, {:member => []}, :lead, tasks_attributes: [:id, :name, :point, :owner, :progress, :dateofcompletion, :_destroy])
     end
 end
+

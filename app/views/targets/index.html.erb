@@ -10,11 +10,56 @@
 </tr>
 </table>
 <br/>
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+  PERSONAL STALE TASKS
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:red">PERSONAL STALE TASKS:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% if @p.present? %>
+        <% @p.each do |hm| %>
+        <% k = Target.find(hm) %>
+      <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">TARGET</th>
+      <th scope="col">TASK</th>
+      <th scope="col">TAKE ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= k.name %></td>
+      <td><%= @h[@j] %></td>
+      <% @j = @j+1 %>
+      <td><a href="<%= target_path(k) %>">Access Task</a></td>
+    </tr>
+  </tbody>
+</table>
+<%end%>
+<%else%>
+<p>NO DATA TO DISPLAY.</p>
+<%end%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <br/>
 <hr id = "target_type_heading">
 <h4>MY PERSONAL TARGETS</h4>
 <hr id = "target_type_heading">
 <br/>
+<%if @personal_targets.present? %>
 <% @personal_targets.each do |personal_target| %>
 <table class="table table-hover" id ="t_table">
     <tr id="target_index_row" id = "t_table_r">
@@ -25,9 +70,12 @@
           
     </tr>
     <%end%>
+    <%end%>
 </table>
 <br/>
+<%if @personal_targets.present? %>
 <%= paginate @personal_targets %>
+<%end%>
 <br/>
 <br/>
 <br/>

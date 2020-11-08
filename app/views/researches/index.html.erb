@@ -2,39 +2,53 @@
 <br/>
 <div class = "container">
 
-  <h1>|| MIRROR RESEARCH ||</h1>
+  <h1>|| MIRROR JOURNAL||</h1>
   <br/>
+  <p><%= link_to "DOWNLOAD JOURNAL", researches_path(@researches, format: "pdf") %></p>
   <div class="time">
     
-    <%= link_to 'NEW', new_research_path, class: 'btn btn-outline-info' %>
+    <%= link_to 'NEW ARTICLE', new_research_path, class: 'btn btn-outline-primary' %>
   </div>
+   <%if @researches.present? %>
+   <% @researches.each do |research| %>
 
 
-    <% @researches.each do |research| %>
-    <h2><%= research.mainheading %></h2>
-    <br/>
-    <h6><%= research.subheading %></h6>
-    <br/>
-    <%= research.contributed %>
-    <br/>
-    <hr id = "r_body_begin">
-    <br/>
+          <div class="jumbotron jumbotron-fluid" id = "research_jumbo">
+          <div class="container" id ="journal_con">
+            <div class="alert alert-success" role="alert">
+          <%= research.mainheading %>
+      </div>
+          <br/>
+          <p><%= research.subheading %></p>
+          <br/>
+          <p class="lead"><%= markdown(research.body) %></p>
+          <br/>
+          <% u = research.user_id %>
+          <% v = User.find(u) %>
 
-    <p lang="en"><%= markdown(research.body) %></p>
-
-    <hr id ="r_body_ends">
-    <%= link_to 'UPDATE', edit_research_path(research) %>
-    <hr id ="r_body_ends">
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <% end %>
+          <footer class="blockquote-footer">Written By: <cite title="Source Title"><%= v.name %></cite></footer>
+          </blockquote>
+          <br/>
+          <% if research.user_id == current_user.id %>
+            <%= link_to 'UPDATE',edit_research_path(research), class: 'btn btn-outline-success btn-sm' %>
+            <% end %>
+          </div>
+          
+          </div>
 
 
+          <br/>
+        <%end%>
+        <%end%>
+        <hr>
+        <br/>
+        <br/>
+        <%if @researches.present? %>
+         <%= paginate @researches %>  
+         <%end%>
 </div>
+
+
 
 
 

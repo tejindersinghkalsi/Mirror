@@ -10,6 +10,7 @@
 	<td><p><b>RESOURCE OWNED BY</b></p></td>
 
 </tr>
+<%if @targets.present? %>
 <% @targets.each do |document| %>
 
 <tr>
@@ -20,12 +21,15 @@
 </tr>
 <%= alerts %> 
 <% end %> 
+<%end%>
 </table>
 <br/>
 <br/>
 <br/>
 <br/>
+<%if @targets.present? %>
 <%= paginate @targets, :container => false %>
+<%end%>
 <br/>
 <br/>
 <br/>

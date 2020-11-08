@@ -8,5 +8,7 @@ class Target < ApplicationRecord
 	mount_uploader :doc, DocumentUploader
 
 	validates_presence_of :name, :description, :begin, :end
+
+
 end
 

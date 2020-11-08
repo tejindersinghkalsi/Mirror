@@ -6,7 +6,28 @@ class ResearchesController < ApplicationController
 
   # GET /researches
   def index
-    @researches = Research.recent.page(params[:page])
+    @researches = Research.page(params[:page])
+
+    i = Research.find_by(sent: nil)
+
+    @g = i.id
+    @j = @g+10
+            
+
+    @sorted_researches = Research.all
+    
+
+      respond_to do |format|
+      format.html
+      format.pdf do
+      pdf = JournalPdf.new(@sorted_researches)
+      send_data pdf.render, filename: "Journal.pdf",
+                            type: "application/pdf",
+                            disposition: "inline"
+    end
+  end
+
+
   end
 
   # GET /researches/1
@@ -14,7 +35,7 @@ class ResearchesController < ApplicationController
   end
 
   # GET /researches/new
-  def new
+  def new 
     @research = Research.new
   end
 

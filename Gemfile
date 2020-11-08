@@ -52,6 +52,8 @@ gem 'coderay', '~> 1.1', '>= 1.1.3'
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'groupdate', '~> 5.2', '>= 5.2.1'
 gem 'social-share-button'
+gem 'sendgrid-actionmailer', '~> 3.1', '>= 3.1.1'
+gem 'prawn', '~> 2.3'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

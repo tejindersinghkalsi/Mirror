@@ -23,17 +23,25 @@
          
           </ul>
         </div>
+        <%= gravatar_helper current_user %>
+
         <div class="nav-item dropdown">
 
           <% if current_user %>
-          
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">OPTIONS</a>
+
+            
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ME</a>
     
                 <div class="dropdown-menu">
                 
-                  <%= link_to "INBOX", conversations_path, class: "dropdown-item" %>
-                  <%= link_to "FEEDBACK", new_feedback_path, class: "dropdown-item" %>
-                  <%= link_to "RESEARCH", researches_path, class: "dropdown-item" %>
+                  <p><p id ="udet"><b>NAME:</b></p><p id ="udett"><%= current_user.name%></p></p>
+                  <hr>
+                  <p><p id ="udet"><b>EMAIL:</b></p><p id ="udett"><%= current_user.email%></p></p>
+                  <hr>
+                  <p><p id ="udet"><b>JOINED ON:</b></p><p id ="udett"><%= current_user.created_at.strftime("%d-%m-%Y")%></p></p>
+                  <hr>
+                  <p><p id ="udet"><b>UPDATE PROFILE</b></p><p id ="udett"><%= link_to "Update", edit_user_registration_path%></p></p>
+                  
                   
                  
                 </div>

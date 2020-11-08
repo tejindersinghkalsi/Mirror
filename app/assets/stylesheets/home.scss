@@ -25,7 +25,54 @@ a:hover, a:active, a:focus
 {
   outline: 0;
 }
+#notification_card_text
+{
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 12px;
+}
+#notification_card_hr_line
+{
+  background-color: navy;
+}
+#notification
+{
+  float:left;
+  padding-right:20px;
+  margin-right:20px;
+  padding-top:0px;
+  margin-top: 0px;
+ width: 40%;
+}
+#notification_jumbo
+{
+  height:50%;
+  padding-top: 0px;
 
+}
+.vl {
+  border-left: 3px solid purple;
+  height: 100%;
+ padding-right: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+
+}
+#testing
+{
+  
+  padding-left: 0px;
+  margin-left: 0px;
+}
+#notification_panel
+{
+  padding-right: 0px;
+  margin-right: 0px;
+}
+#notification_card
+{
+  font-size: 14px;
+}
 #word_b
 {
   background-color: purple;
@@ -64,12 +111,24 @@ a:hover, a:active, a:focus
 
 #news_jumbotron
 {
-	
+	  
     height:100%;
-    margin:0px;
-    padding:0px;
-}
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-top: 0px;
+  margin-top:0px;
 
+}
+#news_jumbo_con
+{
+  padding-top: 0px;
+  margin-top:0px;
+}
+#feed_col
+{
+  padding-top: 0px;
+  margin-top: 0px;
+}
   #footer
   {
     height:30px;
@@ -78,8 +137,23 @@ a:hover, a:active, a:focus
     padding-bottom:0px;
     margin-top: 180px;
   }
-
-
+#quick_launch_icons
+{
+  padding-bottom: 0px;
+  border: 1 px solid black;
+}
+#udet
+{
+  color: navy;
+  font-size: 10px;
+  padding-left: 5px;
+}
+#udett
+{
+  font-size: 10px;
+  padding-left: 5px;
+  
+}
   #footer_text
   {
   text-align:right;
@@ -90,5 +164,43 @@ a:hover, a:active, a:focus
   color:white;
 
   }
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 20px;
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
 
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}
 

@@ -1,8 +1,9 @@
 <br/>
 <br/>
 <center>
-<h2 style="color:blue">EDIT CREDENTIALS</h2>
+<h2 style="color:navy">UPDATE ACCOUNT</h2>
 </center>
+<br/>
 <br/>
  <div class = "container">
 
@@ -13,14 +14,14 @@
   <table>
   <tr>
   <div class="field">
-   <td> <%= f.label :name %></td>
+   <td> <b style="color:purple"><%= f.label :name %></b></td>
     <td><%= f.text_field :name %></td>
   </div>
 </tr>
 
 <tr>
   <div class="field">
-   <td> <%= f.label :email %></td>
+   <td><b style="color:purple"><%= f.label :email %></b></td>
     <td><%= f.email_field :email, autofocus: true%></td>
   </div>
 </tr>
@@ -32,7 +33,7 @@
 
 <tr>
   <div class="field">
-   <td> <%= f.label :password %>(Leave blank if you don't want to change it.)</td>
+   <td><b style="color:purple"><%= f.label :password %></b>(Leave blank if you don't want to change it.)</td>
    <td> <%= f.password_field :password, autocomplete: "new-password" %></td>
     <% if @minimum_password_length %>
     <% end %>
@@ -42,15 +43,22 @@
 
  <tr>
   <div class="field">
-   <td> <%= f.label :password_confirmation %><br /></td>
+   <td><b style="color:purple"><%= f.label :password_confirmation %></b><br/></td>
     <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
   </div>
 </tr>
 
 <tr>
   <div class="field">
-   <td> <%= f.label :current_password %>(We need your current password to confirm your changes.)</td>
+   <td><b style="color:purple"><%= f.label :current_password %></b>(We need your current password to confirm your changes.)</td>
    <td> <%= f.password_field :current_password, autocomplete: "current-password" %></td>
+  </div>
+</tr>
+
+<tr>
+  <div class="field">
+   <td><b style="color:purple"><%= f.label :subscribe %></b>(Save as "YES", to subscribe Mirror Journal)</td>
+   <td> <%= f.password_field :subscribe %></td>
   </div>
 </tr>
 </center>
