@@ -7,11 +7,6 @@ class ResearchesController < ApplicationController
   # GET /researches
   def index
     @researches = Research.page(params[:page])
-
-    i = Research.find_by(sent: nil)
-
-    @g = i.id
-    @j = @g+10
             
 
     @sorted_researches = Research.all
