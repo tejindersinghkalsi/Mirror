@@ -7,9 +7,6 @@ class ResearchesController < ApplicationController
   # GET /researches
   def index
     @researches = Research.page(params[:page])
-            
-  end
-
 
   end
 
