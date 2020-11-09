@@ -36,8 +36,9 @@ class TargetsController < ApplicationController
                           end
                          end 
                     end
+                    @j = 0 
               end
-     @j = 0
+    
   end
 
 
@@ -88,13 +89,13 @@ class TargetsController < ApplicationController
     @group_targets = (Target.where(":user_id = ANY(member)", user_id: current_user.id )).page(params[:page])
     
 
-      @stale_personal_targets = (Target.where(":user_id = ANY(member)", user_id: current_user.id ))
+      @stale_group_targets = (Target.where(":user_id = ANY(member)", user_id: current_user.id ))
 
                @e = []
                @u = []
 
 
-               @stale_personal_targets.each do |target|
+               @stale_group_targets.each do |target|
 
       
      
@@ -116,8 +117,9 @@ class TargetsController < ApplicationController
                             end
                          end 
                     end
+                    @b = 0
               end
-     @b = 0
+     
   end
 
 
