@@ -9,12 +9,13 @@ class HomeController < ApplicationController
   	 @word = Word.last
   	 @user_targets = Target.all
 
-  	 @b = @user_targets.count 
       @c = []
 
       @w = []
 
       @s = []
+
+      @ff = []
 
 
   	 @user_targets.each do |target|
@@ -33,14 +34,16 @@ class HomeController < ApplicationController
 
                if (task.owner == current_user.id)
                   @s << task.target_id
-                  @c = Kaminari.paginate_array(@s).page(params[:page]).per(2)
                   @w << task.name
+                  @ff = @s.zip(@w)
+                  @c = Kaminari.paginate_array(@ff).page(params[:page]).per(2)
+                  
                end
             end
 
          end
      end
-     @i = 0
+     
   
   end
 

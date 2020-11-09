@@ -23,8 +23,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <% if @e.present? %>
-        <% @e.each do |om| %>
+        <% if @jj.present? %>
+        <% @jj.each do |om, tm| %>
         <% s = Target.find(om) %>
       <table class="table table-striped">
   <thead>
@@ -37,8 +37,7 @@
   <tbody>
     <tr>
       <td><%= s.name %></td>
-      <td><%= @u[@b] %></td>
-      <% @j = @b+1 %>
+      <td><%= tm %></td>
       <td><a href="<%= target_path(s) %>">Access Task</a></td>
     </tr>
   </tbody>

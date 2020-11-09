@@ -12,6 +12,7 @@ class TargetsController < ApplicationController
 
                @p = []
                @h = []
+               @jj = []
 
 
                @stale_personal_targets.each do |target|
@@ -33,10 +34,11 @@ class TargetsController < ApplicationController
                              
                              @p << task.target_id
                              @h << task.name
+                             @jj = @p.zip(@h)
                           end
                          end 
                     end
-                    @j = 0 
+                  
               end
     
   end
@@ -93,6 +95,7 @@ class TargetsController < ApplicationController
 
                @e = []
                @u = []
+               @kk = []
 
 
                @stale_group_targets.each do |target|
@@ -114,10 +117,11 @@ class TargetsController < ApplicationController
                            if (task.owner == current_user.id)  
                              @e << task.target_id
                              @u << task.name
+                             @kk = @e.zip(@u)
                             end
                          end 
                     end
-                    @b = 0
+                    
               end
      
   end

@@ -20,17 +20,16 @@
        <div class = "col-md-7" id = "notification_panel">
 
             <%if @c.present? %>
-            <% @c.each do |vm| %>
+            <% @c.each do |x,y| %>
             <div class="card" style= "width: 16rem;" id ="notification" >
             <div class="card-body" >
             <h6 class="card-title" style="color: blue;">COMPLETE SOON</h6>
-            <% g = Target.find(vm) %>
+            <% g = Target.find(x) %>
             <hr id = "notification_card_hr_line">
             <b><p id = "notification_card_text">You have pending task in the following target. If not updated it will be marked as stale task.</p></b>
             <hr id = "notification_card_hr_line">
             <p id = "notification_card"style="color: black;"><b>TARGET NAME:</b> <%= g.name %></p>
-            <p id = "notification_card"style="color: black;"><b>TASK NAME:</b> <%= @w[@i] %></p>
-            <% @i = @i+1 %>
+            <p id = "notification_card"style="color: black;"><b>TASK NAME:</b><%= y %></p>
             <hr id = "notification_card_hr_line">
             <p class="card-text"></p>
             <a href="<%= target_path(g) %>">Access</a>
