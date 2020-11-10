@@ -11,6 +11,15 @@ class ResearchesController < ApplicationController
 
     @sorted_researches = Research.all
     
+
+      respond_to do |format|
+      format.html
+      format.pdf do
+      pdf = JournalPdf.new(@sorted_researches)
+      send_data pdf.render, filename: "Journal.pdf",
+                            type: "application/pdf",
+                            disposition: "inline"
+    end
   end
 
 
