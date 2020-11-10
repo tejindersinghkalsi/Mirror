@@ -17,7 +17,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color:red">GROUP STALE TASKS:</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="color:black">GROUP STALE TASKS:</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -26,22 +26,15 @@
         <% if @kk.present? %>
         <% @kk.each do |om, tm| %>
         <% s = Target.find(om) %>
-      <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">TARGET</th>
-      <th scope="col">TASK</th>
-      <th scope="col">TAKE ACTION</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= s.name %></td>
-      <td><%= tm %></td>
-      <td><a href="<%= target_path(s) %>">Access Task</a></td>
-    </tr>
-  </tbody>
-</table>
+        <div class="alert alert-danger" role="alert" id ="stale_task_alert">
+                   
+                   <b>TARGET NAME :</b><%= s.name %>
+                   <br/>
+                   <b>TASK NAME :</b><%= tm %>
+                   <hr>
+                   <b>ACCESS LINK :</b><a href="<%= target_path(s) %>">Click Here</a>
+                   </div>
+                  <br/>
 <%end%>
 <%else%>
 <p>NO DATA TO DISPLAY.</p>

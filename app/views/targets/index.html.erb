@@ -13,11 +13,11 @@
 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
   PERSONAL STALE TASKS
 </button>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade .modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color:red">PERSONAL STALE TASKS:</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="color:black">PERSONAL STALE TASKS:</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -26,22 +26,16 @@
         <% if @jj.present? %>
         <% @jj.each do |hm, nm| %>
         <% k = Target.find(hm) %>
-      <table class="table table-striped" id = "p_stale_i">
-  <thead>
-    <tr>
-      <th scope="col">TARGET</th>
-      <th scope="col">TASK</th>
-      <th scope="col">TAKE ACTION</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= k.name %></td>
-      <td><%= nm %></td>
-      <td><a href="<%= target_path(k) %>">Access Task</a></td>
-    </tr>
-  </tbody>
-</table>
+
+            <div class="alert alert-danger" role="alert" id ="stale_task_alert">
+                   
+                   <b>TARGET NAME :</b><%= k.name %>
+                   <br/>
+                   <b>TASK NAME :</b><%= nm %>
+                   <hr>
+                   <b>ACCESS LINK :</b><a href="<%= target_path(k) %>">Click Here</a>
+                   </div>
+                  <br/>
 <%end%>
 <%else%>
 <p>NO DATA TO DISPLAY.</p>
