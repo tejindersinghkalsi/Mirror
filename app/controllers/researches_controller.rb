@@ -40,7 +40,7 @@ class ResearchesController < ApplicationController
 
   # POST /researches
   def create
-    @research = Research.new(research_params)
+    @research = Research.new(research_params.merge(user_id: current_user.id))
 
     if @research.save
       redirect_to researches_path, notice: 'Research was successfully created.'
