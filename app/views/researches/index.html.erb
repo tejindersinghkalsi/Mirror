@@ -21,6 +21,12 @@
           <br/>
           <p><%= research.subheading %></p>
           <br/>
+          <br/>
+          <% if research.Image.present? %>
+          <div id = "imgg"><%= image_tag(research.Image.url) %></div>
+          <%end%>
+          <br/>
+          <br/>
           <p class="lead"><%= markdown(research.body) %></p>
           <br/>
           <% u = research.user_id %>

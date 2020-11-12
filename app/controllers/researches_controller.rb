@@ -72,6 +72,6 @@ class ResearchesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def research_params
-      params.require(:research).permit(:mainheading, :subheading, :contributed, :body)
+      params.require(:research).permit(:mainheading, :subheading, :contributed, :body, :Image)
     end
 end

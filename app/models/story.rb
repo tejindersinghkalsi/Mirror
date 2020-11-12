@@ -5,7 +5,9 @@ class Story < ApplicationRecord
 	is_impressionable
 
 	validates_presence_of :title, :body, :topic_id
-
+    
+    mount_uploader :Attachment, DocumentUploader
+    mount_uploader :Img, DocumentUploader
 	#Custom scope
 	def self.recent       
 

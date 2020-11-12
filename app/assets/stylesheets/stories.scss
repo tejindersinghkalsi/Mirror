@@ -21,12 +21,23 @@
     width: 24px;
   }
 }
+#backg
+{
+  background-color: red;
+}
 #udet
 {
   color: navy;
   font-size: 10px;
   padding-left: 5px;
 }
+#imgg
+{
+  max-width:100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
 #udett
 {
   font-size: 10px;

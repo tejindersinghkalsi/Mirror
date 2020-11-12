@@ -30,6 +30,28 @@
     <%= form.text_area :body, placeholder: 'Add content...', rows: 10, cols: 90, class: 'form-content' %>
     
   </div>
+  <hr id = "backg">
+  <p><b>Upload Images:</b></p>
+  <br>
+  <div class = "row" >
+    <div class = "col-md-2">
+  <div class="form-group">
+  <label class = 'btn btn-outline-warning'>
+    Upload Image<%= form.file_field :Attachment, style: 'display: none;' %>
+  </label>
+
+  </div>
+</div>
+<div class = "col">
+  <div class="form-group">
+  <label class = 'btn btn-outline-warning'>
+    Supporting Image<%= form.file_field :Img, style: 'display: none;' %>
+  </label>
+
+  </div>
+</div>
+</div>
+<hr  id = "backg">
   <br/>
   <br/>
   <div class="actions">
