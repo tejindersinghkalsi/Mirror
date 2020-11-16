@@ -1,0 +1,140 @@
+<%= form_with(model: estimate, local: true) do |form| %>
+ <% if estimate.errors.any? %>
+    <% estimate.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
+    <% end %>
+  <% end %>
+
+ <% z = @estimate.share %>
+ <% y =z.to_i %>
+
+<% if y != current_user.id %>
+  <div class="form-group">
+    <%= form.text_field :name, placeholder: 'Enter estimate name', :size => 70, class: 'form-content' %>
+  </div>
+<br/>
+<%else%>
+  <div class="form-group">
+    <%= form.text_field :name, placeholder: 'Enter estimate name', :size => 70, :disabled=>true, class: 'form-content' %>
+  </div>
+<br/>
+<%end%>
+
+<% if y != current_user.id %> 
+  <div class="form-group">
+    <%= form.text_area :description, placeholder: 'Enter Description/Related information...', cols: "72", rows: "5", class: 'form-content' %>
+  </div>
+  <%else%>
+  <div class="form-group">
+    <%= form.text_area :description, placeholder: 'Enter Description/Related information...', cols: "72", rows: "5", :disabled=>true, class: 'form-content' %>
+  </div>
+<%end%>
+
+
+ 
+ <% if y == current_user.id %>
+     <div class="form-group">
+    <%= form.text_area :Recommendation, placeholder: 'Add your remarks here...', cols: "72", rows: "5", class: 'form-content' %>
+     </div>
+  <%end%>
+ 
+             
+<br/>
+
+  <h5><b>LINK ESTIMATE TO</b></h5>
+  <br/>
+  <% if y != current_user.id %> 
+   <div class="form-group">
+    <%= form.label :year_id %>
+   <%= form.collection_select(:year_id, Year.where(user_id: current_user.id), :id, :name, 
+
+                          {
+                            selected: @estimate.year_id,
+                            include_blank: true
+                                  
+                          },
+                          class: "form-group"
+                          )%>
+  </div>
+  <%else%>
+  <div class="form-group">
+    <%= form.label :year_id %>
+   <%= form.collection_select(:year_id, Year.all, :id, :name, 
+
+                          {
+                            selected: @estimate.year_id,
+                            include_blank: true,
+                            
+                                  
+                          },
+                          class: "form-group",
+                            :disabled => true
+                          )%>
+  </div>
+<%end%>
+
+ <br/>
+  <h5><b>PLAN</b></h5>
+  <br/>
+  <div class="alert alert-danger" role="alert">
+  <p style="color: black;"> 1. Sample format for resource:<b>"http://www.example.com"</b>.</p>
+  <br/>
+  <p style="color: black;"> 2. Multiplier is the coversion factor w.r.t INR.</p>
+  <br>
+  <p style="color: black;"> 3. Order of Input: Name<b>>></b>Resource<b>>></b>Cost<b>>></b>Multiplier.</p>
+</div>
+  <% if y != current_user.id %> 
+<div>
+    <%= form.fields_for :tours do |tour_form| %>
+    <%= render "tour_fields",f: tour_form %>
+    <% end %>
+  <div>
+  <%= link_to_add_association 'ADD', form, :tours %>
+</div>
+</div>
+<%else%>
+<div>
+ <h6 style="color: navy;">TO VIEW RELATED COSTING, ACCESS IT VIA THE <b>REMARKS</b> SECTION.</h6>
+</div>
+<%end%>
+<hr>
+<h5><b><svg width="1em" height="1em" viewBox="0 1 18 16" class="bi bi-paperclip" fill="navy" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
+</svg> SHARE ESTIMATE</b></h5>
+  <br/>
+  <% if y != current_user.id %> 
+   <div class="form-group">
+    <%= form.label :share %>
+   <%= form.collection_select(:share, User.all, :id, :name, 
+
+                          {
+                            selected: @estimate.share,
+                            include_blank: true
+                                  
+                          },
+                          class: "form-group"
+                          )%>
+  </div>
+  <%else%>
+  <div class="form-group">
+    <%= form.label :year_id %>
+   <%= form.collection_select(:share, User.all, :id, :name, 
+
+                          {
+                            selected: @estimate.share,
+                            include_blank: true,
+                            
+                                  
+                          },
+                          class: "form-group",
+                            :disabled => true
+                          )%>
+  </div>
+<%end%>
+<br/>
+<br/>
+<hr>
+  <div class="actions">
+    <%= form.submit 'SAVE ESTIMATE',  class: 'btn btn-success'%>
+  </div>
+<% end %>

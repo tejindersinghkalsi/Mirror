@@ -1,0 +1,79 @@
+<div class = "container">
+<br/>
+ <%= alerts %>
+<br/>
+	<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading" style="color: black;"><%= @estimate.name %></h4>
+  <br/>
+  <p style="color: black;" id ="est_des"><%= markdown(@estimate.description) %></p>
+  <hr>
+   <% v = @estimate.tours.sum(:namec) %>
+  <p class="mb-0" style="color: black;"><b>TOTAL ESTIMATE COST:</b> <%= v %></p>
+
+  <br/>
+  <% x = @estimate.year_id %>
+  <% y = Year.find(x) %>
+  <p class="mb-0" style="color: black;"><b>LINKED TO:</b> <%= y.name %></p>
+<br/>
+<br/>
+
+<% z = @estimate.share %>
+<% u = z.to_i %>
+<% if u == current_user.id %>
+<% if @estimate.Recommendation.nil? %>
+<%= link_to 'ADD REMARKS', edit_estimate_path(@estimate) %>
+<%end%>
+<%end%>
+</div>
+
+<% if (@estimate.share.empty?) %>
+<div class="alert alert-danger" role="alert">
+	<p style="color: black;"><b>REVIEWER REMARKS:</b></p>
+	<hr>
+	<br/>
+	<p style="color: black;">Estimate is not submitted for review.</p>
+  </div>
+  <%end%>
+<%if (@estimate.Recommendation.present?)%>
+<div class="alert alert-danger" role="alert">
+	<p style="color: black;"><b>REVIEWER REMARKS:</b></p>
+	<hr>
+	<br/>
+  <p style="color: black;"><%= @estimate.Recommendation %></p>
+</div>
+<%end%>
+<%if ((@estimate.share.present?)&&(@estimate.Recommendation.nil?))%>
+<div class="alert alert-danger" role="alert">
+	<p style="color: black;"><b>REVIEWER REMARKS:</b></p>
+	<hr>
+	<br/>
+  <p style="color: black;">Reviewer has not yet submitted the review.</p>
+</div>
+<%end%>
+<br/>
+<hr>
+<% @estimate.tours.each do |g| %>
+
+<div class="alert" role="alert" id= "estimate_step">
+	<table>
+		<tr>
+			<td id = "f"><%= g.name %></td>
+			<% t = g.namec %>
+			<% k = g.multiplier %>
+			<% cc = (t*k) %>
+			<%tcost =+ cc %>
+			<td id = "ff">COST: <%= cc %></td>
+			<td id = "fff"><button type="button" class="btn btn-light"><%= link_to 'RESOURCE', g.Link %></button></td>
+</tr>
+</table>
+  
+</div>
+
+<%end%>
+<br/>
+<br/>
+<br/>
+<%= link_to 'BACK', new_estimate_path, class: "btn btn-outline-primary" %>
+
+<%= link_to 'HOME', home_path, class: "btn btn-outline-primary" %>
+</div>

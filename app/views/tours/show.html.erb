@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tour.name %>
+</p>
+
+<p>
+  <strong>Expensedesc:</strong>
+  <%= @tour.expensedesc %>
+</p>
+
+<p>
+  <strong>Multiplier:</strong>
+  <%= @tour.multiplier %>
+</p>
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>

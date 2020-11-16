@@ -20,7 +20,23 @@
   line-height:30px;
   padding:0px 15px;
 }
-
+#est_link_a
+{
+  float: right;
+}
+#hui
+{
+  background-color: navy;
+  color:white;
+  line-height: 25px;
+  width: 80%;
+  margin-left: 10%;
+  height: 25px;
+}
+#hui_h
+{
+  background_color: purple;
+}
 a:hover, a:active, a:focus 
 {
   outline: 0;

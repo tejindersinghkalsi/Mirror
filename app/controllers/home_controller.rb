@@ -1,11 +1,13 @@
 class HomeController < ApplicationController
 
+
   before_action :authenticate_user!
   access all: [:home]
 
   layout "myhome"
-    
+  
   def home
+     @years = Year.all
   	 @word = Word.last
   	 @user_targets = Target.all
 

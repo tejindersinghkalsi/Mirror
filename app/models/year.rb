@@ -1,8 +1,9 @@
 class Year < ApplicationRecord
 
 	belongs_to :user
+	has_many :estimates, dependent: :destroy
 
-	validates_presence_of :name, :limit
+	validates_presence_of :name, :limit, :Saving
 	
 	has_many :januaries
 	accepts_nested_attributes_for :januaries, 

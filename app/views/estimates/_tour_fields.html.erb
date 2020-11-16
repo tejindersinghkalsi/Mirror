@@ -1,0 +1,39 @@
+
+<div class="nested-fields">
+          <div class="form-group">
+
+               
+
+              <table>
+
+                <tr>
+
+                <td id = "tour_table_c"><div class="form-group">
+                  <%= f.text_field :name, placeholder:"Name", class: 'form-control' %>
+                </div></td>
+
+                <td id = "tour_table_a"><div class="form-group">
+                  <%= f.text_field :Link, placeholder:"Resource", class: 'form-control' %>
+                </div></td>
+                
+
+                <td id = "tour_table_cone"><div class="form-group">
+                   <%= f.number_field :namec,  class: 'form-control'%>
+                </div></td>
+
+
+                <td id = "tour_table_ctwo"><div class="form-group">
+                   <%= f.number_field :multiplier, class: 'form-control'%>
+                </div></td>
+
+                 <td id = "tour_table_cthree"><div class="form-group">
+                   <%= link_to_remove_association 'REMOVE', f, class: 'btn btn-outline-danger' %>
+                </div></td>
+
+                
+               </tr>
+             </table>
+               
+               
+             </div>
+         </div>

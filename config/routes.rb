@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :information
+  resources :tours
+  resources :estimates
   resources :researches
   resources :feedbacks
   devise_for :admins
@@ -21,8 +24,12 @@ Rails.application.routes.draw do
 
 
   get 'home/' => 'home#home', as: 'home'
+ 
+  
+
   get 'groupnew/' => 'targets#groupnew', as: 'groupnew'
   get 'groupindex/' => 'targets#groupindex', as: 'groupindex'
+
 
 
    get 'aroundme/' => 'topics#aroundme', as: 'aroundme'

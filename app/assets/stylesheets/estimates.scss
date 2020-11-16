@@ -1,3 +1,7 @@
+// Place all the styles related to the Estimates controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
 // Place all the styles related to the Years controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -13,48 +17,76 @@
   margin-bottom:0px;
   color:white;
 }
+#est_des
+{
+    text-align: justify;
+}
+#estimate_step
+{
+ font-size: 20px;
+ padding: 0px;
+ background-color: purple;
+ color: white;
+ border-radius: 0px;
+}
+#f
+{
+  width: 80%;
+}
+#ff
+{
+  width: 25%;
+}
+#fff
+{
+  width: 5%;
+}
 #udet
 {
   color: navy;
   font-size: 10px;
   padding-left: 5px;
 }
-#l_h
-{
-  background-color: white;
-}
-#list_r
-{
-  width: 100%;
-  margin-left: 1px;
-  padding-left: 0px;
-
-}
-
-#year_card
-{
-  border-radius: 0px;
-  background-color: navy;
-  color: white;
-  border: 2px solid white;
-  float: left;
-  text-align: justify;
-  text-justify: inter-word;
-  font-size: 12px;
-  height: fixed;
-   overflow:scroll;
-   height: 300px;
-  
-}
-#year_estimate_link
-{
-  border-radius: 0px;
-}
 #udett
 {
   font-size: 10px;
   padding-left: 5px;
   
+}
+
+#tt
+{
+  border: 1px solid navy;
+}
+#tour_table_c
+{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width: 25%;
+}
+#tour_table_cone
+{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width: 10%;
+}
+#tour_table_ctwo
+{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width: 10%;
+}
+#tour_table_cthree
+{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width: 20%;
+}
+#tour_table_a
+{
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  width: 35%;
 }
 
 
@@ -325,6 +357,13 @@ padding: 0px;
     color: white;
     border: 1px solid #DDD;
     border-left-width: 0;
+}
+
+.vl {
+  border-left: 2px solid purple;
+  height: 500px;
+  padding-left: 10px;
+
 }
 
 .pagination {

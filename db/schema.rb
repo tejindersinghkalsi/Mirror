@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_12_113114) do
+ActiveRecord::Schema.define(version: 2020_11_16_174041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,19 @@ ActiveRecord::Schema.define(version: 2020_11_12_113114) do
     t.datetime "updated_at", null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_decembers_on_year_id"
+  end
+
+  create_table "estimates", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "share"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "Recommendation"
+    t.bigint "year_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_estimates_on_user_id"
+    t.index ["year_id"], name: "index_estimates_on_year_id"
   end
 
   create_table "februaries", force: :cascade do |t|
@@ -325,8 +338,8 @@ ActiveRecord::Schema.define(version: 2020_11_12_113114) do
     t.datetime "updated_at", null: false
     t.string "doc"
     t.bigint "user_id"
-    t.integer "lead"
     t.integer "member", default: [], array: true
+    t.integer "lead"
     t.index ["user_id"], name: "index_targets_on_user_id"
   end
 
@@ -338,8 +351,8 @@ ActiveRecord::Schema.define(version: 2020_11_12_113114) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "target_id"
-    t.integer "status"
     t.integer "owner"
+    t.integer "status"
     t.index ["target_id"], name: "index_tasks_on_target_id"
   end
 
@@ -347,6 +360,17 @@ ActiveRecord::Schema.define(version: 2020_11_12_113114) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "tours", force: :cascade do |t|
+    t.string "name"
+    t.integer "namec"
+    t.integer "multiplier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "estimate_id"
+    t.string "Link"
+    t.index ["estimate_id"], name: "index_tours_on_estimate_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -382,6 +406,7 @@ ActiveRecord::Schema.define(version: 2020_11_12_113114) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.integer "limit"
+    t.integer "Saving"
     t.index ["user_id"], name: "index_years_on_user_id"
   end
 
@@ -390,6 +415,8 @@ ActiveRecord::Schema.define(version: 2020_11_12_113114) do
   add_foreign_key "comments", "stories"
   add_foreign_key "comments", "users"
   add_foreign_key "decembers", "years"
+  add_foreign_key "estimates", "users"
+  add_foreign_key "estimates", "years"
   add_foreign_key "februaries", "years"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "januaries", "years"
@@ -408,5 +435,6 @@ ActiveRecord::Schema.define(version: 2020_11_12_113114) do
   add_foreign_key "stories", "users"
   add_foreign_key "targets", "users"
   add_foreign_key "tasks", "targets"
+  add_foreign_key "tours", "estimates"
   add_foreign_key "years", "users"
 end

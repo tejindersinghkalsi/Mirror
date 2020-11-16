@@ -48,6 +48,9 @@ class YearsController < ApplicationController
   @x = l.sum(:cost)
   
 
+
+@u = @year.estimates.page(params[:page]).per(2)
+
   @sum = (a.sum(:cost)+b.sum(:cost)+c.sum(:cost)+d.sum(:cost)+e.sum(:cost)+f.sum(:cost)+g.sum(:cost)+h.sum(:cost)+i.sum(:cost)+j.sum(:cost)+k.sum(:cost)+l.sum(:cost))
 
  end

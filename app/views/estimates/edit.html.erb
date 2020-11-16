@@ -1,0 +1,94 @@
+<br/>
+<br/>
+<div class = "container">
+  <%= alerts %>
+	<div class = "row">
+	<div class = "col-md-7">
+<h3>UPDATE ESTIMATE</h3>
+<br/>
+<br/>
+
+<%= render 'form', estimate: @estimate %>
+</div>
+<div class = "col">
+<h3>AVAILABLE ESTIMATES</h3>
+	<br/>
+   <% @e.each do |estimate| %>
+	<div class="alert alert-success" role="alert">
+		<% if estimate.Recommendation.present? %>
+  <p><%= estimate.name %> <svg width="1em" height="1em" viewBox="0 1 16 18" class="bi bi-bookmark-check-fill" fill="navy" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm6.854 5.854a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+</svg></p>
+ <%elsif estimate.share.present? %>
+ <%= estimate.name %> <svg width="1em" height="1em" viewBox="0 1 16 18" class="bi bi-bookmark-check" fill="navy" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+  <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+</svg></p>
+
+<%else%>
+<%= estimate.name %>
+<%end%>
+  <hr>
+
+  <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-outline-secondary"><%= link_to 'Show', estimate %></button>
+  
+  <button type="button" class="btn btn-outline-secondary"><%= link_to 'Edit', edit_estimate_path(estimate) %></button>
+  <button type="button" class="btn btn-outline-secondary"><%= link_to 'Destroy', estimate, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tags" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
+  <path fill-rule="evenodd" d="M5.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+  <path d="M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
+</svg></button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">SHARE ESTIMATE</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <%= form_with(model: estimate, local: true) do |form| %>
+      <div class="form-group">
+    <%= form.label :share %>
+   <%= form.collection_select(:share, User.all, :id, :name,
+
+                          {
+                            selected: @estimate.share,
+                                  
+                          },
+                          class: "form-group"
+                          )%>
+  </div>
+  <div class="actions">
+    <%= form.submit 'SHARE',  class: 'btn btn-outline-success'%>
+  </div>
+<% end %>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <br/>
+</div>
+
+
+
+<%end%>
+<%= paginate @e %>
+<br/>
+<br/>
+</div>
+</div>
+<br/>
+<%= link_to 'BACK', estimates_path, class: "btn btn-outline-primary" %>
+<%= link_to 'HOME', home_path, class: "btn btn-outline-primary" %>
+</div>
