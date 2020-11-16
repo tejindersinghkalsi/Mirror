@@ -98,7 +98,7 @@ class YearsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
    def year_params
-      params.require(:year).permit(:name, :limit, januaries_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
+      params.require(:year).permit(:name, :limit,:Saving, januaries_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
                                                  februaries_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
                                                  marches_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
                                                  aprils_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
