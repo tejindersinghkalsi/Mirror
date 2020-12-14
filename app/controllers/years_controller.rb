@@ -36,10 +36,10 @@ class YearsController < ApplicationController
   @t = h.sum(:cost)
 
   i=@year.septembers.all
-  @u = i.sum(:cost)
+  @uuu = i.sum(:cost)
 
   j=@year.octobers.all
-  @v = j.sum(:cost)
+  @vvv = j.sum(:cost)
 
   k=@year.novembers.all
   @w = k.sum(:cost)

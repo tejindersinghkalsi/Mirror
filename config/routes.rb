@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :solutions
+  resources :questions
+  resources :quizzes
   resources :information
   resources :tours
   resources :estimates
@@ -31,7 +34,7 @@ Rails.application.routes.draw do
   get 'groupindex/' => 'targets#groupindex', as: 'groupindex'
 
 
-
+   get 'launch/' => 'quizzes#launch', as: 'launch'
    get 'aroundme/' => 'topics#aroundme', as: 'aroundme'
    get 'technology/' => 'topics#technology', as: 'technology'
    get 'travel/' => 'topics#travel', as: 'travel'

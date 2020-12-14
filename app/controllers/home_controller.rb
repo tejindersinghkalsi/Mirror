@@ -7,6 +7,10 @@ class HomeController < ApplicationController
   layout "myhome"
   
   def home
+
+    @quizzes = Quiz.all
+    
+    
      @years = Year.all
   	 @word = Word.last
   	 @user_targets = Target.all

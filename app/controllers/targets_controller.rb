@@ -48,22 +48,23 @@ class TargetsController < ApplicationController
   # GET /targets/1
   # GET /targets/1.json
   def show
-    
+         @v = 0
+         @n = 0
      @target.tasks.each do |g|
      @count = 0
-     @v = 0
+
      @w = 0
-     @n = 0
+     
      y = g.updated_at.to_date
      c = Date.today
      if(@r = ((c-y).to_i >=3))
      @count =+1
      end
      if g.progress.between?(0,24)
-      @v =+ 1
+      @v = @v+1 
      end
      if g.progress.between?(75,100)
-      @n =+ 1
+      @n = @n+1
      end
 
      

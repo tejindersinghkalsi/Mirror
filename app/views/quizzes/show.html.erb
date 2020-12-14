@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "container" id ="quiz_exam_center">
+	<table>
+	<center><b><strong style="color:black;" > <%= @quiz.name %>- PREVIEW</strong></b></center>
+	
+<hr>
+<b><p>DETAILS</p></b>
+	<tr>
+		<p>
+  <td><strong style="color:white;">PASS %:</strong></td>
+  <td><%= @quiz.result %></td></p>
+</tr>
+
+
+	<tr>
+		<p>
+
+  <td><strong style="color:white;">TOTAL TIME :</strong></td>
+  <td><%= @quiz.time %><b> Minutes</b></td></p>
+</tr>
+
+<tr>
+		<p>
+
+  <td><strong style="color:white;">TOTAL QUESTIONS :</strong></td>
+  <td><%= @quiz.questions.count %></td></p>
+</tr>
+
+<tr>
+		<p>
+
+  <td><strong style="color:white;">MINIMUM QUESTIONS TO BE CORRECT TO PASS:</strong></td>
+
+  <% res = @quiz.result*@quiz.questions.count %>
+  <% zz = res/100 %>
+   <td><%= zz %></td></p>
+</tr>
+
+
+</table>
+<hr>
+
+<% @quiz.questions.each do |ques| %>
+
+
+<div class="card" id ="exam_ques_card">
+  <div class="card-body">
+    <p><%= ques.ques %></p>
+    <hr>
+    <div class = "row">
+    	<div class ="col-md-6">
+           <p><b>A</b> <%= ques.optionone %></p>
+        </div>
+        <div class ="col-md-6">
+           <p><b>B</b> <%= ques.optiontwo %></p>
+        </div>
+    </div>
+    <br/>
+    <div class = "row">
+    	<div class ="col-md-6">
+           <p><b>C</b> <%= ques.optionthree %></p>
+        </div>
+        <div class ="col-md-6">
+           <p><b>D</b> <%= ques.optionfour %></p>
+        </div>
+    </div>
+    
+  </div>
+</div>
+
+<br/>
+<%end%>
+</div>
+<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
+<%= link_to 'Back', quizzes_path %>

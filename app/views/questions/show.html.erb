@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ques:</strong>
+  <%= @question.ques %>
+</p>
+
+<p>
+  <strong>Optionone:</strong>
+  <%= @question.optionone %>
+</p>
+
+<p>
+  <strong>Optiontwo:</strong>
+  <%= @question.optiontwo %>
+</p>
+
+<p>
+  <strong>Optionthree:</strong>
+  <%= @question.optionthree %>
+</p>
+
+<p>
+  <strong>Optionfour:</strong>
+  <%= @question.optionfour %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

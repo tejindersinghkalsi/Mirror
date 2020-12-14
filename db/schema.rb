@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_174041) do
+ActiveRecord::Schema.define(version: 2020_12_13_155652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -291,6 +291,29 @@ ActiveRecord::Schema.define(version: 2020_11_16_174041) do
     t.index ["year_id"], name: "index_octobers_on_year_id"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.text "ques"
+    t.text "optionone"
+    t.text "optiontwo"
+    t.text "optionthree"
+    t.text "optionfour"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "Answer"
+    t.bigint "quiz_id"
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string "name"
+    t.integer "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "students", default: [], array: true
+    t.integer "time"
+    t.date "schedule"
+  end
+
   create_table "researches", force: :cascade do |t|
     t.text "mainheading"
     t.text "subheading"
@@ -313,6 +336,16 @@ ActiveRecord::Schema.define(version: 2020_11_16_174041) do
     t.datetime "updated_at", null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_septembers_on_year_id"
+  end
+
+  create_table "solutions", force: :cascade do |t|
+    t.text "correctanswer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "question_id"
+    t.bigint "quiz_id"
+    t.index ["question_id"], name: "index_solutions_on_question_id"
+    t.index ["quiz_id"], name: "index_solutions_on_quiz_id"
   end
 
   create_table "stories", force: :cascade do |t|
@@ -360,6 +393,8 @@ ActiveRecord::Schema.define(version: 2020_11_16_174041) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_topics_on_user_id"
   end
 
   create_table "tours", force: :cascade do |t|
@@ -429,12 +464,16 @@ ActiveRecord::Schema.define(version: 2020_11_16_174041) do
   add_foreign_key "mays", "years"
   add_foreign_key "novembers", "years"
   add_foreign_key "octobers", "years"
+  add_foreign_key "questions", "quizzes"
   add_foreign_key "researches", "users"
   add_foreign_key "septembers", "years"
+  add_foreign_key "solutions", "questions"
+  add_foreign_key "solutions", "quizzes"
   add_foreign_key "stories", "topics"
   add_foreign_key "stories", "users"
   add_foreign_key "targets", "users"
   add_foreign_key "tasks", "targets"
+  add_foreign_key "topics", "users"
   add_foreign_key "tours", "estimates"
   add_foreign_key "years", "users"
 end

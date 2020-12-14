@@ -1,0 +1,130 @@
+// Place all the styles related to the Quizzes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the Stories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap";
+@import "gritter";
+
+#total_resources
+{
+  border-radius: 0px;
+}
+#quiz_exam_center
+{
+  background-color: grey;
+}
+#exam_ques_card
+{
+  border-radius: 0px;
+  border: 1px solid black;
+}
+
+ #application_name
+{
+  background-color: navy;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+}
+.alert {
+  margin-bottom: 1px;
+  height: 30px;
+  line-height:30px;
+  padding:0px 15px;
+}
+
+#one 
+{
+width: 10%; 
+}
+#two
+{
+  width: 65%;
+}
+#three
+{
+  width: 10%;
+}
+#four
+{
+  width: 15%;
+}
+
+  #footer
+  {
+    height:30px;
+    background-color:navy;
+    margin-bottom:0px;
+    padding-bottom:0px;
+    margin-top: 180px;
+
+  }
+  #member {
+    border-collapse: separate;
+    border-spacing: 0 3em;
+}
+
+.container
+{
+  word-wrap:break-word;
+}
+
+
+  #footer_text
+  {
+  text-align:right;
+  padding-right:5px;
+  margin-bottom:0px;
+  padding-bottom:0px;
+  padding-top:5px;
+  color:white;
+
+  }
+
+
+ 
+
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: purple;
+    color: white;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}

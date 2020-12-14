@@ -1,0 +1,55 @@
+<br/>
+<br/>
+
+<div class="nested-fields">
+          <div class="form-group">
+
+<div class ="row">
+  <div class = "col-md-12">
+<div class="form-group">
+    <%= f.text_area :ques, placeholder: 'Enter question...', cols: "120", rows: "2", class: 'form-content form-block' %>
+  </div>
+<br/>
+</div>
+</div>
+<div class ="row">
+
+  <div class ="col-md-6">
+<div class="form-group">
+    <%= f.text_field :optionone, placeholder: 'Enter first option...', :size => 40, class: 'form-content' %>
+  </div>
+</div>
+<div class ="col-md-6">
+<div class="form-group">
+    <%= f.text_field :optiontwo, placeholder: 'Enter second option...', :size => 40, class: 'form-content' %>
+  </div>
+</div>
+</div>
+
+<div class = "row">
+  <div class = "col-md-6">
+
+<div class="form-group">
+    <%= f.text_field :optionthree, placeholder: 'Enter third option...', :size => 40, class: 'form-content' %>
+  </div>
+</div>
+<div class ="col-md-6">
+
+<div class="form-group">
+    <%= f.text_field :optionfour, placeholder: 'Enter fourth option...', :size => 40, class: 'form-content' %>
+  </div>
+</div>
+</div>
+ <div>
+  <br/>
+<%= link_to_remove_association 'REMOVE QUESTION', f, class: 'btn btn-outline-danger btn-sm' %>
+<br/>
+<br/>
+</div>
+<br/>
+<hr>
+
+
+
+   </div>
+         </div>

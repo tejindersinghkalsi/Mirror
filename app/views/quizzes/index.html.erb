@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<div class = "container">
+  <br/>
+<h3 style="color: navy;">ASSIGNMENTS</h3>
+<br/>
+<br/>
+<%= link_to 'CREATE NEW ASSIGNMENT', new_quiz_path, class: 'btn btn-outline-primary btn-sm' %>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<table class="table table-striped table table-sm">
+  <thead>
+    <tr class="table-primary">
+      <th>CREATED</th>
+      <th>NAME</th>
+      <th>PASS %</th>
+      <th>OPTIONS</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quizzes.each do |quiz| %>
+      <tr>
+        <td id = "one", class="table-danger"><%= quiz.created_at.strftime('%d-%m-%Y') %></td>
+        <td id = "two"><%= quiz.name %></td>
+        <td id = "three"><%= quiz.result %></td>
+        <td id = "four"><%= link_to 'Prev', quiz %>/
+        <%= link_to 'Edit', edit_quiz_path(quiz) %>/
+        <%= link_to 'Delete', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

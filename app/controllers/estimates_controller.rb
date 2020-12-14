@@ -60,6 +60,6 @@ class EstimatesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def estimate_params
-      params.require(:estimate).permit(:name, :description, :year_id, :share, :Recommendation, tours_attributes: [:id, :name, :namec, :multiplier, :Link])
+      params.require(:estimate).permit(:name, :description, :year_id, :share, :Recommendation, tours_attributes: [:id, :name, :namec, :multiplier, :Link, :_destroy])
     end
 end
