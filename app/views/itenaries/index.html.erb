@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "conatiner" id = "itenarycontainer">
+<div class="alert alert-success" role="alert" id = "itenarylist">
+  <h4>ITENARY</h4>
+</div>
+
+<br/>
+
+<button type="button" class="btn btn-light btn-sm"><%= link_to 'New Itenary', new_itenary_path %></button>
+<br/>
+<br/>
+<table>
+  <thead>
+    <tr>
+      <th><div class="alert alert-secondary" role="alert" id = "itenarystart">
+  <h4>STARTS</h4>
+</div></th>
+            <th><div class="alert alert-warning" role="alert" id = "itenaryname">
+  <h4>NAME</h4>
+</div></th>
+
+      <th><div class="alert alert-danger" role="alert" id = "itenaryaction">
+  <h4>ACTION</h4>
+</div></th>
+   
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @itenaries.each do |itenary| %>
+    <% g = itenary.related %>
+    <% v = Estimate.find(g) %>
+    <% b = v.user_id %>
+    <% if b == current_user.id %>
+      <tr>
+        <td><%= itenary.start.to_s(:rfc822) %></td>
+        <td><b><%= itenary.planname %></b></td>
+     
+        <td><%= link_to 'Preview', itenary %> |
+        <%= link_to 'Edit', edit_itenary_path(itenary) %> |
+        <%= link_to 'X', itenary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <%end%>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

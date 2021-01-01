@@ -53,6 +53,7 @@ gem 'kaminari', '~> 1.2', '>= 1.2.1'
 gem 'groupdate', '~> 5.2', '>= 5.2.1'
 gem 'social-share-button'
 gem 'prawn', '~> 2.3'
+gem 'prawn-table', '~> 0.2.2'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -1,27 +1,22 @@
-
-
- <% @quizzes.each do |quiz| %>
+<% @quizzes.each do |quiz| %>
      
      <% quiz.students.each do |studentt| %>
        
         
 
          <% v = studentt.to_i %>
-         <% if v == current_user.id %>
+         <% if ((v == current_user.id) && (Date.today == quiz.schedule)) %>
         
          <div class="alert alert-warning" role="alert" id = "assignment_warning">
         
-          You have an assignment to complete. <a href="<%= launch_path(quiz) %>" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="navy" class="bi bi-arrow-right-circle-fill" viewBox="0 2 18 14">
+          You have an assignment to complete. <b>Assignment Name:</b> <%= quiz.name %>. <a href="<%=quizzes_path %>"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="navy" class="bi bi-arrow-right-circle-fill" viewBox="0 2 18 14">
   <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-11.5.5a.5.5 0 0 1 0-1h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5z"/>
 </svg></a>
          </div>
       
        <%end%> 
        <%end%>
-
       <%end%>
-
-
 
 <br/>
 <p id ="quick_launch_icons"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-open-fill" fill="orange" xmlns="http://www.w3.org/2000/svg">
@@ -42,8 +37,48 @@
 </svg><%= link_to " JOURNAL", researches_path %> |
 
 <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
- REMARKS
-</button></p>
+ REVIEWS
+</button>
+
+<% @itenaries.each do |iten| %>
+     
+    <% g = iten.related %>
+    <% v = Estimate.find(g) %>
+    <% b = v.user_id %>
+   
+    <% if b == current_user.id  && iten.calender == "YES" %>
+
+         <% z = (iten.start - Date.today).to_i %>
+
+
+       
+            <% if z.between?(8,10) %>
+                  <button type="button" class="btn btn-success btn-sm">
+                  Upcomming trip !!! <span class="badge bg-secondary"><%= iten.start.to_s(:rfc822)%></span> <%= link_to 'ACCESS', itenary_path(iten) %>
+                  </button>
+            <%end%>
+
+            <% if z.between?(4,7) %>
+                  <button type="button" class="btn btn-warning btn-sm">
+                  Upcomming trip !!! <span class="badge bg-secondary"><%= iten.start.to_s(:rfc822)%></span> <%= link_to 'ACCESS', itenary_path(iten) %>
+                  </button>
+            <%end%>
+
+            <% if z.between?(1,3) %>
+                  <button type="button" class="btn btn-danger btn-sm">
+                  Upcomming trip !!! <span class="badge bg-secondary"><%= iten.start.to_s(:rfc822)%></span> <%= link_to 'ACCESS', itenary_path(iten) %>
+                  </button>
+            <%end%>
+   <%end%>
+
+<%end%> 
+      
+
+
+
+
+
+</p>
 
 <div class = "container">
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -178,12 +213,73 @@
 <%if @c.present? %>
 <%= paginate @c %>
 <% end %>
-<br/>
-<br/>
+<div class = "row">
+<div class = "col-md-7">
 <h5 style="color:navy">TARGET SETTING FREQUENCY</h5>
 <br/>
 <%= line_chart current_user.targets.group_by_day(:created_at).count, colors: ["#49f149"] %>
-<br/>
+</div>
+
+<div class = "col scroll">
+
+<div class="card md-2">
+
+    
+      <div class="card-body">
+       <h5 class="card-title" style="color:red;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="purple" class="bi bi-bag-check-fill" viewBox="0 2 22 16">
+  <path fill-rule="evenodd" d="M5.5 3.5a2.5 2.5 0 0 1 5 0V4h-5v-.5zm6 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+</svg>AVAILABLE ESTIMATES</h5>
+        <hr>
+       <% @estimates.each do |esti| %>
+           
+           <% @hh = esti.year_id %>
+           <% @v = esti.tours %>
+               <% @m = @v.sum(:namec) %>
+              <% if ((Year.find(@hh).Saving > @m) && (esti.share.blank?)) %>
+          
+                        <div class="card" style="width: 20rem;">
+                             <div class="card-body">
+                                     <h5 class="card-title">ESTIMATE: <%= esti.name %></h5>
+                                     <h6 class="card-subtitle mb-2 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="navy" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
+  <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"/>
+  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"/>
+</svg> Budget: <%= @m %> INR</h6>
+                                     <hr>
+                                     <h6 class="card-subtitle mb-2 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="navy" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+  <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+</svg> LINKED TO:<%= Year.find(@hh).name %> </h6>
+                                     <hr>
+                                       <h6 class="card-subtitle mb-2 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="navy" class="bi bi-shield-fill-check" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"/>
+</svg> STATUS: <button type="button" class="btn btn-outline-success btn-sm">ACHIEVED</button></h6>
+    
+                              
+                            </div>
+                        </div>
+                  <br/>
+
+        <% end %>
+        
+
+<%end%>
+        
+    
+       <br/>
+
+
+       <a href="/itenaries" class="btn btn-primary btn-sm" id = "avail_button">MY ITENARIES</a>
+
+      </div>
+
+  
+</div>
+</div>
+</div>
+
+
+
 <br/>
 <h5 style="color:navy">STORIES CONTRIBUTION</h5>
 <br/>

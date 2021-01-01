@@ -17,8 +17,9 @@ Rails.application.config.assets.precompile += %w( docipedias.scss )
 Rails.application.config.assets.precompile += %w( conversations.scss )
 Rails.application.config.assets.precompile += %w( feedbacks.scss )
 Rails.application.config.assets.precompile += %w( researches.scss )
-Rails.application.config.assets.precompile += %w( estimates.css )
-Rails.application.config.assets.precompile += %w( quizzes.css )
+Rails.application.config.assets.precompile += %w( estimates.scss )
+Rails.application.config.assets.precompile += %w( quizzes.scss )
+Rails.application.config.assets.precompile += %w( itenaries.scss )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

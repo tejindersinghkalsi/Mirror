@@ -1,15 +1,10 @@
 <%= form_with(model: quiz, local: true) do |form| %>
-  <% if quiz.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
-
-      <ul>
-      <% quiz.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<% if quiz.errors.any? %>
+    <% quiz.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
+    <% end %>
   <% end %>
+
 <br/>
 <br/>
 <b><p>GENERAL INFORMATION:</p></b>
@@ -88,11 +83,25 @@
     <%= render "question_fields",f: question_form %>
     <% end %>
   </div>
-<br/>
-<br/>
+
 
 <div>
   <%= link_to_add_association 'NEW QUESTION', form, :questions %>
+</div>
+
+<br/>
+<br/>
+
+<b><p>ADD KEY:</p></b>
+  <div>
+    <%= form.fields_for :keys do |key_form| %>
+    <%= render "key_fields",f: key_form %>
+    <% end %>
+  </div>
+
+
+<div>
+  <%= link_to_add_association 'NEW KEY', form, :keys %>
 </div>
 <br/>
   <div class="actions">

@@ -1,0 +1,81 @@
+<%= alerts %>
+<div class ="container" id= "editcont">
+
+<div class="alert alert-success" role="alert" id = "show_itenary_heading">
+  <b>ITENARY : <%= @itenary.planname %></b>
+</div>
+<br/>
+<br/>
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <div class="col">
+      <div class="p-3 border bg-light">ACTIVITIES: <%= @itenary.subitenaries.count(:activity) %></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-light">TOTAL KMS: <%= @itenary.subitenaries.sum(:distance) %></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-light">TOTAL STAY: <%= @itenary.subitenaries.sum(:stay) %></div>
+    </div>
+    <div class="col">
+      <% result = 0 %>
+      <% q = @itenary.related.to_i %>
+      <% v =  Estimate.find(q) %>
+      <% v.tours.each do |yy| %>
+
+      <% g = yy.multiplier %>
+      <% f = yy.namec %>
+      <% r = (f*g) %>
+
+      <% result = result + r %>
+
+      <%end%>
+      <div class="p-3 border bg-light">BUDGET: <%= result%> </div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-light"><center><%= link_to "PRINT ITENARY", itenary_path(@itenary, format: "pdf") %></center></div>
+    </div>
+
+</div>
+<br/>
+<br/>
+<p>
+  <strong>Starts On:</strong>
+  <%= @itenary.start.to_s(:rfc822) %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @itenary.planname %>
+</p>
+<br/>
+<br/>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">DATE</th>
+      <th scope="col">ACTIVITY</th>
+      <th scope="col">MODE OF TRAVEL</th>
+      <th scope="col">DISTANCE</th>
+      <th scope="col">STAY</th>
+    </tr>
+  </thead>
+  <% @itenary.subitenaries.each do |t| %>
+  <tbody>
+    <tr>
+      
+      <td><%= t.begin.to_s(:rfc822) %></td>
+      <td><%= t.activity %></td>
+      <td><%= t.modeoftravel %></td>
+      <td><%= t.distance %></td>
+      <td><%= t.stay %></td>
+       
+    </tr>
+  </tbody>
+  <%end%>
+</table>
+<br/>
+<br/>
+<%= link_to 'BACK', itenaries_path, class: "btn btn-outline-primary" %>
+<%= link_to 'EDIT', edit_itenary_path(@itenary), class: "btn btn-outline-primary" %> 
+
+
+</div>

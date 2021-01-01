@@ -1,6 +1,5 @@
 class QuizzesController < ApplicationController
   layout "quiz"
-  layout false, only: [:launch]
   before_action :set_quiz, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
@@ -11,10 +10,19 @@ class QuizzesController < ApplicationController
 
 
   def show
+    respond_to do |format|
+      format.html
+           format.pdf do 
+             pdf = QuizPdf.new(@quiz)
+             send_data pdf.render, filename: "quiz_download.pdf",
+                                   type: "application/pdf",
+                                   disposition: "inline"
+                          
+           end
+      end
   end
 
-  def launch
-  end
+
 
 
   # GET /quizzes/new
@@ -60,6 +68,6 @@ class QuizzesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def quiz_params
-      params.require(:quiz).permit(:name, :result, :time, {:students => []}, questions_attributes: [:id, :ques, :optionone, :optiontwo, :optionthree, :optionfour, :Answer, :_destroy])
+      params.require(:quiz).permit(:name, :schedule, :result, :time, {:students => []}, questions_attributes: [:id, :ques, :optionone, :optiontwo, :optionthree, :optionfour, :Answer, :_destroy], keys_attributes: [:id, :answer, :_destroy])
     end
 end

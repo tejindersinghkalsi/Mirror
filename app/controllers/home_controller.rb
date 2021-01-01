@@ -8,6 +8,10 @@ class HomeController < ApplicationController
   
   def home
 
+    @itenaries = Itenary.all
+
+    @estimates = Estimate.where(user_id: current_user.id).page(params[:page])
+
     @quizzes = Quiz.all
     
     

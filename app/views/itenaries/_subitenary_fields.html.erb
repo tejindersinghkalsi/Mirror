@@ -1,0 +1,52 @@
+
+<div class="nested-fields">
+          <div class="form-group">
+
+             <div>
+                  <%= link_to_remove_association 'Remove Row', f, class: 'btn btn-outline-danger btn-sm' %>
+             </div>
+
+                <table>
+                  <thead>
+                     <tr>
+                        <th scope="col">DATE</th>
+                        <th scope="col">ACTIVITY NAME</th>
+                        <th scope="col">MODE OF TRAVEL</th>
+                        <th scope="col">DISTANCE</th>
+                        <th scope="col">STAY</th>
+                     </tr>
+                  </thead>
+                 <tbody>
+               
+
+                <br/>
+             
+
+                <td id = "oo"><div class="form-group">
+                  <%= f.date_select :begin, :size => 80, class: 'form-control' %>
+                </div></td>
+              
+
+                <td td id = "ooi"><div class="form-group">
+                   <%= f.text_field :activity, placeholder:"Enter the activity name...", class: 'form-control'%>
+                </div></td>
+
+
+                <td td id = "ooi"><div class="form-group">
+                   <%= f.text_field :modeoftravel, placeholder:"Preffered mode of travel...", class: 'form-control'%>
+                </div></td>
+
+                <td td id = "ooiv"><div class="form-group">
+                   <%= f.number_field :distance, placeholder:"Approx distance in Kms...", class: 'form-control'%>
+                </div></td>
+
+
+                <td td id = "ooiv"><div class="form-group">
+                  
+                 <b> <%= f.number_field :stay, placeholder:"Expected stay in days...", class: 'form-control'%></b>
+                </div></td>
+               
+               </tbody>
+             </table>
+             </div>
+         </div>

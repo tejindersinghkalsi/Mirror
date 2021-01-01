@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :itenaries
   resources :solutions
   resources :questions
   resources :quizzes
@@ -32,7 +33,7 @@ Rails.application.routes.draw do
 
   get 'groupnew/' => 'targets#groupnew', as: 'groupnew'
   get 'groupindex/' => 'targets#groupindex', as: 'groupindex'
-
+  get 'othernew/' => 'itenaries#othernew', as: 'othernew'
 
    get 'launch/' => 'quizzes#launch', as: 'launch'
    get 'aroundme/' => 'topics#aroundme', as: 'aroundme'

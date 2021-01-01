@@ -1,0 +1,76 @@
+<br/>
+<br/>
+<%= form_with(model: itenary, local: true) do |form| %>
+<% if itenary.errors.any? %>
+    <% itenary.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
+    <% end %>
+  <% end %>
+  
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col" style="font-size:12px;">DATE</th>
+      <th scope="col" style="font-size:12px;">NAME</th>
+      <th scope="col" style="font-size:12px;">CALENDER</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td><div class="form-group">
+    <%= form.date_select :start, :size => 10, class: 'form-content' %>
+  </div></td>
+
+  <td><div class="form-group">
+    <%= form.text_field :planname, placeholder: "Enter Itenary Name", :size => 30, class: 'form-content' %>
+  </div></td>
+
+    <td><div class="form-group">
+    <%= form.text_field :calender, placeholder: "Add to Calender", :size => 20, class: 'form-content' %>
+    </div></td></tr>
+    
+    </tbody>
+
+</table>
+      <p><b>SELECT ESTIMATE</b></p>
+    </tr>
+    <div class="form-group">
+   <%= form.collection_select(:related, Estimate.where(share: "") && Estimate.where(user_id: current_user.id), :id, :name, 
+
+                          {
+                            selected: @itenary.related,
+
+                            
+                            
+                                  
+                          },
+                          class: "form-group",
+                           
+                          )%>
+  </div>
+
+
+
+
+<b>*Save as "YES" to add to calender.</b>
+  <hr>
+<div class="col-md-12">
+
+  <div>
+    <%= form.fields_for :subitenaries do |subitenary_form| %>
+    <%= render "subitenary_fields",f: subitenary_form %>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <%= link_to_add_association 'Add Row', form, :subitenaries, class: 'btn btn-outline-primary btn-sm' %>
+</div>
+
+<br/>
+<br/>
+
+  <div class="actions">
+    <%= form.submit 'SAVE ITENARY', class: 'btn btn-success btn-block' %>
+  </div>
+<% end %>

@@ -2,6 +2,7 @@ class Estimate < ApplicationRecord
 	
 	has_many :tours, dependent: :destroy
 	belongs_to :year
+	has_one :itenary
 
 	validates_presence_of :name, :description, :year_id
 

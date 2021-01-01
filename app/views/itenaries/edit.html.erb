@@ -1,0 +1,14 @@
+<br/>
+<br/>
+<div class ="container" id= "editcont">
+
+<div class="alert alert-primary" role="alert" id = "edititenary">
+  <b>EDIT ITENARY - <%= @itenary.planname %></b>
+</div>
+<%= render 'form', itenary: @itenary %>
+<br/>
+<br/>
+<%= link_to 'BACK', itenaries_path, class: "btn btn-outline-primary" %>
+<%= link_to 'PREVIEW', @itenary, class: "btn btn-outline-primary" %> 
+
+</div>

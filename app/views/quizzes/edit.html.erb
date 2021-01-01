@@ -1,6 +1,13 @@
-<h1>Editing Quiz</h1>
+<br/>
+<div class = "container">
+<div class="alert alert-success" role="alert" id = "edit_assign_heading">
+  <b>UPDATE ASSIGNMENT: <%= @quiz.name %></b>
+</div>
 
 <%= render 'form', quiz: @quiz %>
+<br/>
+<br/>
+<%= link_to 'BACK', quizzes_path, class: "btn btn-outline-primary" %>
+<%= link_to 'PREVIEW', @quiz, class: "btn btn-outline-primary" %> 
 
-<%= link_to 'Show', @quiz %> |
-<%= link_to 'Back', quizzes_path %>
+</div>

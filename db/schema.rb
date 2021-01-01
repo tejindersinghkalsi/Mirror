@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_13_155652) do
+ActiveRecord::Schema.define(version: 2020_12_31_063248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -160,6 +160,15 @@ ActiveRecord::Schema.define(version: 2020_12_13_155652) do
     t.index ["user_id"], name: "index_impressions_on_user_id"
   end
 
+  create_table "itenaries", force: :cascade do |t|
+    t.date "start"
+    t.string "planname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "calender"
+    t.integer "related"
+  end
+
   create_table "januaries", force: :cascade do |t|
     t.date "occourance"
     t.text "name"
@@ -191,6 +200,14 @@ ActiveRecord::Schema.define(version: 2020_12_13_155652) do
     t.datetime "updated_at", null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_junes_on_year_id"
+  end
+
+  create_table "keys", force: :cascade do |t|
+    t.string "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "quiz_id"
+    t.index ["quiz_id"], name: "index_keys_on_quiz_id"
   end
 
   create_table "mailboxer_conversation_opt_outs", id: :serial, force: :cascade do |t|
@@ -362,6 +379,18 @@ ActiveRecord::Schema.define(version: 2020_12_13_155652) do
     t.index ["user_id"], name: "index_stories_on_user_id"
   end
 
+  create_table "subitenaries", force: :cascade do |t|
+    t.date "begin"
+    t.text "activity"
+    t.string "modeoftravel"
+    t.integer "distance"
+    t.integer "stay"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "itenary_id"
+    t.index ["itenary_id"], name: "index_subitenaries_on_itenary_id"
+  end
+
   create_table "targets", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -457,6 +486,7 @@ ActiveRecord::Schema.define(version: 2020_12_13_155652) do
   add_foreign_key "januaries", "years"
   add_foreign_key "julies", "years"
   add_foreign_key "junes", "years"
+  add_foreign_key "keys", "quizzes"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
@@ -471,6 +501,7 @@ ActiveRecord::Schema.define(version: 2020_12_13_155652) do
   add_foreign_key "solutions", "quizzes"
   add_foreign_key "stories", "topics"
   add_foreign_key "stories", "users"
+  add_foreign_key "subitenaries", "itenaries"
   add_foreign_key "targets", "users"
   add_foreign_key "tasks", "targets"
   add_foreign_key "topics", "users"

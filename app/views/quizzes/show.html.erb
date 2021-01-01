@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
-
+<br/>
+<br/>
+<%= alerts %>
+<div class = "container">
 <div class = "container" id ="quiz_exam_center">
 	<table>
 	<center><b><strong style="color:black;" > <%= @quiz.name %>- PREVIEW</strong></b></center>
@@ -65,12 +67,35 @@
            <p><b>D</b> <%= ques.optionfour %></p>
         </div>
     </div>
-    
+    <br/>
+
   </div>
+  
 </div>
+<%end%>
+<br/>
+<br/>
+<p><b><%= @quiz.name %> - ANSWER KEY</b></p>
+<hr>
+<% i = 1 %>
+<% @quiz.keys.each do |kt| %>
+
+ <p><b><%= i %></b> <%= kt.answer %></p>
+<%i = i + 1%>
+<%end%>
+<br/>
+<br/>
+
 
 <br/>
-<%end%>
+<br/>
 </div>
-<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
-<%= link_to 'Back', quizzes_path %>
+<br/>
+<br/>
+<div class="p-3 border bg-light"><center><%= link_to "PRINT ASSIGNMENT", quiz_path(@quiz, format: "pdf") %></center></div>
+<br/>
+<br/>
+<%= link_to 'BACK', quizzes_path, class: "btn btn-outline-primary" %>
+<%= link_to 'EDIT', edit_quiz_path(@quiz), class: "btn btn-outline-primary" %> 
+
+</div>
