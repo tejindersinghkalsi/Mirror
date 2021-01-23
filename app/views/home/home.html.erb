@@ -1,3 +1,17 @@
+  <%def multiply(qqw) %>
+   <%$result = 0 %>
+<%  qqw.tours.each do |ju|%>
+   
+<%   v = (ju.namec * ju.multiplier)%>
+  <% $result = ($result + v)%>
+  <%end%>
+  <%return $result%>
+ <%end%>
+
+
+
+
+
 <% @quizzes.each do |quiz| %>
      
      <% quiz.students.each do |studentt| %>
@@ -232,8 +246,8 @@
        <% @estimates.each do |esti| %>
            
            <% @hh = esti.year_id %>
-           <% @v = esti.tours %>
-               <% @m = @v.sum(:namec) %>
+           
+               <% @m = multiply esti %>
               <% if ((Year.find(@hh).Saving > @m) && (esti.share.blank?)) %>
           
                         <div class="card" style="width: 20rem;">
