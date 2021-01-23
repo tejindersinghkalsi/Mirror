@@ -1,10 +1,27 @@
 <br/>
 <br/>
-
+  <%def multiply(qqw) %>
+   <%$result = 0 %>
+<%  qqw.tours.each do |ju|%>
+   
+<%   v = (ju.namec * ju.multiplier)%>
+  <% $result = ($result + v)%>
+  <%end%>
+  <%return $result%>
+ <%end%>
 <div class = "container">
 	 <%= alerts %>
-<h1 style="color:green"><strong>YEAR: </strong><%= @year.name %></h1>
+
+	 <div class="card border-secondary mb-3" style="max-width: 70rem;" >
+  <div class="card-header" id = "year_n"><h2><b>YEAR: <%= @year.name %></b></h2></div>
+</div>
 <hr>
+<div class="alert alert-info" role="alert" id = "savings_tab">
+ <p> <b>Annual Savings:</b> <%= (@year.Saving*12) %> pa.</p>
+</div>
+<div class="alert alert-danger" role="alert" id = "savings_tab">
+  <p> <b>Expected Expenditure:</b> <%= @year.limit %> pa.</p>
+</div>
 <% sav = @year.Saving %>
 <% tt = (sav*12) %>
 <% avail = (tt - @sum) %>
@@ -16,8 +33,7 @@
 	<%if @year.estimates.present? %>
 
 <% @u.each do |d| %>
-<% @v = d.tours %>
-    <% @m = @v.sum(:namec) %>
+    <%  @m = multiply d %>
 <div class="card" style="width: 14rem;" id = "year_card">
   <div class="card-body">
   	<%if avail > @m %> 
@@ -35,7 +51,7 @@
     <p class="card-text">COST: <%= @m %></p>
     <a href="<%= estimate_path(d) %>" class="btn btn-primary btn-sm" id = "year_estimate_link">DETAILS</a>
     <%if avail > @m  &&  d.share.present? && d.Recommendation.present? %> 
-    <a href="<%= othernew_path %>" class="btn btn-primary btn-sm" id = "year_estimate_link">ITENARY</a>
+    <a href="<%= othernew_path %>" class="btn btn-primary btn-sm" id = "year_estimate_link">ITENERARY</a>
     <% end %>
 
   </div>
@@ -68,7 +84,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -78,7 +94,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @m %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @ml %></p>
 <br/>
 <br/>
 <hr>
@@ -101,7 +117,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -111,7 +127,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @n %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @n %></p>
 <br/>
 <br/>
 <hr>
@@ -134,7 +150,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -144,7 +160,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @o %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @o %></p>
 <br/>
 <br/>
 <hr>
@@ -167,7 +183,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -177,7 +193,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @p %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @p %></p>
 <br/>
 <br/>
 <hr>
@@ -200,7 +216,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -210,7 +226,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @q %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @q %></p>
 <br/>
 <br/>
 <hr>
@@ -233,7 +249,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -243,7 +259,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @r %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @r %></p>
 <br/>
 <br/>
 <hr>
@@ -266,7 +282,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -276,7 +292,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @s %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @s %></p>
 <br/>
 <br/>
 <hr>
@@ -299,7 +315,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -309,7 +325,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @t %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @t %></p>
 <br/>
 <br/>
 <hr>
@@ -332,7 +348,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -342,7 +358,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @uuu %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @uuu %></p>
 <br/>
 <br/>
 <hr>
@@ -365,7 +381,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -375,7 +391,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @vvv %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @vvv %></p>
 <br/>
 <br/>
 <hr>
@@ -398,7 +414,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -408,7 +424,7 @@
 </center>
 <br/>
 <br/>
-<p style="color:red"><b>TOTAL MONHTLY EXPENSE: </b><%= @w %></p>
+<p style="color:red"><b>MONTH EXPENSE: </b><%= @w %></p>
 <br/>
 <br/>
 <hr>
@@ -431,7 +447,7 @@
 
 
 	<tbody>
-		<td id ="col1"><%= month.occourance %></td>
+		<td id ="col1"><%= month.occourance.strftime("%d-%b-%Y") %></td>
 		<td id ="col2"><%= month.name %></td>
 		<td id ="col3"><%= month.reason %></td>
 		<td id ="col4"><%= month.cost %></td>
@@ -445,16 +461,16 @@
 <br/>
 <br/>
 <hr>
-<!-- DEC END -->
+<b>YEAR SUMMARY:</b>
+<br/> 
 <br/>
 <div class="card" id="total_card">
  
-   <h5>TOTAL EXPENSES AS ON <%= Time.now.strftime("%m/%d/%Y") %>:<%= @sum %></h5>
+   <h5>TOTAL EXPENSES AS ON <%= Time.now.strftime("%d-%b-%Y") %>:    <%= @sum %></h5>
 
 </div>
 <br/>
 <br/>
-<hr>
 <% if @sum < @year.limit %>
 <div class="card" id="total_card_cons">
  
@@ -467,7 +483,6 @@
    <h5>YOU ARE OFF TRACK, PLEASE DECREASE YOUR EXPENSES</h5>
 
 </div>
-
 <% end %>
 <br/>
 <br/>

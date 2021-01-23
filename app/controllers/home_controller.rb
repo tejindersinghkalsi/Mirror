@@ -13,6 +13,7 @@ class HomeController < ApplicationController
     @estimates = Estimate.where(user_id: current_user.id).page(params[:page])
 
     @quizzes = Quiz.all
+
     
     
      @years = Year.all

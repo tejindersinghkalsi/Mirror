@@ -38,7 +38,7 @@
 
 <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
  REVIEWS
-</button>
+</button> 
 
 <% @itenaries.each do |iten| %>
      
@@ -162,12 +162,12 @@
 
             <%if @c.present? %>
             <% @c.each do |x,y| %>
-            <div class="card" style= "width: 16rem;" id ="notification" >
+            <div class="card" style= "width: 14rem;" id ="notification" >
             <div class="card-body" >
             <h6 class="card-title" style="color: blue;">COMPLETE SOON</h6>
             <% g = Target.find(x) %>
             <hr id = "notification_card_hr_line">
-            <b><p id = "notification_card_text">You have pending task in the following target. If not updated it will be marked as stale task.</p></b>
+            <b><p id = "notification_card_text">You have pending task in the following target. If not updated within 3 days, it will be marked as stale task.</p></b>
             <hr id = "notification_card_hr_line">
             <p id = "notification_card"style="color: black;"><b>TARGET NAME:</b> <%= g.name %></p>
             <p id = "notification_card"style="color: black;"><b>TASK NAME:</b><%= y %></p>
@@ -187,9 +187,8 @@
 <div class="vl">
 <div class="jumbotron jumbotron-fluid mw-100" id="news_jumbotron">
   <div class="container" id = "news_jumbo_con">
-    <h3 class="display-6", style="color:green"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-eyeglasses" fill="black" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 0-4 0 2 2 0 0 0 4 0z"/>
-</svg> ANNOUNCEMENTS</h3>
+    <h3 class="display-6", style="color:green">MIRROR NEWS</h3>
+    <h6>LAST UPDATED: <%= @word.updated_at.strftime("%d-%b-%Y") %></h6>
     <hr>
     <p>
   <h4 style="color:navy"><b><%= @word.wordtitle %></b></h4>
@@ -208,11 +207,11 @@
 
 
 </div>
-<br/>
-<br/>
 <%if @c.present? %>
 <%= paginate @c %>
 <% end %>
+<br/>
+<br/>
 <div class = "row">
 <div class = "col-md-7">
 <h5 style="color:navy">TARGET SETTING FREQUENCY</h5>
@@ -223,7 +222,7 @@
 <div class = "col scroll">
 
 <div class="card md-2">
-
+<div class="vl">
     
       <div class="card-body">
        <h5 class="card-title" style="color:red;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="purple" class="bi bi-bag-check-fill" viewBox="0 2 22 16">
@@ -239,7 +238,7 @@
           
                         <div class="card" style="width: 20rem;">
                              <div class="card-body">
-                                     <h5 class="card-title">ESTIMATE: <%= esti.name %></h5>
+                                     <h5 class="card-title">ESTIMATE: <%= esti.name %></h5><hr>
                                      <h6 class="card-subtitle mb-2 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="navy" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
   <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"/>
   <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"/>
@@ -268,8 +267,8 @@
     
        <br/>
 
-
-       <a href="/itenaries" class="btn btn-primary btn-sm" id = "avail_button">MY ITENARIES</a>
+</div>
+       <a href="/itenaries" class="btn btn-primary btn-sm" id = "avail_button">MY ITINERARIES</a>
 
       </div>
 
@@ -278,10 +277,19 @@
 </div>
 </div>
 
+    <% trending = Story.maximum('impressions_count') %>
 
-
+    <% @trendingstory = Story.find_by(:impressions_count => trending) %>
 <br/>
-<h5 style="color:navy">STORIES CONTRIBUTION</h5>
+<br/>
+
+<h5 style="color:navy">MY STORIES</h5>
+
+<div class="alert alert-success" role="alert" id = "trend">
+<b><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-suit-heart-fill" viewBox="0 1 16 18">
+  <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+</svg> TRENDING:</b> <%= @trendingstory.title %> <%= link_to 'Click Here', story_url(@trendingstory) %>
+</div>
 <br/>
 <%= line_chart current_user.stories.group_by_day(:created_at).count, colors: ["#a14171"]  %>
 <br/>

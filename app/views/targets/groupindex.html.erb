@@ -54,16 +54,46 @@
 <hr id = "target_type_heading">
 <br/>
 <%if @group_targets.present? %>
-<% @group_targets.each do |group_target| %>
+<% @group_targets.each do |group_targett| %>
+               
+               <% flagset = 0 %>
+               <% total = 0 %>
+               <% $fl = 0 %>
+               <% tasktotal = group_targett.tasks.count %>
+                <% group_targett.tasks.each do |tttt| %>
+
+                  <% if  tttt.owner == current_user.id %>
+
+                  <% $fl = $fl + 1 %>
+
+                  <%end%> 
+                <%end%>
+              <% group_targett.tasks.each do |ttttt| %>
+
+               <% if  ttttt.owner == current_user.id %>
+
+               <% flagset = flagset + 1 %>
+
+               
+
+              <% total = total + ttttt.progress %>
+
+              <% if ((flagset*100) != total) %>
+
 <table class="table table-hover" id ="t_group_table">
+  <% if flagset == $fl %>
     <tr id="target_index_row" id = "t_table_r">
-      <td id="target_g"><h4 style="color:black"><%= group_target.name %></h4></td>
-      <td id="target_options"><%= link_to 'Review/', group_target %>
-          <%= link_to 'Edit', edit_target_path(group_target) %>
-          <%if group_target.lead == current_user.id %>
-          <%= link_to '/Delete', group_target, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+      <td id="target_g"><h4 style="color:black"><%= group_targett.name %></h4></td>
+      <td id="target_options"><%= link_to 'Review/', group_targett %>
+          <%= link_to 'Edit', edit_target_path(group_targett) %>
+          <%if group_targett.lead == current_user.id %>
+          <%= link_to '/Delete', group_targett, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+          <%end%>
           <%end%>
     </tr>
+    <%end%>
+    <%end%>
+    <%end%>
     <%end%>
     <%end%>
 </table>
@@ -71,21 +101,73 @@
 <br/>
 <br/>
 <br/>
-    <%if @group_targets.present? %>
-    <%= paginate @group_targets %>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<hr id = "target_type_heading">
+<h4>COMPLETED GROUP TARGETS</h4>
+<hr id = "target_type_heading">
+<br/>
+<%if @groupp_targets.present? %>
+<% @groupp_targets.each do |group_target| %>
+               <% flagset = 0 %>
+               <% total = 0 %>
+               <% $fl = 0 %>
+               <% tasktotal = group_target.tasks.count %>
+                <% group_target.tasks.each do |ttt| %>
+
+                  <% if  ttt.owner == current_user.id %>
+
+                  <% $fl = $fl + 1 %>
+
+                  <%end%> 
+                <%end%>
+              <% group_target.tasks.each do |tttt| %>
+
+               <% if  tttt.owner == current_user.id %>
+
+               <% flagset = flagset + 1 %>
+
+               
+
+              <% total = total + tttt.progress %>
+
+              <% if ((flagset*100) == total) %>
+
+<table class="table table-hover" id ="tt_group_table">
+    <% if flagset == $fl %>
+    <tr id="target_index_row" id = "t_table_r">
+  
+      <td id="target_gy"><span><h4 style="color:black"><%= group_target.name %> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="navy" class="bi bi-pin-fill" viewBox="0 0 16 16">
+  <path d="M4.146.146A.5.5 0 0 1 4.5 0h7a.5.5 0 0 1 .5.5c0 .68-.342 1.174-.646 1.479-.126.125-.25.224-.354.298v4.431l.078.048c.203.127.476.314.751.555C12.36 7.775 13 8.527 13 9.5a.5.5 0 0 1-.5.5h-4v4.5c0 .276-.224 1.5-.5 1.5s-.5-1.224-.5-1.5V10h-4a.5.5 0 0 1-.5-.5c0-.973.64-1.725 1.17-2.189A5.921 5.921 0 0 1 5 6.708V2.277a2.77 2.77 0 0 1-.354-.298C4.342 1.674 4 1.179 4 .5a.5.5 0 0 1 .146-.354z"/>
+</svg><%= ((flagset* 100)/tasktotal) %></h4></td>
+      <%if group_target.lead == current_user.id %>
+      <td id="target_options"><%= link_to 'Review/', group_target %>
+          <%= link_to 'Edit', edit_target_path(group_target) %>
+          <%= link_to '/Delete', group_target, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+          <%else%>
+          <td id="target_options"><%= link_to 'Review', group_target %></td>
+          <%end%>
+          <%end%>
+    </tr>
     <%end%>
+    <%end%>
+    <%end%>
+    <%end%>
+    <%end%>
+</table>
+<br/>
+<br/>
+<br/>
+<br/>
 </div>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 
 
 

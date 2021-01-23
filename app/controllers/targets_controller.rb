@@ -6,9 +6,11 @@ class TargetsController < ApplicationController
   # GET /targets
   # GET /targets.json
   def index
-    @personal_targets = (Target.where(user_id: current_user.id) && Target.where(lead: nil)).page(params[:page])
+    @personal_targets = (Target.where(user_id: current_user.id)).page(params[:page])
 
-              @stale_personal_targets = (Target.where(user_id: current_user.id))
+    @completed_targets = (Target.where(user_id: current_user.id)).page(params[:page])
+
+              @stale_personal_targets = (Target.where(user_id: current_user.id) && Target.where(lead: nil))
 
                @p = []
                @h = []
@@ -90,6 +92,8 @@ class TargetsController < ApplicationController
 
  def groupindex
     @group_targets = (Target.where(":user_id = ANY(member)", user_id: current_user.id )).page(params[:page])
+
+    @groupp_targets = (Target.where(":user_id = ANY(member)", user_id: current_user.id )).page(params[:page])
     
 
       @stale_group_targets = (Target.where(":user_id = ANY(member)", user_id: current_user.id ))

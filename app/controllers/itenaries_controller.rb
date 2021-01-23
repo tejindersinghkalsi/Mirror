@@ -5,7 +5,9 @@ class ItenariesController < ApplicationController
  layout "itenary"
   # GET /itenaries
   def index
-    @itenaries = Itenary.all
+    @itenaries = Itenary.where(st: "ACTIVE")
+
+    @ar_itenaries = Itenary.where(st: "ARCHIVED")
   end
 
   # GET /itenaries/1
@@ -72,6 +74,6 @@ class ItenariesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def itenary_params
-      params.require(:itenary).permit(:start, :planname, :calender, :related, subitenaries_attributes: [:id, :begin, :modeoftravel, :activity, :distance, :stay, :_destroy])
+      params.require(:itenary).permit(:start, :planname, :calender, :st, :related, subitenaries_attributes: [:id, :begin, :modeoftravel, :activity, :distance, :stay, :_destroy])
     end
 end

@@ -2,7 +2,7 @@ class Story < ApplicationRecord
 	belongs_to :topic
 	belongs_to :user
 	has_many :comments, dependent: :destroy
-	is_impressionable
+	is_impressionable :counter_cache => true
 
 	validates_presence_of :title, :body, :topic_id
     

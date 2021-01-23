@@ -10,9 +10,12 @@ class YearsController < ApplicationController
   end
 
   # GET /years/1
+
+
   def show
+
     a=@year.januaries.all
-  @m = a.sum(:cost)
+  @ml = a.sum(:cost)
 
   b=@year.februaries.all
   @n = b.sum(:cost)
@@ -98,18 +101,18 @@ class YearsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
    def year_params
-      params.require(:year).permit(:name, :limit,:Saving, januaries_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 februaries_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 marches_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 aprils_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 mays_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 junes_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 julies_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 augusts_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 septembers_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 octobers_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 novembers_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance],
-                                                 decembers_attributes: [:id, :_destroy, :name, :reason, :cost, :occurance])
+      params.require(:year).permit(:name, :limit,:Saving, januaries_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 februaries_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 marches_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 aprils_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 mays_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 junes_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 julies_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 augusts_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 septembers_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 octobers_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 novembers_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance],
+                                                 decembers_attributes: [:id, :_destroy, :name, :reason, :cost, :occourance])
 
 
     end

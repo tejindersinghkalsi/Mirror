@@ -3,7 +3,7 @@ class CreateEstimates < ActiveRecord::Migration[5.2]
     create_table :estimates do |t|
       t.string :name
       t.text :description
-      t.string :share
+      t.string :share, :default => 1000
 
       t.timestamps
     end

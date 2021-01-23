@@ -5,12 +5,56 @@
 
 <div class = "conatiner" id = "itenarycontainer">
 <div class="alert alert-success" role="alert" id = "itenarylist">
-  <h4>ITENARY</h4>
+  <h4>ITINERARY</h4>
 </div>
 
 <br/>
 
-<button type="button" class="btn btn-light btn-sm"><%= link_to 'New Itenary', new_itenary_path %></button>
+<button type="button" class="btn btn-light btn-sm"><%= link_to 'New Itinerary', new_itenary_path %></button>
+
+<button type="button" class="btn btn-light btn-sm" data-toggle="modal" data-target="#exampleModal">
+ <b>ARCHIVED ITINERARIES</b>
+</button>
+<div class="modal fade .modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:black">ARCHIVED ITINERARIES</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <% @ar_itenaries.each do |itenary| %>
+      <% g = itenary.related %>
+      <% v = Estimate.find(g) %>
+      <% b = v.user_id %>
+      <% if b == current_user.id %>
+
+      
+          <div class="card" id = "archived">
+               <div class="card-body" id = "ar_b"> 
+                    <b>NAME:</b>  <%= itenary.planname %>
+                    <br/>
+                    <% z = itenary.related %>
+                    <% c = z.to_i %>
+                    <b>BELONGS TO: </b> <%= Estimate.find(c).name %> 
+                    <br/>
+                    <br/>
+                    <b>ACCESS:</b> <%= link_to 'Click Here', itenary %>
+
+               </div>
+          </div>
+<%end%>
+      <%end%>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <br/>
 <br/>
 <table>

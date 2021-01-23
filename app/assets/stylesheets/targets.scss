@@ -105,6 +105,22 @@ a:hover, a:active, a:focus
   background-color: navy;
 }
 
+#t_table_t
+{
+  background-color: yellow;
+}
+
+#t_table_rr
+{
+  color: black;
+  height:80px;
+}
+
+#tt_group_table
+{
+  background-color: yellow;
+}
+
 #t_group_table
 {
   background-color: darkgreen;
@@ -146,10 +162,21 @@ a:hover, a:active, a:focus
   background-color: blue;
 }
 
+#target_hhh
+{
+  width:30%;
+  background-color: brown;
+}
+
 #target_g
 {
   width:30%;
   background-color: chartreuse;
+}
+#target_gy
+{
+  width:30%;
+  background-color: brown;
 }
 #target_with_lead
 {
@@ -198,8 +225,8 @@ a:hover, a:active, a:focus
 #target_type_heading
 {
   background-color: yellow;
+  height: 5px;
 }
-
   #target_details
   {
    width:95%;

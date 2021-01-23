@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_31_063248) do
+ActiveRecord::Schema.define(version: 2021_01_23_073740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 2020_12_31_063248) do
   create_table "estimates", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "share"
+    t.string "share", default: "1000"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "Recommendation"
@@ -165,8 +165,11 @@ ActiveRecord::Schema.define(version: 2020_12_31_063248) do
     t.string "planname"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "estimate_id"
     t.string "calender"
     t.integer "related"
+    t.string "st"
+    t.index ["estimate_id"], name: "index_itenaries_on_estimate_id"
   end
 
   create_table "januaries", force: :cascade do |t|
@@ -375,6 +378,7 @@ ActiveRecord::Schema.define(version: 2020_12_31_063248) do
     t.string "Attachment"
     t.string "string"
     t.string "Img"
+    t.integer "impressions_count", default: 0
     t.index ["topic_id"], name: "index_stories_on_topic_id"
     t.index ["user_id"], name: "index_stories_on_user_id"
   end
@@ -483,6 +487,7 @@ ActiveRecord::Schema.define(version: 2020_12_31_063248) do
   add_foreign_key "estimates", "years"
   add_foreign_key "februaries", "years"
   add_foreign_key "feedbacks", "users"
+  add_foreign_key "itenaries", "estimates"
   add_foreign_key "januaries", "years"
   add_foreign_key "julies", "years"
   add_foreign_key "junes", "years"

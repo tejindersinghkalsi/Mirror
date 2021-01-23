@@ -47,13 +47,22 @@
     </div>
   </div>
 </div>
+
+
 <br/>
 <hr id = "target_type_heading">
 <h4>MY PERSONAL TARGETS</h4>
 <hr id = "target_type_heading">
 <br/>
 <%if @personal_targets.present? %>
+
 <% @personal_targets.each do |personal_target| %>
+<% if personal_target.lead.blank? %>
+<% fff = personal_target.tasks.count %>
+
+              <% ggg = personal_target.tasks.sum(:progress) %>
+
+              <% if ((fff*100) != ggg) %>
 <table class="table table-hover" id ="t_table">
     <tr id="target_index_row" id = "t_table_r">
       <td id="target_h"><h4 style="color:black"><%= personal_target.name %></h4></td>
@@ -64,13 +73,51 @@
     </tr>
     <%end%>
     <%end%>
+    <%end%>
+    <%end%>
 </table>
 <br/>
-<%if @personal_targets.present? %>
-<%= paginate @personal_targets %>
-<%end%>
 <br/>
 <br/>
+<br/>
+<br/>
+<br/>
+<hr id = "target_type_heading">
+<h4><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="green" class="bi bi-easel-fill" viewBox="0 1 18 16">
+  <path d="M8.473.337a.5.5 0 0 0-.946 0L6.954 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h1.85l-1.323 3.837a.5.5 0 1 0 .946.326L4.908 11H7.5v2.5a.5.5 0 0 0 1 0V11h2.592l1.435 4.163a.5.5 0 0 0 .946-.326L12.15 11H14a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H9.046L8.473.337z"/>
+</svg> COMPLETED PERSONAL TARGETS</h4>
+<hr id = "target_type_heading">
+<br/>
+<p>
+        
+        <% @completed_targets.each do |personal_ttt| %>
+              <% if personal_ttt.lead.blank? %> 
+              <% ff = personal_ttt.tasks.count %>
+
+              <% gg = personal_ttt.tasks.sum(:progress) %>
+
+              <% if ((ff*100) == gg) %>
+            
+
+              <table class="table table-hover" id ="t_table_t">
+    <tr id="target_index_row" id = "t_table_rr">
+      <td id="target_hhh"><h4 style="color:black"><%= personal_ttt.name %></h4></td>
+      <td id="target_options"><%= link_to 'Review', personal_ttt %></td>
+          
+    </tr>
+</table>
+             
+
+              <%end%>
+
+                 <%end%>
+              
+                
+  
+
+       <% end %>
+
+</p>
 <br/>
 </div>
 <br/>
@@ -83,6 +130,26 @@
 <br/>
 <br/>
 <br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

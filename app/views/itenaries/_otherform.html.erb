@@ -35,7 +35,7 @@
       <p><b>SELECT ESTIMATE</b></p>
     </tr>
     <div class="form-group">
-   <%= form.collection_select(:related, Estimate.where.not(Recommendation: nil) && Estimate.where(user_id: current_user.id), :id, :name, 
+   <%= form.collection_select(:related, Estimate.where(user_id: current_user.id), :id, :name, 
 
                           {
                             selected: @itenary.related,

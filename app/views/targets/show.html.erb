@@ -29,12 +29,12 @@
 
 <tr>
   <td><strong>Start Date:</strong></td>
-  <td><%= @target.begin.strftime("%d-%m-%Y") %></td>
+  <td><%= @target.begin.strftime("%d-%b-%Y") %></td>
 </tr>
 
 <tr>
   <td><strong>End Date:</strong></td>
-  <td><%= @target.end.strftime("%d-%m-%Y") %></td>
+  <td><%= @target.end.strftime("%d-%b-%Y") %></td>
 </tr>
 
     <% if @target.doc.present? %>

@@ -20,6 +20,10 @@
   padding:0px;
   border-radius: 0px;
 }
+#trend
+{
+  padding-left: 2px;
+}
 .scroll 
 {
   max-height: 500px;
@@ -98,7 +102,7 @@ a:hover, a:active, a:focus
 }
 .vl {
   border-left: 3px solid purple;
-   max-height:300px;
+   max-height:350px;
  padding-right: 0px;
   margin-right: 0px;
   margin-left: 0px;
@@ -159,7 +163,7 @@ a:hover, a:active, a:focus
 {
 	  
     overflow: scroll;
- max-height:300px;
+ max-height:350px;
     margin-left: 10px;
     padding-left: 10px;
     padding-top: 0px;
