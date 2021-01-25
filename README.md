@@ -1,7 +1,6 @@
 # MIRROR - SELF DEVELOPMENT TOOL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Mirror is a self development tool with features such as goal management, expense management and travel management.
 
 Things you may want to cover:
 
