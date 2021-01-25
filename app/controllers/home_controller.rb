@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   
   def home
     
-    @festival = Festival.all
+    @festival = Festival.first
     
     @itenaries = Itenary.all
 
