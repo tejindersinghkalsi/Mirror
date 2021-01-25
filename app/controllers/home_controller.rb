@@ -8,6 +8,7 @@ class HomeController < ApplicationController
   
   def home
 
+    @festival = Festival.first!
     @itenaries = Itenary.all
 
     @estimates = Estimate.where(user_id: current_user.id).page(params[:page])
