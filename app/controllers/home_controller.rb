@@ -2,11 +2,54 @@ class HomeController < ApplicationController
 
 
   before_action :authenticate_user!
-  access all: [:home]
+  access all: [:home, :accountsettings, :systemaccess, :custom, :expensereport, :targetreport, :bookmark, :yearreport]
+  layout :determine_layout
 
-  layout "myhome"
-  
+  def accountsettings
+
+    @user = current_user.id
+
+  end
+
+  def systemaccess
+    
+    user = current_user.id
+    @u = User.find(user)
+    
+  end
+
+  def custom
+    
+    user = current_user.id
+    @u = User.find(user)
+    
+  end
+
+  def expensereport
+    
+    
+  end
+
+  def targetreport
+    
+    
+  end
+
+  def bookmark
+    user = current_user.id
+    @u = User.find(user)
+    
+  end
+
+  def yearreport
+    
+    
+  end
+
+
   def home
+
+    @bookmarks = Bookmark.where(user_id: current_user.id)
     
     @festival = Festival.first
     
@@ -60,4 +103,22 @@ class HomeController < ApplicationController
   
   end
 
+  def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
+  
 end

@@ -53,6 +53,12 @@
 <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#staticBackdrop">
  REVIEWS
 </button> 
+ 
+  
+
+
+
+
 
 <% @itenaries.each do |iten| %>
      
@@ -90,6 +96,8 @@
 
 
 <br/>
+
+
 
 </p>
 
@@ -202,7 +210,7 @@
 
 
 <div class = "col-md-5" id = "feed_col">
-<div class="vl">
+<div class="vl" id ="news_vl">
 <div class="jumbotron jumbotron-fluid mw-100" id="news_jumbotron">
   <div class="container" id = "news_jumbo_con">
     <h3 class="display-6", style="color:green">MIRROR NEWS</h3>
@@ -240,7 +248,7 @@
 <div class = "col scroll">
 
 <div class="card md-2">
-<div class="vl">
+<div class="vl" id = "home_vl">
     
       <div class="card-body">
        <h5 class="card-title" style="color:red;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="purple" class="bi bi-bag-check-fill" viewBox="0 2 22 16">
@@ -254,7 +262,7 @@
                <% @m = multiply esti %>
               <% if ((Year.find(@hh).Saving > @m) && (esti.share.blank?)) %>
           
-                        <div class="card" style="width: 20rem;">
+                        <div class="card" style="width: 17rem;" id = "share_es">
                              <div class="card-body">
                                      <h5 class="card-title">ESTIMATE: <%= esti.name %></h5><hr>
                                      <h6 class="card-subtitle mb-2 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="navy" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">

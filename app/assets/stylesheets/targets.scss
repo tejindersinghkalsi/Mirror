@@ -9,7 +9,10 @@
 {
   border-radius: 0px;
 }
-
+#t_table
+{
+  background-color: navy;
+}
  #application_name
 {
   background-color: navy;
@@ -23,6 +26,33 @@
   height: 30px;
   line-height:30px;
   padding:0px 15px;
+}
+#application_name_two
+{
+  background-color: green;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_three
+{
+  background-color: black;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_four
+{
+  background-color: orange;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:black;
+
 }
 #stale_task_personal
 {
@@ -100,10 +130,7 @@ a:hover, a:active, a:focus
 {
   width: 50px;
 }
-#t_table
-{
-  background-color: navy;
-}
+
 
 #t_table_t
 {
@@ -224,7 +251,7 @@ a:hover, a:active, a:focus
 }
 #target_type_heading
 {
-  background-color: yellow;
+  background-color: maroon;
   height: 5px;
 }
   #target_details

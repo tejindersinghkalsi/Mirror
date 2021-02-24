@@ -1,7 +1,7 @@
 class TargetsController < ApplicationController
-  layout "target"
   before_action :authenticate_user!
   before_action :set_target, only: [:show, :edit, :update, :destroy]
+   layout :determine_layout
 
   # GET /targets
   # GET /targets.json
@@ -186,5 +186,22 @@ class TargetsController < ApplicationController
     def target_params
       params.require(:target).permit(:name, :description, :begin, :end, :doc, {:member => []}, :lead, tasks_attributes: [:id, :name, :point, :owner, :progress, :dateofcompletion, :_destroy])
     end
+    def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end
 

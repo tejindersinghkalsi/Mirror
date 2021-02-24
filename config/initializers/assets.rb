@@ -20,7 +20,10 @@ Rails.application.config.assets.precompile += %w( researches.scss )
 Rails.application.config.assets.precompile += %w( estimates.scss )
 Rails.application.config.assets.precompile += %w( quizzes.scss )
 Rails.application.config.assets.precompile += %w( itenaries.scss )
-
+Rails.application.config.assets.precompile += %w( myhometwo.scss )
+Rails.application.config.assets.precompile += %w( myhomefour.scss )
+Rails.application.config.assets.precompile += %w( myhomethree.scss )
+Rails.application.config.assets.precompile += %w( myhome.scss )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.

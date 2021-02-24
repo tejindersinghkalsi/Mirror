@@ -26,6 +26,13 @@
   </div>
 </tr>
 
+<tr>
+  <div class="field">
+   <td><b style="color:purple"><%= f.label :roles %></b></td>
+    <td><%= f.email_field :roles, autofocus: true, :disabled => true %></td>
+  </div>
+</tr>
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

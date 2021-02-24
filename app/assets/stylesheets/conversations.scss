@@ -21,6 +21,125 @@
   font-size: 10px;
   padding-left: 5px;
 }
+#application_name_two
+{
+  background-color: green;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_three
+{
+  background-color: black;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_four
+{
+  background-color: orange;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:black;
+
+}
+#udett
+{
+  font-size: 10px;
+  padding-left: 5px;
+  
+}
+
+.alert {
+  margin-bottom: 1px;
+  height: 30px;
+  line-height:30px;
+  padding:0px 15px;
+}
+a:hover, a:active, a:focus 
+{
+  outline: 0;
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}
+
+@import "gritter";
+
+.pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: purple;
+    color: white;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+#udet
+{
+  color: navy;
+  font-size: 10px;
+  padding-left: 5px;
+}
+#application_name_two
+{
+  background-color: green;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_three
+{
+  background-color: black;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_four
+{
+  background-color: orange;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:black;
+
+}
 #udett
 {
   font-size: 10px;

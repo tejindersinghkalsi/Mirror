@@ -1,9 +1,8 @@
 class ResearchesController < ApplicationController
 
-  layout 'research'
-  before_action :set_research, only: [:show, :edit, :update, :destroy]
+    before_action :set_research, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
-
+    layout :determine_layout
   # GET /researches
   def index
     @researches = Research.page(params[:page])
@@ -74,4 +73,21 @@ class ResearchesController < ApplicationController
     def research_params
       params.require(:research).permit(:mainheading, :subheading, :contributed, :body, :Image)
     end
+    def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

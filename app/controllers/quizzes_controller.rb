@@ -1,8 +1,8 @@
 class QuizzesController < ApplicationController
-  layout "quiz"
+  
   before_action :set_quiz, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
-
+    layout :determine_layout
   # GET /quizzes
   def index
     @quizzes = Quiz.all
@@ -70,4 +70,21 @@ class QuizzesController < ApplicationController
     def quiz_params
       params.require(:quiz).permit(:name, :schedule, :result, :time, {:students => []}, questions_attributes: [:id, :ques, :optionone, :optiontwo, :optionthree, :optionfour, :Answer, :_destroy], keys_attributes: [:id, :answer, :_destroy])
     end
+    def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

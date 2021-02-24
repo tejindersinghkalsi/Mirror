@@ -14,11 +14,35 @@
 {
   border-radius: 0px;
 }
+#rep
+{
+ background-color: black; 
+}
 #avail_e_card
 {
   margin: 0px;
   padding:0px;
   border-radius: 0px;
+}
+#bookmarkrow
+{
+  margin-left:15px;
+}
+#bookmarkbutton
+{
+  border-radius: 0px;
+}
+#sys_acc
+{
+  padding-left: 1px;
+}
+#settings
+{
+  background-color: navy;
+}
+#settt
+{
+  background-color: purple;
 }
 #festive
 {
@@ -34,6 +58,57 @@ overflow-x: scroll;
 {
   padding-left: 2px;
 }
+#cl
+{
+  border: 1px solid balck; 
+}
+#theme_con
+{
+  padding-left: 0px;
+}
+#mw
+{
+  border: 1px solid balck; 
+}
+#ii
+{
+  border: 1px solid balck; 
+   width: 105%;
+}
+#bp
+{
+  border: 1px solid balck; 
+  width: 105%;
+}
+#ob
+{
+  background-color: navy;
+  color: white;
+}
+#customm
+{
+  background-color: purple;
+  width: 80%;
+  margin-left: 0px;
+}
+
+#pg
+{
+  background-color: green;
+  color: white;
+}
+
+#db
+{
+  background-color: black;
+  color: white;
+}
+
+#so
+{
+  background-color: orange;
+  color: black;
+}
 .scroll 
 {
   max-height: 500px;
@@ -47,6 +122,34 @@ overflow-x: scroll;
   font-size: 30px;
   margin-bottom:0px;
   color:white;
+
+}
+
+#application_name_two
+{
+  background-color: green;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_three
+{
+  background-color: black;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_four
+{
+  background-color: orange;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:black;
 
 }
 #assignment_warning
@@ -197,6 +300,37 @@ a:hover, a:active, a:focus
     margin-bottom:0px;
     padding-bottom:0px;
     margin-top: 180px;
+    color: black;
+  }
+
+  #footer_two
+  {
+    height:30px;
+    background-color:green;
+    margin-bottom:0px;
+    padding-bottom:0px;
+    margin-top: 180px;
+    color: black;
+  }
+
+  #footer_three
+  {
+    height:30px;
+    color: white;
+    background-color:black;
+    margin-bottom:0px;
+    padding-bottom:0px;
+    margin-top: 180px;
+  }
+
+  #footer_four
+  {
+    height:30px;
+    background-color:orange;
+    margin-bottom:0px;
+    padding-bottom:0px;
+    margin-top: 180px;
+    color: black;
   }
 #quick_launch_icons
 {

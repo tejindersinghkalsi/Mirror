@@ -9,9 +9,9 @@ class User < ApplicationRecord
  
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # :confirmable, :lockable, :timeoutable,  and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :trackable
 
   
 
@@ -25,8 +25,14 @@ class User < ApplicationRecord
   has_many :stories, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
   has_many :researches, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   acts_as_messageable
+
+  accepts_nested_attributes_for :bookmarks,
+                                 allow_destroy: :true, 
+                                 reject_if: lambda{ |attrs| attrs['bname'].blank? }
+
 
   #Returning any kind of identification you want for the model
   def display_name

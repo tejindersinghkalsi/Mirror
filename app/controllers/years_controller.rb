@@ -1,5 +1,5 @@
 class YearsController < ApplicationController
-   layout "year"
+    layout :determine_layout
   before_action :authenticate_user!
   before_action :set_year, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
@@ -116,4 +116,21 @@ class YearsController < ApplicationController
 
 
     end
+    def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

@@ -1,0 +1,124 @@
+  <body>
+    <br>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  
+          <%= link_to "PROFILE", accountsettings_path %>
+                  
+                <hr id ="settings">
+              </li>
+
+             <% if logged_in?(:site_admin) %>
+              <li class="nav-item">
+                <%= link_to "SYSTEM ACCESS", systemaccess_path %>
+                <hr id ="settings">
+              </li>
+              <%else%>
+              <li class="nav-item">
+                <div class="alert alert-warning" role="alert" id = "sys_acc">
+                  <b>SYSTEM ACCESS</b>
+                </div>
+                <hr id ="settings">
+              </li>
+              <%end%>
+              <li class="nav-item">
+                <%= link_to "CUSTOM", custom_path %>
+                <hr id ="settings">
+              </li>  
+            
+            </ul>
+          </div>
+        </nav>
+
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2" style="color:maroon" >PROFILE</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+               
+              </div>
+            
+            </div>
+
+          </div>
+          <table class= "table table-success table-info">
+  
+  <tbody>
+    <tr>
+      <td><b>Name:-</b></td>
+      <% z = @user %>
+      <% a = User.find(z) %>
+      <td><%= a.name %></td>
+     
+    </tr>
+    <tr>
+      <td><b>Email:-</b></td>
+      <td><%= a.email %></td>
+     
+    </tr>
+
+    <tr>
+      <td><b>Joined On:-</b></td>
+      <td><%= a.created_at.strftime("%d-%b-%Y") %></td>
+     
+    </tr>
+
+    <tr>
+      <td><b>Last Updated:-</b></td>
+      <td><%= a.updated_at.strftime("%d-%b-%Y") %></td>
+     
+    </tr>
+
+     <tr>
+      <td><b>Access:- </b></td>
+      <% r = a.roles %>
+      <td><%= r[0] %></td> 
+    
+
+     
+    </tr>
+    
+    <tr>
+      <td><b>Total Logins:-</b></td>
+      <td><%= a.sign_in_count %></td>
+     
+    </tr>
+
+    <tr>
+      <td><b>Last Login On:-</b></td>
+      <td><%= a.last_sign_in_at.strftime("%d-%b-%Y") %></td>
+     
+    </tr>
+
+    <tr>
+      <td><b>Journal Subscription:-</b></td>
+      <% if a.subscribe == "YES" %>
+      <td>YES</td>
+      <%else%>
+      <td>NO</td>
+      <%end%>
+     
+    </tr>
+
+  </tbody>
+</table>
+
+          
+        </main>
+      </div>
+    </div>
+
+   
+   
+  </body>
+

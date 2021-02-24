@@ -1,0 +1,105 @@
+  <body>
+    <br>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  
+              <%= link_to "PROFILE", accountsettings_path %>
+                  
+                <hr id ="settings">
+              </li>
+
+             <% if logged_in?(:site_admin) %>
+              <li class="nav-item">
+                <%= link_to "SYSTEM ACCESS", systemaccess_path %>
+                <hr id ="settings">
+              </li>
+              <%else%>
+              <li class="nav-item">
+                <div class="alert alert-warning" role="alert" id = "sys_acc">
+                  <b>SYSTEM ACCESS</b>
+                </div>
+                <hr id ="settings">
+              </li>
+              <%end%>
+              <li class="nav-item">
+                <%= link_to "CUSTOM", custom_path %>
+                <hr id ="settings">
+              </li>
+              
+         
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2" style="color:maroon" >CUSTOM SETTINGS</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+               
+              </div>
+            
+            </div>
+
+          </div>
+
+          <div class="container">
+            <p><b>AVAILABLE COLOURS</b></p>
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <div class="col">
+      <div class="p-3 border" id = "ob"><b>Ocean Blue</b></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border" id = "pg" ><b>Parrot Green</b></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border" id = "db"><b>Dense Black</b></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border" id = "so"><b>Sun Orange</b></div>
+    </div>
+  </div>
+<hr id = "customm">
+
+        <%= form_for @u, url: registration_path(@u) do |f| %>
+         
+         <table>
+          <tr>
+          <td><b>Select Colour:</b></td> <td><%= f.select :colour, '<option value="blue">Ocean Blue</option><option value="green">Parrot Green</option><option value="black">Dense Black</option><option value="orange">Sun Orange</option>'.html_safe %></td>
+          </tr>
+          <br/>
+         
+          <br/>
+          <tr>
+          <td>Password to confirm:</td><td> <%= f.text_field :current_password %></td>
+        </tr>
+
+      </table>
+
+          <br/>
+          <br/>
+          <hr id = "settt">
+         <div class="actions">
+    <%= f.submit "UPDATE MY CREDENTIALS", class: 'btn btn-info btn-sm' %>
+  </div>
+
+         <%end%>
+          
+          
+        </main>
+      </div>
+    </div>
+
+   
+   
+  </body>
+

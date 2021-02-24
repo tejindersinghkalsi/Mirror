@@ -33,7 +33,7 @@
   <br/>
   <br/>
   <div class ="row">
-     <div class="vl"></div>
+     <div class="vl" id = "new_kb_vl"></div>
     <div class = "col">
       <div class="field">
     <%= form.text_field :title, placeholder:"Add a title...", :size => 51 %>
@@ -47,16 +47,16 @@
   </label>
   </div>
 </div>
-<div class="vl"></div>
+<div class="vl" id = "new_kb_vl_body"></div>
 <div class ="col">
    <div class="field">
-    <%= form.text_area :body, placeholder:"Add notes...", rows: 6, cols: 55 %>
+    <%= form.text_area :body, placeholder:"Add notes...", rows: 5, cols: 55 %>
   </div>
 </div>
 </div>
    <br/>
    <br/>
-   <hr>
+   <hr id = "add_kb_page">
    <br/>
 
   <div class="actions">

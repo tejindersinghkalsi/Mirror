@@ -1,7 +1,7 @@
 class DocipediasController < ApplicationController
 
 
-  layout "docipedia"
+   layout :determine_layout
 
   before_action :authenticate_user!
     
@@ -9,5 +9,21 @@ class DocipediasController < ApplicationController
   	 @targets = (Target.where(user_id: current_user.id) and Target.where.not(doc: nil)).page(params[:page])
 
   end
+def determine_layout
 
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

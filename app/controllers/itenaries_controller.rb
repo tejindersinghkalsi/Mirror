@@ -2,7 +2,7 @@ class ItenariesController < ApplicationController
   before_action :set_itenary, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
- layout "itenary"
+   layout :determine_layout
   # GET /itenaries
   def index
     @itenaries = Itenary.where(st: "ACTIVE")
@@ -76,4 +76,21 @@ class ItenariesController < ApplicationController
     def itenary_params
       params.require(:itenary).permit(:start, :planname, :calender, :st, :related, subitenaries_attributes: [:id, :begin, :modeoftravel, :activity, :distance, :stay, :_destroy])
     end
+    def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

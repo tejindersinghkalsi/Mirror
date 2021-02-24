@@ -12,13 +12,13 @@
 <br/>
  <%= alerts %>
 <br/>
-	<div class="alert alert-success" role="alert">
+	<div class="alert alert-success" role="alert" id = "show_es">
   <h4 class="alert-heading" style="color: black;"><%= @estimate.name %></h4>
   <br/>
   <p style="color: black;" id ="est_des"><%= markdown(@estimate.description) %></p>
   <hr>
    <% v = multiply @estimate %>
-  <p class="mb-0" style="color: black;"><b>TOTAL ESTIMATE COST:</b> <%= v %></p>
+  <p class="mb-0" style="color: black;"><b>TOTAL ESTIMATE COST:</b> <%= v %> <b>INR</b></p>
 
   <br/>
   <% x = @estimate.year_id %>
@@ -37,7 +37,7 @@
 </div>
 
 <% if (@estimate.share.empty?) %>
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" id ="show_es_t">
 	<p style="color: black;"><b>REVIEWER REMARKS:</b></p>
 	<hr>
 	<br/>
@@ -45,7 +45,7 @@
   </div>
   <%end%>
 <%if (@estimate.Recommendation.present?)%>
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" id ="show_es_t">
 	<p style="color: black;"><b>REVIEWER REMARKS:</b></p>
 	<hr>
 	<br/>
@@ -53,7 +53,7 @@
 </div>
 <%end%>
 <%if ((@estimate.share.present?)&&(@estimate.Recommendation.nil?))%>
-<div class="alert alert-danger" role="alert">
+<div class="alert alert-danger" role="alert" id ="show_es_t">
 	<p style="color: black;"><b>REVIEWER REMARKS:</b></p>
 	<hr>
 	<br/>
@@ -61,7 +61,7 @@
 </div>
 <%end%>
 <br/>
-<hr>
+<hr id ="es_h">
 <% @estimate.tours.each do |g| %>
 
 <div class="alert" role="alert" id= "estimate_step">
@@ -82,7 +82,7 @@
 </div>
 
 <%end%>
-<hr>
+<hr id = "es_h">
 <br/>
 <br/>
 <br/>

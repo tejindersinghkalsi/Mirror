@@ -1,4 +1,4 @@
-// Place all the styles related to the Years controller here.
+     // Place all the styles related to the Years controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -17,6 +17,33 @@
 {
   padding: 0px;
   height: 30px;
+}
+#application_name_two
+{
+  background-color: green;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_three
+{
+  background-color: black;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:white;
+
+}
+#application_name_four
+{
+  background-color: orange;
+  height: 1.5em;
+  font-size: 30px;
+  margin-bottom:0px;
+  color:black;
+
 }
 #year_n
 {

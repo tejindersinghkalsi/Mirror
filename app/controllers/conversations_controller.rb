@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
     
-    layout "conversation"
+     layout :determine_layout
     before_action :authenticate_user!
 	def index 
      @conversations = current_user.mailbox.conversations.page(params[:page])
@@ -19,5 +19,21 @@ class ConversationsController < ApplicationController
     	@recipient = User.find(params[:user_id])
     	receipt = current_user.send_message(@recipient, params[:body], params[:subject])
     end
+def determine_layout
 
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  layout "story"
+    layout :determine_layout
   before_action :authenticate_user!
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
@@ -80,4 +80,21 @@ class StoriesController < ApplicationController
     def story_params
       params.require(:story).permit( :title, :body, :topic_id, :user_id, :Attachment )
     end
+    def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

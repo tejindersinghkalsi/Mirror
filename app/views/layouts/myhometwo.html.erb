@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>  
+  
+  <head> 
+        
+    <title>MIRROR: HOME</title> <!--Dynamic title. @page_title is an instance variable whose value changes as per the controller layout -->
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
+    <%= stylesheet_link_tag    'myhometwo', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      
+  </head>
+
+
+  
+  <body>
+  
+   
+   <%= render "shared/application_heading_two" %>
+    
+    <!-- Navbar partial -->   
+    
+    <%= render "shared/nav", color: 'bg-light'%>
+        
+
+    <%= yield %>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <%= render "shared/footer_two" %>
+   
+  
+  
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

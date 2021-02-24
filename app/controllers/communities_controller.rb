@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
-  layout "community"
+    layout :determine_layout
   before_action :authenticate_user!
   before_action :set_community, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
@@ -59,4 +59,21 @@ class CommunitiesController < ApplicationController
     def community_params
       params.require(:community).permit(:title, :body, :doc)
     end
+    def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

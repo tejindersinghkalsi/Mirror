@@ -1,6 +1,6 @@
 class FeedbacksController < ApplicationController
 
-  layout "feedback"
+    layout :determine_layout
 
   before_action :set_feedback, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
@@ -66,4 +66,21 @@ class FeedbacksController < ApplicationController
     def feedback_params
       params.require(:feedback).permit(:date, :uipoints, :usability, :improvement, :comments, :addfeatures)
     end
+   def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

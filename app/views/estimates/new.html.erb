@@ -18,7 +18,7 @@
    
        <% @e.each do |estimate| %>
 	
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success" role="alert" id = "estimate_av">
    
              <% if estimate.Recommendation.present? %>
                     <p><%= estimate.name %> <svg width="1em" height="1em" viewBox="0 1 16 18" class="bi bi-bookmark-check-fill" fill="navy" xmlns="http://www.w3.org/2000/svg">

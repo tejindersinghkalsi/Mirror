@@ -1,0 +1,93 @@
+  <body>
+    <br>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  
+              <%= link_to "PROFILE", accountsettings_path %>
+                  
+                <hr id ="settings">
+              </li>
+
+              <% if logged_in?(:site_admin) %>
+              <li class="nav-item">
+                <%= link_to "SYSTEM ACCESS", systemaccess_path, :disabled => true %>
+                <hr id ="settings">
+              </li>
+              <%else%>
+              <li class="nav-item">
+                <div class="alert alert-danger" role="alert" id = "sys_acc">
+                  <b>SYSTEM ACCESS</b>
+                </div>
+                <hr id ="settings">
+              </li>
+              <%end%>
+              <li class="nav-item">
+                <%= link_to "CUSTOM", custom_path %>
+                <hr id ="settings">
+              </li>
+             
+            
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2" style="color:maroon" >SELECT ROLE</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+               
+              </div>
+            
+            </div>
+
+          </div>
+          <h6><u>AVAILABLE ROLES</u></h6>
+          <table border = "2">
+            <tr>
+              <td><b>User</b></td><td>The role provides the full access of the software except the administrartor controls. Also, a user cannot contribute to the KB articles, nor they can delete any story. </td>
+            </tr>
+             <tr>
+              <td><b>Administrator</b></td><td>This role have the access to the administrator section in addition to the user access.</td>
+            </tr>
+          </table>
+         <%= form_for @u, url: registration_path(@u) do |f| %>
+         
+         <table>
+          <tr>
+          <td>Add Role:</td> <td><%= f.text_field :roles %></td>
+          </tr>
+          <br/>
+          <br/>
+          <tr>
+          <td>Password to confirm:</td><td> <%= f.text_field :current_password %></td>
+        </tr>
+
+      </table>
+
+          <br/>
+          <br/>
+          <hr id = "settt">
+         <div class="actions">
+    <%= f.submit "UPDATE MY CREDENTIALS", class: 'btn btn-info btn-sm' %>
+  </div>
+
+         <%end%>
+          
+        </main>
+      </div>
+    </div>
+
+   
+   
+  </body>
+

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'journal@mirror.com'
+  default from: 'support@mirror.com'
   layout 'mailer'
 end

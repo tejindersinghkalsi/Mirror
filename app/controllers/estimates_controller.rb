@@ -1,6 +1,6 @@
 class EstimatesController < ApplicationController
 
-  layout "estimate"
+    layout :determine_layout
 
   before_action :set_estimate, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
@@ -62,4 +62,21 @@ class EstimatesController < ApplicationController
     def estimate_params
       params.require(:estimate).permit(:name, :description, :year_id, :share, :Recommendation, tours_attributes: [:id, :name, :namec, :multiplier, :Link, :_destroy])
     end
+    def determine_layout
+
+    case current_user.colour
+
+    when "orange"
+    "myhomefour"
+
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+  end
+end
 end

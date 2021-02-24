@@ -28,6 +28,16 @@ Rails.application.routes.draw do
 
 
   get 'home/' => 'home#home', as: 'home'
+  get 'accountsettings/' => 'home#accountsettings', as: 'accountsettings'
+  get 'systemaccess/' => 'home#systemaccess', as: 'systemaccess'
+  get 'targetreport/' => 'home#targetreport', as: 'targetreport'
+  get 'yearreport/' => 'home#yearreport', as: 'yearreport'
+  get 'expensereport/' => 'home#expensereport', as: 'expense'
+  get 'bookmark/' => 'home#bookmark', as: 'bookmark'
+  get 'custom/' => 'home#custom', as: 'custom'
+ 
+ 
+  
  
   
 

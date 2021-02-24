@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_161212) do
+ActiveRecord::Schema.define(version: 2021_02_09_120638) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,15 @@ ActiveRecord::Schema.define(version: 2021_01_24_161212) do
     t.datetime "updated_at", null: false
     t.bigint "year_id"
     t.index ["year_id"], name: "index_augusts_on_year_id"
+  end
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.string "bname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "dname"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -463,6 +472,8 @@ ActiveRecord::Schema.define(version: 2021_01_24_161212) do
     t.datetime "updated_at", null: false
     t.string "roles"
     t.string "subscribe"
+    t.string "colour", default: "blue"
+    t.string "theme", default: "classic"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -486,6 +497,7 @@ ActiveRecord::Schema.define(version: 2021_01_24_161212) do
 
   add_foreign_key "aprils", "years"
   add_foreign_key "augusts", "years"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "stories"
   add_foreign_key "comments", "users"
   add_foreign_key "decembers", "years"
