@@ -24,9 +24,9 @@
               </li>
               <%else%>
               <li class="nav-item">
-                <div class="alert alert-danger" role="alert" id = "sys_acc">
+                
                   <b>SYSTEM ACCESS</b>
-                </div>
+          
                 <hr id ="settings">
               </li>
               <%end%>
@@ -64,12 +64,12 @@
          
          <table>
           <tr>
-          <td>Add Role:</td> <td><%= f.text_field :roles %></td>
+          <td><b>Add Role:</b></td> <td><%= f.text_field :roles %></td>
           </tr>
           <br/>
           <br/>
           <tr>
-          <td>Password to confirm:</td><td> <%= f.text_field :current_password %></td>
+          <td><b>Password to confirm:</b></td><td> <%= f.text_field :current_password %></td>
         </tr>
 
       </table>
