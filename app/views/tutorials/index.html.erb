@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "container" id = "tutorials_con">
+<h4 style = "color:red">RUBY ON RAILS ERRORS</h4>
+<br>
+<hr id = "tutorial_hr">
+<%= link_to 'REGISTER NEW ERROR', new_tutorial_path %> 
+<hr id = "tutorial_hr">
+  <% @tutorials.each do |tutorial| %>
+
+<div class="card" id = "error_card">
+  <div class="card-header" id = "error_index_card">
+    <b><%= tutorial.title %></b>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= tutorial.area %></h5>
+    
+    <hr>
+    <%= link_to 'DETAILS', tutorial %> |
+    <%= link_to 'UPDATE', edit_tutorial_path(tutorial) %> |
+    <%= link_to 'DELETE', tutorial, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<br/>
+<hr id = "index_hr">
+<br/>
+<%end%>
+
+
+
+</div>

@@ -43,8 +43,10 @@
                   <p><p id ="udet"><b>UPDATE PROFILE</b></p><p id ="udett"><%= link_to "Update", edit_user_registration_path%></p></p>
                   <hr>
                   <p><p id ="udet"><b>ACCOUNT SETTINGS</b></p><p id ="udett"><%= link_to "Settings", accountsettings_path%></p></p>
-              
-                  
+                  <% if logged_in?(:site_admin) %>
+                  <hr>
+                  <p><p id ="udet"><b>ROR Errors</b></p><p id ="udett"><%= link_to "Access", tutorials_path %></p></p>
+                  <% end %>
                   
                  
                 </div>

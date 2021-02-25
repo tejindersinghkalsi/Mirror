@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_120638) do
+ActiveRecord::Schema.define(version: 2021_02_25_103405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -454,6 +454,18 @@ ActiveRecord::Schema.define(version: 2021_02_09_120638) do
     t.bigint "estimate_id"
     t.string "Link"
     t.index ["estimate_id"], name: "index_tours_on_estimate_id"
+  end
+
+  create_table "tutorials", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.text "area"
+    t.string "doc"
+    t.text "command"
+    t.string "name"
+    t.text "function"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -25,6 +25,10 @@ a:hover, a:active, a:focus
   background-color: maroon;
   height: 5px;
 }
+#news_hr
+{
+  background-color: white;
+}
 #application_name_two
 {
   background-color: green;
@@ -1147,9 +1151,28 @@ a:hover, a:active, a:focus
  margin-left: 5%;
  padding:15px;
  }
+
+ #version
+ {
+ text-align: center;
+ font-size: 10px;
+ }
 #ques
 {
-  width:75%;
+  width:85%;
+  height: 30px;
+  padding-top: 0px;
+  padding-left: 2px;
+
+}
+
+#new_error_form
+{
+  margin-left: 5%;
+}
+#tutorial_hr
+{
+  background-color: red;
 }
 #stats_container
 {
@@ -1158,13 +1181,14 @@ a:hover, a:active, a:focus
 }
 #feedback_form
  {
-  border-collapse: separate;
-  border-spacing: 0 70px;
-  border:1px solid navy;
+  background-color: navy;
   align:center;
-  width: 95%;
+  width: 100%;
 }
-
+#tutorials_con
+{
+  margin-left: 3%;
+}
 #feedback_results
 {
   height:100px;
@@ -1173,6 +1197,9 @@ a:hover, a:active, a:focus
 #my_feedback_count
 {
   width: 75%;
+  height: 30px;
+  padding-top: 1px;
+  padding-left: 2px;
 }
 
 // Place all the styles related to the Access controller here.
@@ -1289,11 +1316,40 @@ overflow-x: scroll;
   background-color: green;
   color: white;
 }
+#show_error_con
+{
+  margin-left: 5%;
+}
+#show_error_det
+{
+  border-radius: 0px;
+}
+#img_box
+{
+  width:100%;
+  height: 500px;
+  border: 5px dashed red;
+  overflow-y: hidden;
+}
+#partition_hr
+{
+  background-color: navy;
+}
+
+#index_hr
+{
+  background-color: black;
+}
 
 #db
 {
   background-color: black;
   color: white;
+}
+#tut_tab
+{
+  padding: 0px;
+  margin:0px;
 }
 
 #so
@@ -1301,11 +1357,22 @@ overflow-x: scroll;
   background-color: orange;
   color: black;
 }
+#show_error
+{
+  padding:0px;
+  border: 1px solid black;
+  box-shadow: 10px 10px 5px red;
+
+}
 .scroll 
 {
   max-height: 500px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+#error_card
+{
+  border-radius: 0px;
 }
 #application_name
 {
@@ -1316,7 +1383,26 @@ overflow-x: scroll;
   color:white;
 
 }
-
+#error_index_card
+{
+  background-color: red; 
+  color: black;
+  border-radius: 0px;
+  border: 1px solid red;
+}
+#new_error_hr
+{
+  background-color: black;
+}
+#first_field_tutorial_form
+{
+  width: 25%;
+}
+#new_form_warning
+{
+  font-size: 10px;
+  color: red;
+}
 #application_name_two
 {
   background-color: green;
@@ -1483,6 +1569,14 @@ a:hover, a:active, a:focus
 {
   padding-top: 0px;
   margin-top: 0px;
+}
+#tar_show
+{
+  height: 30px; 
+  padding-top: 0px;
+  padding-left: 2px;
+  border: 1px solid black;
+  box-shadow: 10px 10px 5px navy;
 }
   #footer
   {

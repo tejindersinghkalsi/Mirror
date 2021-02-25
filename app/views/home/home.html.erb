@@ -214,10 +214,10 @@
 <div class="jumbotron jumbotron-fluid mw-100" id="news_jumbotron">
   <div class="container" id = "news_jumbo_con">
     <h3 class="display-6", style="color:green">MIRROR NEWS</h3>
-    <h6>LAST UPDATED: <%= @word.updated_at.strftime("%d-%b-%Y") %></h6>
-    <hr>
+    <h6>LAST UPDATED: <%= @word.updated_at.strftime("%d-%B-%Y") %></h6>
+    <hr id = "news_hr">
     <p>
-  <h4 style="color:navy"><b><%= @word.wordtitle %></b></h4>
+  <h4 style="color:white"><b><%= @word.wordtitle %></b></h4>
 </p>
 
 <p>

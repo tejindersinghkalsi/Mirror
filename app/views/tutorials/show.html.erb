@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+<br/>
+<div class = "container" id ="show_error_con">
+<p style = "color: navy">
+  <strong>ERROR NAME:</strong>
+  <%= @tutorial.title %>
+</p>
+<hr>
+<br/>
+
+
+
+  <div class="card" id = "show_error">
+  <div class="card-body">
+    <table class="table table-danger table-hover" id ="tut_tab">
+      <tr>
+        <td><b>Error Identification Number:</b></td>
+        <td>E-00-<%= @tutorial.id %></td>
+      </tr>
+
+      <tr>
+        <td><b>Reported On:</b></td>
+        <td><%= @tutorial.created_at.strftime("%d-%B-%Y") %></td>
+      </tr>
+       
+      <tr>
+      <td><b>Last Updated On:</b></td>
+      <td><%= @tutorial.updated_at.strftime("%d-%B-%Y") %></td>
+      </tr>
+
+      <tr>
+        <td><b>Total Views:</b></td>
+        <td><%= @tutorial.updated_at.strftime("%d-%B-%Y") %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<br/>
+<hr>
+
+<div class="card" id = "show_error_det">
+  <div class="card-body">
+  
+
+      <p>
+  <strong>Supporting Error Image:</strong>
+  <div id = "img_box" >
+  <img src="<%=(@tutorial.doc) %>" >
+  </div>
+      </p>
+
+    <hr id = "partition_hr">
+     
+     <p>
+  <strong>Description:</strong>
+  <%= @tutorial.description %>
+</p>
+
+<hr id = "partition_hr">
+<strong>Rails Related Area:</strong>
+  <%= @tutorial.area %>
+</p>
+
+<hr id = "partition_hr">
+<p>
+  <strong>Solution Code:</strong>
+  <%= @tutorial.command %>
+</p>
+</div>
+
+
+</div>
+<br/>
+<br/>
+<%= link_to 'BACK', tutorials_path, class: 'btn btn-outline-primary' %>
+<%= link_to 'EDIT', edit_tutorial_path(@tutorial), class: 'btn btn-outline-primary' %> 
+<%= link_to 'HOME', home_path, class: 'btn btn-outline-primary'%>
+</div>
+

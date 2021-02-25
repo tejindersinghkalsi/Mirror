@@ -1,0 +1,15 @@
+<br/>
+<br/>
+<div class = "container" id = "new_error_form">
+<b><h4 style = "color:red">UPDATE E-00-<%= @tutorial.id %></h4></b>
+
+<%= render 'form', tutorial: @tutorial %>
+
+<br/>
+<br/>
+<%= link_to 'BACK', tutorials_path, class: 'btn btn-outline-primary' %>
+<%= link_to 'SHOW', @tutorial, class: 'btn btn-outline-primary' %>
+<%= link_to 'HOME', home_path, class: 'btn btn-outline-primary'%>
+
+
+</div>

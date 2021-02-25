@@ -1,0 +1,53 @@
+<%= form_with(model: tutorial, local: true) do |form| %>
+  <% if tutorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tutorial.errors.count, "error") %> prohibited this tutorial from being saved:</h2>
+
+      <ul>
+      <% tutorial.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="table table-dark table-hover">
+    <tr>
+  <div class="field">
+    <td colspan="1" ><%= form.label :title %></td>
+    <td><%= form.text_field :title, :size=>"100", placeholder: 'Enter Error Title...' %></td>
+  </div>
+</tr>
+
+<tr>
+  <div class="field">
+    <td colspan="1"><%= form.label :description %></td>
+    <td><%= form.text_area :description, cols: 80, rows: 7, placeholder: 'Describe the error...' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+   <td colspan="1"> <%= form.label :area %></td>
+    <td><%= form.text_area :area, cols: 80, rows: 2, placeholder: 'Enter the functionality to which this error is related to...'%></td>
+  </div>
+</tr>
+
+<tr>
+  <div class="field">
+    <td colspan="1"><%= form.label :command %></td>
+    <td><%= form.text_area :command, cols: 80, rows: 2, placeholder: 'Enter solution code...' %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <td colspan="1"><%= form.label :doc %></td>
+    <td><%= form.file_field :doc %></td>
+  </div>
+</tr>
+</table>
+<br/>
+  <div class="actions">
+  <%= form.submit 'SAVE ERROR', class: 'btn btn-success btn-block btn-sm' %>
+  </div>
+<hr id = "new_error_hr">
+<% end %>
