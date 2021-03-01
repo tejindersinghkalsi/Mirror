@@ -1,21 +1,29 @@
 <%= form_with(model: tutorial, local: true) do |form| %>
   <% if tutorial.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(tutorial.errors.count, "error") %> prohibited this tutorial from being saved:</h2>
-
-      <ul>
-      <% tutorial.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+      <% if tutorial.errors.any? %>
+    <% tutorial.errors.full_messages.each do |error| %>
+    <%= alert_generator error %>
+    <% end %>
   <% end %>
+  <% end %>
+
 
   <table class="table table-dark table-hover">
     <tr>
   <div class="field">
     <td colspan="1" ><%= form.label :title %></td>
     <td><%= form.text_field :title, :size=>"100", placeholder: 'Enter Error Title...' %></td>
+  </div>
+</tr>
+<tr>
+<td>Category</td> <td><%= form.select :name, '<option value="NOTES">NOTES</option><option value="ERROR">ERROR</option>'.html_safe %>
+</td>
+</tr>
+
+<tr>
+  <div class="field">
+    <td colspan="1"><%= form.label :function %></td>
+    <td><%= form.text_area :function, cols: 80, rows: 1, placeholder: 'Type NONE...for Errors...' %></td>
   </div>
 </tr>
 

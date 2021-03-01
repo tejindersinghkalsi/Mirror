@@ -12,12 +12,14 @@ class TutorialsController < ApplicationController
 
   # GET /tutorials/1
   def show
+    impressionist(@tutorial)
   end
 
   # GET /tutorials/new
   def new
     @tutorial = Tutorial.new
   end
+
 
   # GET /tutorials/1/edit
   def edit

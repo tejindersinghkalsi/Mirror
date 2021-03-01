@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+ <%= alerts %>
 <br/>
 <div class = "container" id ="show_error_con">
 <p style = "color: navy">
@@ -30,7 +30,7 @@
 
       <tr>
         <td><b>Total Views:</b></td>
-        <td><%= @tutorial.updated_at.strftime("%d-%B-%Y") %></td>
+        <td><%= @tutorial.impressionist_count %></td>
       </tr>
     </table>
   </div>
@@ -41,13 +41,16 @@
 <div class="card" id = "show_error_det">
   <div class="card-body">
   
-
+<% if @tutorial.doc.present? %>
       <p>
   <strong>Supporting Error Image:</strong>
   <div id = "img_box" >
   <img src="<%=(@tutorial.doc) %>" >
   </div>
       </p>
+      <%else%>
+      <p><b>IMAGE NOT FOUND</b></p>
+<%end%>
 
     <hr id = "partition_hr">
      

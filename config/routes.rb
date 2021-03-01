@@ -36,8 +36,7 @@ Rails.application.routes.draw do
   get 'expensereport/' => 'home#expensereport', as: 'expense'
   get 'bookmark/' => 'home#bookmark', as: 'bookmark'
   get 'custom/' => 'home#custom', as: 'custom'
- 
- 
+
   
  
   
