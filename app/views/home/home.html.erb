@@ -106,7 +106,7 @@
 <div id = "festive" class="img-fluid" ><img src="<%=(@festival.imggg) %>" ></div>
 </center>
 <%end%>
-<div class = "container">
+<div class = "container" id = "gim">
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -181,10 +181,10 @@
 
 <br/>
 <br/>
-<div class = "container" id="testing" >
+<div class = "container-fluid" id="testing" >
     <div class = "row">
 
-       <div class = "col-md-7" id = "notification_panel">
+       <div class = "col-md-8" id = "notification_panel">
 
             <%if @c.present? %>
             <% @c.each do |x,y| %>
@@ -209,11 +209,11 @@
      </div>
 
 
-<div class = "col-md-5" id = "feed_col">
+<div class = "col-md-4" id = "feed_col">
 <div class="vl" id ="news_vl">
-<div class="jumbotron jumbotron-fluid mw-100" id="news_jumbotron">
-  <div class="container" id = "news_jumbo_con">
-    <h3 class="display-6", style="color:green">MIRROR NEWS</h3>
+<div class="jumbotron jumbotron-fluid" id="news_jumbotron">
+  <div class="container-fluid" id = "news_jumbo_con">
+    <h3 class="display-6", style="color:white">MIRROR NEWS</h3>
     <h6>LAST UPDATED: <%= @word.updated_at.strftime("%d-%B-%Y") %></h6>
     <hr id = "news_hr">
     <p>
@@ -238,22 +238,23 @@
 <% end %>
 <br/>
 <br/>
+<br/>
 <div class = "row">
-<div class = "col-md-7">
-<h5 style="color:navy">TARGET SETTING FREQUENCY</h5>
+<div class = "col-md-8">
+<h5 style="color:navy"><b>TARGET SETTING FREQUENCY</b></h5>
 <br/>
 <%= line_chart current_user.targets.group_by_day(:created_at).count, colors: ["#49f149"] %>
 </div>
 
 <div class = "col scroll">
 
-<div class="card md-2">
-<div class="vl" id = "home_vl">
+<div class="card md-4">
+<div class="vl" id = "homes_vl">
     
       <div class="card-body">
        <h5 class="card-title" style="color:red;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="purple" class="bi bi-bag-check-fill" viewBox="0 2 22 16">
   <path fill-rule="evenodd" d="M5.5 3.5a2.5 2.5 0 0 1 5 0V4h-5v-.5zm6 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
-</svg>AVAILABLE ESTIMATES</h5>
+</svg><b>AVAILABLE ESTIMATES</b></h5>
         <hr>
        <% @estimates.each do |esti| %>
            
@@ -298,29 +299,26 @@
 
       </div>
 
-  
-</div>
-</div>
-</div>
 
-    <% trending = Story.maximum('impressions_count') %>
-
-    <% @trendingstory = Story.find_by(:impressions_count => trending) %>
+</div>
+</div>
+</div>
 <br/>
 <br/>
 
-<h5 style="color:navy">MY STORIES</h5>
+
+<h5 style="color:navy"><b>MY STORIES</b></h5>
 
 <div class="alert alert-success" role="alert" id = "trend">
 <b><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-suit-heart-fill" viewBox="0 1 16 18">
   <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-</svg> TRENDING:</b> <%= @trendingstory.title %> <%= link_to 'Click Here', story_url(@trendingstory) %>
+
 </div>
 <br/>
 <%= line_chart current_user.stories.group_by_day(:created_at).count, colors: ["#a14171"]  %>
 <br/>
 <br/>
-<h5 style="color:navy">MY EXPENDITURE LIMITS</h5>
+<h5 style="color:navy"><b>MY EXPENDITURE LIMITS</b></h5>
 <br/>
 <%= column_chart current_user.years.group(:name).sum(:limit), colors: ["#08088A", "#8A0829", "FF00FF"] %>
 <br/>

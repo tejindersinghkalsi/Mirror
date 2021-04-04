@@ -1,59 +1,84 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
-  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
-  # GET /questions
-  def index
-    @questions = Question.all
-  end
+    #Layout
+    layout :determine_layout
+    #Before-filters
+    before_action :set_question, only: [:show, :edit, :update, :destroy]
+    #Petergate authentication-accesses
+    access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
-  # GET /questions/1
-  def show
-  end
-
-  # GET /questions/new
-  def new
-    @question = Question.new
-  end
-
-  # GET /questions/1/edit
-  def edit
-  end
-
-  # POST /questions
-  def create
-    @question = Question.new(question_params)
-
-    if @question.save
-      redirect_to @question, notice: 'Question was successfully created.'
-    else
-      render :new
+    #Index action.
+    def index
+      @questions = Question.all
     end
-  end
-
-  # PATCH/PUT /questions/1
-  def update
-    if @question.update(question_params)
-      redirect_to @question, notice: 'Question was successfully updated.'
-    else
-      render :edit
+    #Show action.
+    def show
     end
-  end
+    #New action.
+    def new
+      @question = Question.new
+    end
+    #Edit action.
+    def edit
+    end
 
-  # DELETE /questions/1
-  def destroy
-    @question.destroy
-    redirect_to questions_url, notice: 'Question was successfully destroyed.'
-  end
+    #Create action. Works together with "New".
+    def create
+      @question = Question.new(question_params)
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
+      if @question.save
+        redirect_to @question, notice: 'Question was successfully created.'
+      else
+        render :new
+      end
+    end
+
+    #Update action.Works togrther with "Edit".
+    def update
+      if @question.update(question_params)
+        redirect_to @question, notice: 'Question was successfully updated.'
+      else
+        render :edit
+     end
+    end
+
+    #Destroy action. Works together with "Delete".
+    def destroy
+      @question.destroy
+      redirect_to questions_url, notice: 'Question was successfully destroyed.'
+    end
+
+    #Private
+
+    private
+    
     def set_question
       @question = Question.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    
     def question_params
       params.require(:question).permit(:ques, :optionone, :optiontwo, :optionthree, :optionfour, :Answer, solutions_attributes: [:id, :correctanswer, :_destroy])
     end
-end
+
+    #Layout method.
+    def determine_layout
+
+      case current_user.colour
+
+         when "orange"
+         "myhomefour"
+
+         when "black"
+         "myhomethree"
+
+         when "green"
+         "myhometwo"
+
+    
+        else
+        "myhome"
+      end
+    end
+
+end #End of Class.

@@ -1497,17 +1497,28 @@ a:hover, a:active, a:focus
 }
 #home_vl {
   border-left: 3px solid purple;
-   max-height:350px;
- padding-right: 0px;
+  max-height:350px;
+  padding-right: 0px;
   margin-right: 0px;
   margin-left: 0px;
 
+
+
+}
+
+#gim
+{
+ 
+  margin-left: 2%;
+  min-width: 98%;
 }
 #testing
 {
   
   padding-left: 0px;
   margin-left: 0px;
+ 
+  width: 100%;
 }
 #notification_panel
 {
@@ -1563,16 +1574,19 @@ a:hover, a:active, a:focus
     
     overflow: scroll;
  max-height:350px;
-    margin-left: 10px;
+    margin-left: 5px;
     padding-left: 10px;
     padding-top: 0px;
   margin-top:0px;
+  padding-right:0px;
+  min-width: 100%;
 
 }
 #news_jumbo_con
 {
   padding-top: 0px;
   margin-top:0px;
+
 }
 #feed_col
 {
@@ -1744,11 +1758,23 @@ a:hover, a:active, a:focus
 {
   width: 30%;
 }
+#res_body
+{
+  min-width: 98%;
+}
+#res_con
+{
+  min-width: 98%;
+}
 #show_itenary_heading
 {
   padding-left:0px;
   height: 30px;
   padding-top: 0px;
+}
+#new_kb_con
+{
+  min-width: 98%;
 }
 #ooi
 {
@@ -1874,10 +1900,7 @@ a:hover, a:active, a:focus
 #news_vl {
   border-left: 3px solid purple;
    max-height:300px;
-   width:490px;
- padding-right: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
+   width:100%;
 
 }
 
@@ -1887,12 +1910,7 @@ a:hover, a:active, a:focus
   
   padding:0px 15px;
 }
-#testing
-{
-  
-  padding-left: 0px;
-  margin-left: 0px;
-}
+
 #notification_panel
 {
   padding-right: 0px;
@@ -2554,6 +2572,10 @@ a:hover, a:active, a:focus
   background-color: navy;
   height: 2px;
 }
+#detailed_story
+{
+  min-width: 98%;
+}
 
 .container
 {
@@ -2563,6 +2585,10 @@ a:hover, a:active, a:focus
 #story_hr
 {
   background-color: navy;
+}
+#story_con
+{
+  min-width: 98%;
 }
 
 #story_title_section
@@ -2975,9 +3001,86 @@ a:hover, a:active, a:focus
 {
   background-color: purple;
 }
+#ques_con
+{
+  min-width:98%;
+}
+#detailed_quiz
+{
+  min-width:98%;
+}
+#new_quiz_con
+{
+  min-width:98%;
+}
+#detailed_convo
+{
+  min-width:98%;
+}
+#creating_new_year
+{
+  min-width:98%;
+}
+#es_det
+{
+  height: 10%;
+}
+#group_head
+{
+  height: 2%;
+}
+#new_head
+{
+  height: 2%;
+}
+#group_user
+{
+  height: 2%;
+}
+#homes_vl
+{
+  height:40%;
+}
+#new_convo
+{
+  min-width:98%;
+}
+#newgroup_target
+{
+  min-width: 98%;
+}
+#edit_con_es
+{
+  min-width:98%;
+}
+#my_emails
+{
+  min-width:98%;
+}
+#estimate_details
+{
+  min-width:98%;
+}
+#year_details
+{
+  min-width:98%;
+}
+#new_esti
+{
+  min-width:98%;
+}
+
+#docipedia_list
+{
+  min-width:98%;
+}
 #new_target
 {
-  width:100%;
+  min-width: 98%;
+}
+#kb_list
+{
+  min-width:98%;
 }
 #target_type_heading
 {
@@ -2986,7 +3089,22 @@ a:hover, a:active, a:focus
 }
   #target_details
   {
-   width:95%;
+   min-width:98%;
+  }
+
+  #my_expenses_list
+  {
+    min-width:98%;
+  }
+
+  #data
+  {
+    min-width:98%;
+  }
+
+  #list_of_stories
+  {
+    min-width:98%;
   }
 
   #link_for_creating_new_target
@@ -3542,18 +3660,21 @@ body:not(.modal){
   margin-top:0px;
   padding:5px;
   margin: 0px;
-padding: 0px;
+  padding: 0px;
   width:100%
   } 
-
-
+ 
+  #iten_con
+  {
+   min-width: 98%;
+  }
   #footer
   {
     height:30px;
     background-color:navy;
     margin-bottom:0px;
     padding-bottom:0px;
-
+    margin-top: 21%;
   }
 
 
