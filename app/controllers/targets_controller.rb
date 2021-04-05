@@ -31,7 +31,7 @@ class TargetsController < ApplicationController
                        
            
 
-                        if (@flag = ((q - m).to_i >= 0) && task.progress != 100)
+                        if (@flag = ((q - m).to_i >= 3) && task.progress != 100)
                           if (task.owner == current_user.id)
                              
                              @p << task.target_id
@@ -117,7 +117,7 @@ class TargetsController < ApplicationController
                        
            
 
-                        if (@flag = ((q - m).to_i >= 0) && task.progress != 100)
+                        if (@flag = ((q - m).to_i >= 3) && task.progress != 100)
 
                            if (task.owner == current_user.id)  
                              @e << task.target_id
