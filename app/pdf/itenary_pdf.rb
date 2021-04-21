@@ -9,7 +9,7 @@ class ItenaryPdf < Prawn::Document
     end
   
     def m_heading
-      text "MIRROR ITENARY", size: 30, :color => "0000ff"
+      text "MIRROR ITENERARY", size: 30, :color => "0000ff"
   
 
  
