@@ -1,4 +1,4 @@
-
+cc
 
 
 
@@ -6,8 +6,9 @@
   <div id = "bucket_list_main_img">
      <b><h3 class="fw-light" id = "heading_bucket_list"><%= current_user.heading %>...</h3></b>
 <br/>
-      <%= image_tag @u.headingimg.url, alt: 'MY BUCKET LIST', style: 'height:auto;width:100%;'%>
-
+<% if @u.headingimg.present? %>
+      <%= image_tag @u.headingimg.url, style: 'height:auto;width:100%;'%>
+<%end%>
 
   </div>
 <br/>

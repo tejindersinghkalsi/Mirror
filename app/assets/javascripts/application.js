@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
-//= require rails-ujs
 //= require chartkick
 //= require Chart.bundle
+//= require bootstrap-sprockets
+//= require rails-ujs
 //= require activestorage
 //= require popper
 //= require cocoon
