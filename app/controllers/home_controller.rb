@@ -1,12 +1,52 @@
 class HomeController < ApplicationController
-
+    
+    require 'json'
+    require 'httparty'
     #Layout
     layout :determine_layout
     #Before-filters
     before_action :authenticate_user!
     #Petergate authentication-accesses
-    access all: [:home, :accountsettings, :systemaccess, :custom, :expensereport, :targetreport, :bookmark, :yearreport]
+    access all: [:home, :accountsettings, :systemaccess, :custom, :expensereport, :targetreport, :bookmark, :news, :yearreport, :bucket_list, :set_bucket_list, :destinations]
   
+    def news
+      @word = Word.all.order("created_at DESC")
+
+      @latest = Word.last
+    end
+    def bucket_list
+
+      @bucket_list = Visit.where(user_id: current_user.id)
+      user = current_user.id
+      @u = User.find(user)  
+    end
+
+    def destinations
+
+      @m =  Visit.find(params[:m]) 
+      g = ENV.fetch('API_Key')
+
+      @q = @m.country.upcase
+      @response = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?input=#{@q}+tourist+destinations&language=en&key=#{g}")
+      @http_party_json = JSON.parse(@response.body)
+
+      @response_two = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?input=#{@q}+top+hotels+and+resorts&language=en&key=#{g}")
+      @http_party_json_two = JSON.parse(@response_two.body)
+
+      @response_three = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?input=#{@q}+restaurants&language=en&key=#{g}")
+      @http_party_json_three = JSON.parse(@response_three.body)
+
+      @response_four = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?input=#{@q}+airport&type=airport&language=en&key=#{g}")
+      @http_party_json_four = JSON.parse(@response_four.body)
+
+  
+
+    end 
+
+    def set_bucket_list
+     user = current_user.id
+      @u = User.find(user)
+    end 
 
     def accountsettings
       @user = current_user.id

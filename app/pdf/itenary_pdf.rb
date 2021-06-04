@@ -9,7 +9,7 @@ class ItenaryPdf < Prawn::Document
     end
   
     def m_heading
-      text "MIRROR ITENERARY", size: 30, :color => "0000ff"
+      text "MIRROR ITINERARY", size: 30, :color => "0000ff"
   
 
  
@@ -33,7 +33,7 @@ class ItenaryPdf < Prawn::Document
       text "DETAILS",style: :bold
        
       move_down 20
-        table [["NAME OF ITENARY",@itenary.planname],["TOTAL TRIP BUDGET (INR)", result ],["SCHEDULED START DATE",@itenary.start.to_s(:rfc822)]]
+        table [["NAME OF ITENERARY",@itenary.planname],["TOTAL TRIP BUDGET (INR)", result ],["SCHEDULED START DATE",@itenary.start.to_s(:rfc822)]]
       move_down 20
       stroke_horizontal_rule
       move_down 20

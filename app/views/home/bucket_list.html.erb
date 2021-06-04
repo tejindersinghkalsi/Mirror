@@ -1,0 +1,70 @@
+
+
+
+
+
+  <div id = "bucket_list_main_img">
+     <b><h3 class="fw-light" id = "heading_bucket_list"><%= current_user.heading %>...</h3></b>
+<br/>
+      <%= image_tag @u.headingimg.url, alt: 'MY BUCKET LIST', style: 'height:auto;width:100%;'%>
+
+
+  </div>
+<br/>
+  
+
+    <div class=".container-fluid" id = "listcon">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% @bucket_list.each do |mylist| %>
+
+     
+
+        <div class="col">
+          <div class="card shadow-sm">
+      
+           
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy="1em"><%= mylist.country.upcase %></text><text x="50%" y="80%" fill="#eceeef" dy="1em" id ="schedule_date">#<%= mylist.schedule.strftime("%d-%B-%Y") %></text></svg>
+            
+
+            <div class="card-body">
+             
+              <p class="card-text"><%= mylist.description %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                </div>
+                <small class="text-muted"><B>ADDED:</B> <%= mylist.created_at.strftime("%d-%B-%y") %></small>
+                <br/>
+
+
+              </div>
+            <br/>
+            <hr>
+<%= link_to "VIEW TOP DESTINATIONS", destinations_path(:m => mylist.id), class: "btn btn-sm btn-outline-info" %>
+            </div>
+          </div>
+          <br/>
+          <br/>
+        </div>
+
+        <%end%>
+
+      </div>
+
+      
+ 
+      <hr>
+
+
+  
+
+
+   <br/>
+
+    </div>
+ 
+
+
+
+   
+

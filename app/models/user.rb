@@ -13,8 +13,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
 
+  mount_uploader :headingimg, DocumentUploader
   
-
   validates_presence_of :name
   validates_presence_of :email
   validates_uniqueness_of :email
@@ -26,12 +26,18 @@ class User < ApplicationRecord
   has_many :feedbacks, dependent: :destroy
   has_many :researches, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :visits, dependent: :destroy
 
   acts_as_messageable
 
   accepts_nested_attributes_for :bookmarks,
                                  allow_destroy: :true, 
                                  reject_if: lambda{ |attrs| attrs['bname'].blank? }
+
+
+ accepts_nested_attributes_for :visits,
+                                 allow_destroy: :true, 
+                                 reject_if: lambda{ |attrs| attrs['country'].blank? }
 
 
   #Returning any kind of identification you want for the model

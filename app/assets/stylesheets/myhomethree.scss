@@ -1,9 +1,14 @@
 // Place all the styles related to the Communities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 @import "bootstrap";
 @import "gritter";
 @import "social-share-button";
+
+
+
 #application_name {
     background-color: navy;
     height: 1.5em;
@@ -11,7 +16,84 @@
     margin-bottom: 0px;
     color: white;
 }
+#heading_bucket_list
+{
+    color: navy;
+}
 
+#news_update_date
+{
+    color: black;
+    font-size: 12px;
+}
+#listcon
+{
+    
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-left:2%;
+
+}
+#new_news_container
+{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+#news_alert
+{
+    border-radius: 0px;
+    padding-left: 0px;
+}
+#arrangement
+{
+    padding:0px;
+    padding-right:0px;
+    margin:0px;
+    
+}
+
+#trip_date
+{
+    padding-left: 0px;
+}
+
+
+
+#first_column
+{
+    width: 80%;
+}
+#second_column
+{
+    width: 10%;
+}
+#third_column
+{
+    width: 10%;
+}
+
+#bucket_list_main_img
+{
+    width:100vw;
+    height:100vh;
+   margin-bottom: 0%;
+    overflow-y: hidden;
+    padding-bottom: 0px;
+    
+}
+#list_of_countries
+{
+   
+    padding-top: 0px;
+   
+}
+
+#bucket_list_info
+{
+    
+    width: 100%;
+}
 a:hover,
 a:active,
 a:focus {
@@ -19,12 +101,36 @@ a:focus {
 }
 
 #note {
-    background-color: violet;
+    
     color: black;
+    border-radius: 0px;
+}
+
+.bd-placeholder-img {
+        font-size: 3.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 7.5rem;
+        }
+      }
+#schedule_date
+{
+    font-size: 1.0rem;
 }
 
 #button_list {
     margin-left: 20px;
+}
+
+#bucket_list_id
+{
+    background-color: green;
 }
 
 #new_kb {
@@ -35,6 +141,13 @@ a:focus {
 #news_hr {
     background-color: white;
 }
+
+#scont {
+    
+    min-width : 100%;
+    
+}
+
 
 #application_name_two {
     background-color: green;
@@ -818,8 +931,15 @@ a:focus {
     float: left;
 }
 
+
+#inside_val
+{
+    padding-top:1%;
+}
+
 #year_name {
     color: black;
+    margin-top: 0px;
 }
 
 #year_lists {
@@ -860,7 +980,6 @@ a:focus {
     width: 100%;
 }
 
-@import "bootstrap";
 .jumbotron {
     background-color: navy;
     border-radius: 0px;
@@ -1106,11 +1225,6 @@ a:focus {
     padding-left: 2px;
 }
 
-// Place all the styles related to the Access controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-@import "bootstrap";
-@import "gritter";
 #available_estimate {
     background-color: grey;
     border-radius: 0px;
@@ -1374,12 +1488,32 @@ a:focus {
     padding-top: 0px;
 }
 
+
+#target_graph
+{
+    margin-top: 5%;
+}
+#story_graph
+{
+    margin-top: 10%;
+}
+
 #home_vl {
     border-left: 3px solid purple;
     max-height: 350px;
     padding-right: 0px;
     margin-right: 0px;
     margin-left: 0px;
+}
+
+#expenditure_graph
+{
+    margin-top: 10%;
+}
+#nvl{
+  border-left: 3px solid navy;
+  height: auto;
+  padding: 5px;
 }
 
 #gim {
@@ -1626,6 +1760,7 @@ a:focus {
     padding-left: 0px;
     height: 30px;
     padding-top: 0px;
+    border-radius: 0px;
 }
 
 #new_kb_con {
@@ -1640,6 +1775,8 @@ a:focus {
     padding-left: 0px;
     height: 30px;
     padding-top: 0px;
+    border-radius: 0px;
+    width: 100%;
 }
 
 #editcont {
@@ -3201,6 +3338,7 @@ body:not(.modal) {
 #savings_tab {
     padding: 0px;
     height: 30px;
+    border-radius: 0px;
 }
 
 #application_name_two {
@@ -3409,7 +3547,7 @@ a:focus {
     width: 100%;
 }
 
-@import "bootstrap";
+
 .jumbotron {
     background-color: navy;
     border-radius: 0px;

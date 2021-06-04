@@ -2,10 +2,18 @@
 <br/>
 
 <div class = "container" id = "new_esti">
+<%= link_to "MY BUCKET LIST", bucket_list_path %>
+<hr id = "bucket_list_id">
    <%= alerts %>
+
+
+
+
+ 
+
 	<div class = "row">
 	<div class = "col-md-7">
-<h3><b>NEW ESTIMATE</b></h3>
+<h4><b>NEW ESTIMATE</b></h4>
 <br/>
 <br/>
 
@@ -13,7 +21,7 @@
 </div>
 <div class = "col">
 
-       <h3><b>AVAILABLE ESTIMATES</b></h3>
+       <h4><b>AVAILABLE ESTIMATES</b></h4>
 	     <br/>
    
        <% @e.each do |estimate| %>

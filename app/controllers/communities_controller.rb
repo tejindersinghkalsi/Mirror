@@ -19,6 +19,7 @@ class CommunitiesController < ApplicationController
     def show
     end
    
+ 
     #New action.
     def new
       @community = Community.new

@@ -1,0 +1,117 @@
+
+<div class = "container-fluid" id ="api_response" >
+	<br/>
+	<h3 style="color:navy">EXPLORE <%= @m.country.upcase %></h3>
+	<br/>
+  <br/>
+
+  <% trim = @http_party_json_four["results"] %>
+
+<table class="table table-secondary table-striped">
+
+    <th scope="col">AIRPORT</th>
+  
+   
+    <% trim.each do |even| %>
+     <tr>
+     <td id = "first_column"> <%= even["name"] %></td>
+    
+</tr>
+    <%end%>
+
+</table>
+<br/>
+<br/>
+
+
+
+
+<% trimmed = @http_party_json["results"] %>
+
+  <table class="table table-success table-striped">
+
+  	<th scope="col">TOURIST ATTRACTION</th>
+      <th scope="col">RATING</th>
+      <th scope="col">TOTAL REVIEWS</th>
+   
+    <% trimmed.each do |event| %>
+     <tr>
+     <td id = "first_column"> <%= event["name"] %></td>
+      <td id = "second_column"><%= event["rating"] %></td>
+     <td id = "third_column"> <%= event["user_ratings_total"] %></td>
+</tr>
+    <%end%>
+
+</table>
+<br/>
+<br/>
+
+<h3 style="color:navy">MANAGE YOUR STAY IN <%= @m.country.upcase %></h3>
+<hr>
+
+<% trimmed_two = @http_party_json_two["results"] %>
+
+  <table class="table table-info table-striped">
+
+  	<th scope="col">HOTEL/RESORT</th>
+      <th scope="col">RATING</th>
+      <th scope="col">TOTAL REVIEWS</th>
+   
+    <% trimmed_two.each do |eventt| %>
+     <tr>
+     	<% if eventt["business_status"] == "OPERATIONAL"%>
+     <td id = "first_column"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="navy" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg> <%= eventt["name"] %></td>
+<%else%>
+<td id = "first_column"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-x-lg" viewBox="0 0 16 16">
+  <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+</svg> <%= eventt["name"] %></td>
+
+<%end%>
+
+      <td id = "second_column"><%= eventt["rating"] %></td>
+     <td id = "third_column"> <%= eventt["user_ratings_total"] %></td>
+</tr>
+
+    <%end%>
+</table>
+<br/>
+<br/>
+
+
+<h3 style="color:navy">TOP RESTAURANTS IN <%= @m.country.upcase %></h3>
+<hr>
+
+<% trimmed_three = @http_party_json_three["results"] %>
+
+  <table class="table table-secondary table-striped">
+
+    <th scope="col">RESTAURANT</th>
+      <th scope="col">RATING</th>
+      <th scope="col">TOTAL REVIEWS</th>
+   
+    <% trimmed_three.each do |eventtt| %>
+     <tr>
+      <% if eventtt["business_status"] == "OPERATIONAL"%>
+     <td id = "first_column"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="navy" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+</svg> <%= eventtt["name"] %></td>
+<%else%>
+<td id = "first_column"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-x-lg" viewBox="0 0 16 16">
+  <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+</svg> <%= eventtt["name"] %></td>
+
+<%end%>
+
+      <td id = "second_column"><%= eventtt["rating"] %></td>
+     <td id = "third_column"> <%= eventtt["user_ratings_total"] %></td>
+</tr>
+
+    <%end%>
+</table>
+
+<br/>
+
+
+</div>

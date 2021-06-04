@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :communities
   resources :years
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}, controllers: { registrations: "registrations" }
   resources :stories
   resources :targets
   root "welcome#welcome" 
@@ -36,6 +36,10 @@ Rails.application.routes.draw do
   get 'expensereport/' => 'home#expensereport', as: 'expense'
   get 'bookmark/' => 'home#bookmark', as: 'bookmark'
   get 'custom/' => 'home#custom', as: 'custom'
+  get 'bucket_list/' => 'home#bucket_list', as: 'bucket_list'
+  get 'set_bucket_list/' => 'home#set_bucket_list', as: 'set_bucket_list'
+  get 'destinations' => 'home#destinations', as: 'destinations'
+  get 'news' => 'home#news', as: 'news'
 
   
  

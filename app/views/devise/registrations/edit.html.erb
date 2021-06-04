@@ -75,7 +75,7 @@
 <br/>
 <center>
   <div class="actions">
-    <%= f.submit "UPDATE MY CREDENTIALS", class: 'btn btn-info' %>
+    <%= f.submit "UPDATE MY CREDENTIALS", class: 'btn btn-sm btn-info' %>
   </div>
 <% end %>
 </center>
@@ -85,10 +85,10 @@
 <h2 style="color:red">DELETE MY ACCOUNT</h2>
 <br/>
 <br/>
-<p><%= button_to "DELETE", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
+<p><%= button_to "DELETE", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-sm btn-danger' %></p>
 <br/>
-<%= link_to 'HOME', home_path, class: 'btn btn-outline-primary' %>
-<%= link_to 'CONTACT SUPPORT', conversations_path, class: 'btn btn-outline-primary' %>
+<%= link_to 'HOME', home_path, class: 'btn btn-sm btn-outline-primary' %>
+<%= link_to 'CONTACT SUPPORT', conversations_path, class: 'btn btn-sm btn-outline-primary' %>
 <br/>
 <br/>
 (*To contact support, select "<b>Tejinder Kalsi</b>" as the receipent.)

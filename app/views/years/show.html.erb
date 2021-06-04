@@ -13,7 +13,7 @@
 	 <%= alerts %>
 
 	 <div class="card border-secondary mb-3" style="max-width: 70rem;" >
-  <div class="card-header" id = "year_n"><h2><b>YEAR: <%= @year.name %></b></h2></div>
+  <div class="card-header" id = "year_n"><h3 id = "inside_val"><b>YEAR: <%= @year.name %></b></h3></div>
 </div>
 <hr>
 <div class="alert alert-info" role="alert" id = "savings_tab">
@@ -26,7 +26,7 @@
 <% tt = (sav*12) %>
 <% avail = (tt - @sum) %>
 
- 
+ <br/>
 <div class = "row" id ="list_r">
 
 <br/>

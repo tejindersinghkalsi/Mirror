@@ -2,10 +2,14 @@
 <%= alerts %>
 <br/>
 <br/>
-<div class ="container" id= "editcont">
+<div class ="container" id= "scont">
 
+
+  <div class = row>
+
+<div class = "col-md-8">
 <div class="alert alert-success" role="alert" id = "show_itenary_heading">
-  <b>ITENARY : <%= @itenary.planname %></b>
+  <b>ITENERARY : <%= @itenary.planname %></b>
 </div>
 <br/>
 <br/>
@@ -35,7 +39,7 @@
       <div class="p-3 border bg-light">BUDGET: <%= result%> </div>
     </div>
     <div class="col">
-      <div class="p-3 border bg-light"><center><%= link_to "PRINT ITENARY", itenary_path(@itenary, format: "pdf") %></center></div>
+      <div class="p-3 border bg-light"><center><%= link_to "PRINT ITENERARY", itenary_path(@itenary, format: "pdf") %></center></div>
     </div>
 
 </div>
@@ -55,9 +59,9 @@
   <thead>
     <tr>
       <th scope="col">DATE</th>
-      <th scope="col">ACTIVITY</th>
+      <th scope="col">LOCATION</th>
       <th scope="col">MODE OF TRAVEL</th>
-      <th scope="col">DISTANCE</th>
+      <th scope="col">PLANNED ACTIVITY</th>
       <th scope="col">STAY</th>
     </tr>
   </thead>
@@ -66,9 +70,9 @@
     <tr>
       
       <td><%= t.begin.to_s(:rfc822) %></td>
-      <td><%= t.activity %></td>
+      <td><%= t.location.upcase %></td>
       <td><%= t.modeoftravel %></td>
-      <td><%= t.distance %></td>
+      <td><%= t.activity %></td> 
       <td><%= t.stay %></td>
        
     </tr>
@@ -81,4 +85,21 @@
 <%= link_to 'EDIT', edit_itenary_path(@itenary), class: "btn btn-outline-primary" %> 
 
 
+</div>
+
+
+<div class = "col-md-4">
+
+
+
+</p>
+<br/>
+<br/>
+<br/>
+
+
+
+
+</div>
+</div>
 </div>

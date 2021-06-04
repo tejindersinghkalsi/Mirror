@@ -12,7 +12,7 @@
                 <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
                   
-          <%= link_to "PROFILE", accountsettings_path %>
+              <%= link_to "PROFILE", accountsettings_path %>
                   
                 <hr id ="settings">
               </li>
@@ -24,30 +24,28 @@
               </li>
               <%else%>
               <li class="nav-item">
-    
-                  SYSTEM ACCESS 
-            
+
+                SYSTEM ACCESS
+              
                 <hr id ="settings">
               </li>
               <%end%>
               <li class="nav-item">
                 <%= link_to "CUSTOM", custom_path %>
                 <hr id ="settings">
-              </li>  
-
-                <li class="nav-item">
+              </li>
+              
+              <li class="nav-item">
                 <%= link_to "SET BUCKET LIST", set_bucket_list_path %>
                 <hr id ="settings">
               </li>
-            
             </ul>
           </div>
         </nav>
 
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2" style="color:maroon" >PROFILE</h1>
+            <h1 class="h2" style="color:maroon" >SET YOUR BUCKET LIST</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                
@@ -56,68 +54,48 @@
             </div>
 
           </div>
-          <table class= "table table-success table-info">
-  
-  <tbody>
-    <tr>
-      <td><b>Name:-</b></td>
-      <% z = @user %>
-      <% a = User.find(z) %>
-      <td><%= a.name %></td>
-     
-    </tr>
-    <tr>
-      <td><b>Email:-</b></td>
-      <td><%= a.email %></td>
-     
-    </tr>
 
-    <tr>
-      <td><b>Joined On:-</b></td>
-      <td><%= a.created_at.strftime("%d-%b-%Y") %></td>
-     
-    </tr>
+          <div class="container" id = "arrangement">
+          <h6><b>*Add city names to the list for more accurate results.</b></h6>
 
-    <tr>
-      <td><b>Last Updated:-</b></td>
-      <td><%= a.updated_at.strftime("%d-%b-%Y") %></td>
-     
-    </tr>
 
-     <tr>
-      <td><b>Access:- </b></td>
-      <% r = a.roles %>
-      <td><%= r[0] %></td> 
-    
 
-     
-    </tr>
-    
-    <tr>
-      <td><b>Total Logins:-</b></td>
-      <td><%= a.sign_in_count %></td>
-     
-    </tr>
+        <%= form_for @u, url: registration_path(@u) do |f| %>
+         
+         <table>
+         <br/>
+<br/>
+<br/>
+<div>
+  <%= link_to_add_association 'Add Location', f, :visits, class: 'btn btn-sm btn-outline-success' %>
 
-    <tr>
-      <td><b>Last Login On:-</b></td>
-      <td><%= a.last_sign_in_at.strftime("%d-%b-%Y") %></td>
-     
-    </tr>
+ 
+</div>
 
-    <tr>
-      <td><b>Journal Subscription:-</b></td>
-      <% if a.subscribe == "YES" %>
-      <td>YES</td>
-      <%else%>
-      <td>NO</td>
-      <%end%>
-     
-    </tr>
+ <div>
+  <br/><b>Password to confirm:</b></td><td> <%= f.password_field :current_password %><br/>
+<br/>
+</div>
+<br/>
 
-  </tbody>
-</table>
+<hr>
 
+
+
+   </div>
+         </div>
+
+      </table>
+
+          <br/>
+          <br/>
+          <hr id = "settt">
+         <div class="actions">
+    <%= f.submit "ADD TO MY BUCKET LIST", class: 'btn btn-info btn-sm' %>
+  </div>
+
+         <%end%>
+          
           
         </main>
       </div>

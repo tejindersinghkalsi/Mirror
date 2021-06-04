@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_21_071531) do
+ActiveRecord::Schema.define(version: 2021_05_31_023425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -184,6 +184,8 @@ ActiveRecord::Schema.define(version: 2021_04_21_071531) do
     t.string "calender"
     t.integer "related"
     t.string "st"
+    t.decimal "lattitude"
+    t.decimal "longitude"
     t.index ["estimate_id"], name: "index_itenaries_on_estimate_id"
   end
 
@@ -407,6 +409,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_071531) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "itenary_id"
+    t.string "location"
     t.index ["itenary_id"], name: "index_subitenaries_on_itenary_id"
   end
 
@@ -487,8 +490,21 @@ ActiveRecord::Schema.define(version: 2021_04_21_071531) do
     t.string "colour", default: "blue"
     t.string "theme", default: "classic"
     t.string "branding", default: "MIRROR"
+    t.string "headingimg"
+    t.string "heading", default: "MY BUCKET LIST"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.string "country"
+    t.text "description"
+    t.date "schedule"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.string "img"
+    t.index ["user_id"], name: "index_visits_on_user_id"
   end
 
   create_table "words", force: :cascade do |t|
@@ -542,5 +558,6 @@ ActiveRecord::Schema.define(version: 2021_04_21_071531) do
   add_foreign_key "tasks", "targets"
   add_foreign_key "topics", "users"
   add_foreign_key "tours", "estimates"
+  add_foreign_key "visits", "users"
   add_foreign_key "years", "users"
 end

@@ -1,0 +1,31 @@
+<div class = ".container-fluid" id = "new_news_container">
+
+<br/>
+<br/>
+<div class="alert alert-success" role="alert" id = "news_alert">
+  <h4 class="alert-heading">MIRROR - New features and updates !</h4>
+
+   <h6 id = "news_update_date"><b>LAST UPDATED: <%= @latest.updated_at.strftime("%d-%B-%Y") %></b></h6>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<% @word.each do |word| %>
+<div class="vl" id = "nvl">
+<p><b>RELEASE:</b> <%= word.wordtitle.upcase %></b></h4>
+
+	 <h6 id = "news_update_date"><b>DATE: <%= word.created_at.strftime("%d-%B-%Y") %></b></h6>
+</p>
+
+<p>
+  <%= markdown (word.meaning) %>
+</p>
+</div>
+<br/>
+<hr>
+<%end%>
+</div>

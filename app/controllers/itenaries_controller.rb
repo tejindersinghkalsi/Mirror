@@ -1,5 +1,7 @@
 class ItenariesController < ApplicationController
-
+    
+    require 'json'
+    require 'httparty'
     #Layout
     layout :determine_layout
     #Before-filters
@@ -85,7 +87,7 @@ class ItenariesController < ApplicationController
 
     
     def itenary_params
-      params.require(:itenary).permit(:start, :planname, :calender, :st, :related, subitenaries_attributes: [:id, :begin, :modeoftravel, :activity, :distance, :stay, :_destroy])
+      params.require(:itenary).permit(:start, :planname, :calender, :longitude, :lattitude, :st, :related, subitenaries_attributes: [:id, :begin, :modeoftravel, :location, :activity, :distance, :stay, :_destroy])
     end
 
     #Layout method.
