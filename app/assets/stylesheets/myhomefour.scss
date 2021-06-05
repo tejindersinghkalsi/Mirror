@@ -9,6 +9,8 @@
 
 
 
+
+
 #application_name {
     background-color: navy;
     height: 1.5em;
@@ -26,10 +28,6 @@
     color: black;
     font-size: 12px;
 }
-#trend
-{
-    border-radius: 0px;
-}
 #listcon
 {
     
@@ -37,6 +35,33 @@
   margin-right: 2%;
   padding-left:2%;
 
+}
+
+#headingcontainer {
+  position: relative;
+  text-align: center;
+  color: black;
+  height: auto;
+ width: 100vw;
+    max-width: 100vw;
+   
+  padding-left: 0px;
+}
+
+
+.bottom-left {
+font-weight: bold;
+  font-size:40px;
+  position: absolute;
+  bottom: 260px;
+  left: 16px;
+  background-color: white;
+
+}
+
+#trend
+{
+    border-radius: 0px;
 }
 #new_news_container
 {
@@ -66,15 +91,15 @@
 
 #first_column
 {
-    width: 80%;
+    width: 70%;
 }
 #second_column
 {
-    width: 10%;
+    width: 15%;
 }
 #third_column
 {
-    width: 10%;
+    width: 15%;
 }
 
 #bucket_list_main_img
@@ -1193,6 +1218,7 @@ a:focus {
     height: 30px;
     padding-top: 0px;
     padding-left: 2px;
+    border-radius: 0px;
 }
 
 #new_error_form {
@@ -1206,6 +1232,8 @@ a:focus {
 #stats_container {
     margin-left: 5%;
     padding: 0px;
+    width: 90vw;
+    max-width: 90vw;
 }
 
 #feedback_form {
@@ -1223,7 +1251,7 @@ a:focus {
 }
 
 #my_feedback_count {
-    width: 75%;
+    width: 100%;
     height: 30px;
     padding-top: 1px;
     padding-left: 2px;
