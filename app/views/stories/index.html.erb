@@ -28,19 +28,41 @@
         <div class="col-md-8 blog-main">
           <h3 class="pb-3 mb-4 font-bold">
         
-            <h5><%= link_to 'New Story', new_story_path , class: 'btn btn-sm btn-outline-secondary' %></h5>
+            <h5> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="navy" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+  <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
+</svg>  <%= link_to 'New Story', new_story_path , class: 'btn btn-sm btn-outline-secondary' %></h5>
           
             <hr id= "aboutafterline" >
           <div class="blog-post">
+            <p><h5 style="color:navy;"><b>-- public stories --</p></h5></b>
+            <br/>
             <%= render @stories %>
 
+
               <br/>
-              <br/>
-              <br/>
-              <br/>
+          
             
             <%= paginate @stories, :container => false %>
-      
+         
+
+
+          <p><h5 style="color:navy;"><b>-- my private stories --</p></h5></b>
+          <br/>
+          <% @private_stories.each do |story| %>
+          <h4 class="blog-post-title" style="color:purple"><%= story.title %></h4>
+            <p id = "story_details" class="btn btn-outline-info btn-sm"><b>Posted:</b><%= distance_of_time_in_words(story.created_at, Time.now) %> ago</p>
+            <p id = "story_details" class="btn btn-outline-info btn-sm"><b>Last Edited:</b><%= distance_of_time_in_words(story.updated_at, Time.now) %> ago</p>
+            <p id = "story_details" class="btn btn-outline-info btn-sm"><b>Total Views:</b><%= story.impressionist_count %></p>
+            <br/>
+            <br/>
+            <%= link_to 'READ STORY',  story, class: 'btn btn-outline-success btn-sm' %>
+            <% if story.user_id == current_user.id %>
+            <%= link_to 'UPDATE STORY',edit_story_path(story), class: 'btn btn-outline-warning btn-sm' %>
+            <% end %>
+            <hr>
+             <%end%>
+
+             <%= paginate @private_stories, :container => false %>
         <br/>
         <br/>
         <br/>

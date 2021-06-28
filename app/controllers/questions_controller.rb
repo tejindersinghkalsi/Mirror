@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
 
     #Layout
     layout :determine_layout
+    before_action :authenticate_user!
     #Before-filters
     before_action :set_question, only: [:show, :edit, :update, :destroy]
     #Petergate authentication-accesses

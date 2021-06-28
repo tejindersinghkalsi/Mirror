@@ -54,9 +54,9 @@ class ItenaryPdf < Prawn::Document
 
 
     def line_item_rows
-      [["Date", "Activity Name", "Mode of Travel", "Distance (Kms.)", "Stay (Days)"]] +
+      [["Date", "Location", "Activity", "Mode of Travel", "Stay (Days)"]] +
       @itenary.subitenaries.map do |item|
-        [item.begin.to_s(:rfc822),item.activity, item.modeoftravel, item.distance, item.stay]
+        [item.begin.to_s(:rfc822),item.location, item.activity, item.modeoftravel, item.stay]
       end
     end
 

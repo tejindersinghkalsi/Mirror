@@ -6,15 +6,15 @@
   <% end %>
 
   <div class="form-group">
-  
-   <%= form.text_field :title, placeholder: 'Story title...', :size => 70, class: 'form-content' %>
+   <p><b>NAME:</b></p>
+   <%= form.text_field :title, placeholder: 'Story title...', :size => 80, class: 'form-content' %>
   </div>
-  <br/>
-  <br/>
+  
 
 
   <div class="form-group">
-   <%= form.label :topic_id %>
+    <p><b>SELECT TOPIC:</b></p>
+   <b><% form.label :topic_id %></b>
    <%= form.collection_select(:topic_id, Topic.all, :id, :category,
 
                           {
@@ -24,37 +24,45 @@
                           class: "form-group"
                           )%>
   </div>
-  <br/>
-  <br/>
+
   <div class="form-group">
+    <p><b>ADD DESCRIPTION:</b></p>
     <%= form.text_area :body, placeholder: 'Add content...', rows: 10, cols: 90, class: 'form-content' %>
     
   </div>
-  <hr id = "backg">
-  <p><b>Upload Images:</b></p>
+  
+  <p><b>UPLOAD IMAGES:</b></p>
+  <b><h5 style="font-size:10px">(Details: Order-> Supporting image will be displayed at the bottom.)</h5></b>
   <br>
   <div class = "row" >
     <div class = "col-md-2">
   <div class="form-group">
-  <label class = 'btn btn-outline-warning'>
-    Upload Image<%= form.file_field :Attachment, style: 'display: none;' %>
+  <label class = 'btn btn-sm btn-outline-warning'>
+    MAIN IMAGE<%= form.file_field :Attachment, style: 'display: none;' %>
   </label>
 
   </div>
 </div>
 <div class = "col">
   <div class="form-group">
-  <label class = 'btn btn-outline-warning'>
-    Supporting Image<%= form.file_field :Img, style: 'display: none;' %>
+  <label class = 'btn btn-sm btn-outline-warning'>
+    SUPPORTING IMAGE<%= form.file_field :Img, style: 'display: none;' %>
   </label>
 
   </div>
 </div>
 </div>
-<hr  id = "backg">
+
+<div class="form-group">
+ <p><b>ACCESS:</b></p>
+ <b><h5 style="font-size:10px">(*To mark story as private, enter "PRIVATE" in Access.)</h5></b>
+   <%= form.text_field :access, class: 'form-content' %>
+
+  </div>
+
   <br/>
   <br/>
   <div class="actions">
-     <%= form.submit 'PUBLISH STORY', class: 'btn btn-primary' %>
+     <%= form.submit 'PUBLISH STORY', class: 'btn btn-sm btn-block btn-primary' %>
   </div>
 <% end %>

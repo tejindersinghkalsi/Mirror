@@ -1,4 +1,5 @@
 class ToursController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_tour, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 

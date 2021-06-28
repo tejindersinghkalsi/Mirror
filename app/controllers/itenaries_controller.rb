@@ -4,6 +4,7 @@ class ItenariesController < ApplicationController
     require 'httparty'
     #Layout
     layout :determine_layout
+    before_action :authenticate_user!
     #Before-filters
     before_action :set_itenary, only: [:show, :edit, :update, :destroy]
     #Petergate authentication-accesses

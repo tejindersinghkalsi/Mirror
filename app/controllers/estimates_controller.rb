@@ -2,6 +2,7 @@ class EstimatesController < ApplicationController
     
     #Layout 
     layout :determine_layout
+    before_action :authenticate_user!
 
     #Before-filters
     before_action :set_estimate, only: [:show, :edit, :update, :destroy]

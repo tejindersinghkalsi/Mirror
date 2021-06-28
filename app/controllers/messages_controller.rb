@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
 
 	#Before-filters
 	before_action :set_conversation
+	before_action :authenticate_user!
 
 	def create
 		receipt = current_user.reply_to_conversation(@conversation, params[:body])

@@ -9,16 +9,13 @@
 
 <div class = "col-md-8">
 <div class="alert alert-success" role="alert" id = "show_itenary_heading">
-  <b>ITENERARY : <%= @itenary.planname %></b>
+  <b>ITINERARY : <%= @itenary.planname %></b>
 </div>
 <br/>
 <br/>
   <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
     <div class="col">
       <div class="p-3 border bg-light">ACTIVITIES: <%= @itenary.subitenaries.count(:activity) %></div>
-    </div>
-    <div class="col">
-      <div class="p-3 border bg-light">TOTAL KMS: <%= @itenary.subitenaries.sum(:distance) %></div>
     </div>
     <div class="col">
       <div class="p-3 border bg-light">TOTAL STAY: <%= @itenary.subitenaries.sum(:stay) %></div>
@@ -39,7 +36,7 @@
       <div class="p-3 border bg-light">BUDGET: <%= result%> </div>
     </div>
     <div class="col">
-      <div class="p-3 border bg-light"><center><%= link_to "PRINT ITENERARY", itenary_path(@itenary, format: "pdf") %></center></div>
+      <div class="p-3 border bg-light"><center><%= link_to "PRINT ITINERARY", itenary_path(@itenary, format: "pdf") %></center></div>
     </div>
 
 </div>
@@ -88,11 +85,6 @@
 </div>
 
 
-<div class = "col-md-4">
-
-
-
-</p>
 <br/>
 <br/>
 <br/>

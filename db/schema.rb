@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_023425) do
+ActiveRecord::Schema.define(version: 2021_06_27_171413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -184,7 +184,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_023425) do
     t.string "calender"
     t.integer "related"
     t.string "st"
-    t.decimal "lattitude"
+    t.decimal "latitude"
     t.decimal "longitude"
     t.index ["estimate_id"], name: "index_itenaries_on_estimate_id"
   end
@@ -396,6 +396,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_023425) do
     t.string "string"
     t.string "Img"
     t.integer "impressions_count", default: 0
+    t.string "access", default: "PUBLIC"
     t.index ["topic_id"], name: "index_stories_on_topic_id"
     t.index ["user_id"], name: "index_stories_on_user_id"
   end

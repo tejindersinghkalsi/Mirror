@@ -7,7 +7,9 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.recent.page(params[:page])
+    @stories = (Story.where(access: "PUBLIC")).recent.page(params[:page])
+    @PVT = (Story.where(user_id: current_user.id))
+    @private_stories = (@PVT.where(access: "PRIVATE")).recent.page(params[:page])
     @tweets = SocialTool.twitter_search
     @topics = Topic.all
   end
@@ -78,7 +80,7 @@ class StoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def story_params
-      params.require(:story).permit( :title, :body, :topic_id, :user_id, :Attachment )
+      params.require(:story).permit( :title, :access, :body, :topic_id, :user_id, :Attachment )
     end
     def determine_layout
 

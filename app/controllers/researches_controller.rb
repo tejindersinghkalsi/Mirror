@@ -1,5 +1,6 @@
 class ResearchesController < ApplicationController
-
+    
+    before_action :authenticate_user!
     before_action :set_research, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
     layout :determine_layout
