@@ -252,7 +252,7 @@
 
 
 <h5 style="color:navy" id ="story_graph"><b>MY STORIES</b></h5>
-  <% trending = Story.maximum('impressions_count') %>
+  <% trending = Story.maximum('impressions_count') and Story.where(access: "PUBLIC") %>
 
     <% @trendingstory = Story.find_by(:impressions_count => trending) %>
   

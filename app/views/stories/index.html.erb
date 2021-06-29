@@ -32,9 +32,12 @@
   <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
 </svg>  <%= link_to 'New Story', new_story_path , class: 'btn btn-sm btn-outline-secondary' %></h5>
           
-            <hr id= "aboutafterline" >
+            
           <div class="blog-post">
-            <p><h5 style="color:navy;"><b>-- public stories --</p></h5></b>
+            <div class="alert alert-primary" role="alert" id = "public_story_heading">
+<h5 style="color:navy;"><b>PUBLIC STORIES</h5></b>
+</div>
+            <hr id= "aboutafterline" >
             <br/>
             <%= render @stories %>
 
@@ -44,9 +47,13 @@
             
             <%= paginate @stories, :container => false %>
          
+<br/>
+<br/>
 
-
-          <p><h5 style="color:navy;"><b>-- my private stories --</p></h5></b>
+           <div class="alert alert-primary" role="alert" id = "public_story_heading">
+<h5 style="color:navy;"><b>MY STORIES</h5></b>
+</div>
+            <hr id= "aboutafterline" >
           <br/>
           <% @private_stories.each do |story| %>
           <h4 class="blog-post-title" style="color:purple"><%= story.title %></h4>

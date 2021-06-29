@@ -28,6 +28,12 @@
     margin-left: 3%;
 }
 
+#public_story_heading
+{
+    padding-top:2px;
+    border-radius: 0px;
+    padding-left: 0px;
+}
 #edit_story_alert
 {
     border-radius: 0px;
@@ -2638,6 +2644,7 @@ a:focus {
 #story_details {
     font-size: small;
     color: black;
+    border-radius: 0px;
 }
 
 #aboutafterline {
