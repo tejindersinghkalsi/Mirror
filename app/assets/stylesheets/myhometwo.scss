@@ -28,6 +28,30 @@
     margin-left: 3%;
 }
 
+#bookmark_alert
+{
+    border-radius: 0px;
+}
+
+#bug_index_alert
+{
+    padding-left:0px;
+    border-radius: 0px;
+    height:15px;
+    margin-top:0px;
+
+
+}
+
+#bug_index
+{
+    margin-left:3%;
+}
+#bug_container
+{
+    margin-left:3%;
+}
+
 #public_story_heading
 {
     padding-top:2px;
@@ -272,7 +296,7 @@ a:focus {
     background-color: navy;
     margin-bottom: 0px;
     padding-bottom: 0px;
-    margin-top: 180px;
+ 
 }
 
 #footer_text {

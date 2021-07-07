@@ -8,7 +8,7 @@ class DocipediasController < ApplicationController
     
     #Index action.
     def index
-  	   @targets = (Target.where(user_id: current_user.id) and Target.where.not(doc: nil)).page(params[:page])
+  	   @targets = (Target.where(Target.where.not(doc: nil) and (user_id: current_user.id)).page(params[:page])
     end
 
     #Layout method

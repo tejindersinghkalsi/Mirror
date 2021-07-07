@@ -50,7 +50,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2" style="color:maroon" >CUSTOM SETTINGS</h1>
+            <h1 class="h2" style="color:maroon" >SET ACCOUNT BOOKMARKS</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
                
@@ -61,45 +61,33 @@
           </div>
 
           <div class="container" id = "arrangement">
-            <p><b>AVAILABLE COLOURS</b></p>
-  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-    <div class="col">
-      <div class="p-3 border" id = "ob"><b>Ocean Blue</b></div>
-    </div>
-    <div class="col">
-      <div class="p-3 border" id = "pg" ><b>Parrot Green</b></div>
-    </div>
-    <div class="col">
-      <div class="p-3 border" id = "db"><b>Dense Black</b></div>
-    </div>
-    <div class="col">
-      <div class="p-3 border" id = "so"><b>Sun Orange</b></div>
-    </div>
-  </div>
-<hr id = "customm">
+            <h6><b>*Bookmarks will be displayed at Homepage.</b></h6>
+  
 
-        <%= form_for @u, url: registration_path(@u) do |f| %>
+               <%= form_for @u, url: registration_path(@u) do |f| %>
          
          <table>
-          <tr>
-          <td><b>Select Colour:</b></td> <td><%= f.select :colour, '<option value="blue">Ocean Blue</option><option value="green">Parrot Green</option><option value="black">Dense Black</option><option value="orange">Sun Orange</option>'.html_safe %></td>
-          </tr>
-          <br/>
-          <tr>
-          <td><b>Set Application Name:</b></td><td> <%= f.text_field :branding %></td>
-         </tr>
-          <br/>
-          <tr>
-          <td><b>Bucket List Page:</b></td><td> <%= f.text_field :heading %></td>
-        </tr>
-            <br/>
-            <tr>
-          <td><b>Bucket List Image:</b></td><td> <%= f.file_field :headingimg %></td>
-        </tr>
-          <br/>
-          <tr>
-          <td><b>Password to confirm:</b></td><td> <%= f.password_field :current_password %></td>
-        </tr>
+         <br/>
+<br/>
+<br/>
+<div>
+  <%= link_to_add_association 'Add Bookmark', f, :bookmarks, class: 'btn btn-sm btn-outline-success' %>
+
+ 
+</div>
+
+ <div>
+  <br/><b>Password to confirm:</b></td><td> <%= f.password_field :current_password %><br/>
+<br/>
+</div>
+<br/>
+
+<hr>
+
+
+
+   </div>
+         </div>
 
       </table>
 
@@ -107,10 +95,11 @@
           <br/>
           <hr id = "settt">
          <div class="actions">
-    <%= f.submit "UPDATE MY CREDENTIALS", class: 'btn btn-info btn-sm' %>
+    <%= f.submit "SAVE BOOKMARKS", class: 'btn btn-info btn-sm' %>
   </div>
 
          <%end%>
+          
           
           
         </main>

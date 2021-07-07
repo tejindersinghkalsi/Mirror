@@ -1,0 +1,22 @@
+
+<div class="nested-fields">
+          <div class="form-group">
+
+             <div>
+                <%= link_to_remove_association 'Remove Bookmark', f, class: 'btn btn-outline-danger btn-sm' %>
+             </div>
+
+             <br/>
+               
+             <div class="form-group">
+              <%= f.text_field :bname, placeholder:"Add Bookmark link", class: 'form-control'%>
+             </div>
+              
+
+             <div class="form-group">
+               <%= f.text_area :dname, placeholder:"Bookmark to be displayed as...", class: 'form-control'%>
+             </div>
+
+      
+             </div>
+</div>

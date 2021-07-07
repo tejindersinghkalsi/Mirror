@@ -11,18 +11,16 @@ class HomeController < ApplicationController
   
     def news
       @word = Word.all.order("created_at DESC")
-
       @latest = Word.last
     end
-    def bucket_list
 
+    def bucket_list
       @bucket_list = Visit.where(user_id: current_user.id)
       user = current_user.id
       @u = User.find(user)  
     end
 
     def destinations
-
       @m =  Visit.find(params[:m]) 
       g = ENV.fetch('API_Key')
 
@@ -38,13 +36,15 @@ class HomeController < ApplicationController
 
       @response_four = HTTParty.get("https://maps.googleapis.com/maps/api/place/textsearch/json?input=#{@q}+airport&type=airport&language=en&key=#{g}")
       @http_party_json_four = JSON.parse(@response_four.body)
-
-  
-
     end 
 
+    def bookmark
+      user = current_user.id
+      @u = User.find(user)
+    end
+
     def set_bucket_list
-     user = current_user.id
+      user = current_user.id
       @u = User.find(user)
     end 
 
@@ -87,29 +87,30 @@ class HomeController < ApplicationController
 
   	  @user_targets.each do |target|
 
-  	 	  target.tasks.each do |task|
+  	 	     target.tasks.each do |task|
          
-          q = Date.today
-          z = Time.now
-          mm = task.updated_at
-          r = task.dateofcompletion
+                q = Date.today
+                z = Time.now
+                mm = task.updated_at
+                r = task.dateofcompletion
            
 
-          if (@flag = ((r-q).to_i >= 1)) 
+                if (@flag = ((r-q).to_i >= 1)) 
 
-            if (task.owner == current_user.id)
+                        if (task.owner == current_user.id)
                   
-              @s << task.target_id
-              @w << task.name
-              @ff = @s.zip(@w)
-              @c = Kaminari.paginate_array(@ff).page(params[:page]).per(2)
+                                @s << task.target_id
+                                @w << task.name
+                                @ff = @s.zip(@w)
+                                @c = Kaminari.paginate_array(@ff).page(params[:page]).per(2)
                   
+                        end
+                
+                end
+
             end
-          end
 
-        end
-
-     end 
+       end 
      
   
     end #End of Home method.
@@ -118,22 +119,21 @@ class HomeController < ApplicationController
 
     def determine_layout
 
-       case current_user.colour
+    case current_user.colour
 
-         when "orange"
-         "myhomefour"
+    when "orange"
+      "myhomefour"
 
-         when "black"
-         "myhomethree"
+    when "black"
+      "myhomethree"
 
-         when "green"
-         "myhometwo"
+    when "green"
+      "myhometwo"
 
-
-
-         else
-         "myhome"
-      end
+    else
+      "myhome"
+      
+    end
     end
   
 end  #End of Class.

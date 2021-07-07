@@ -1,0 +1,51 @@
+<!--HTML Layout file for the Target controller -->
+
+
+<!DOCTYPE html>
+
+<html>  
+  
+    <head> 
+        
+    <title>MIRROR</title> 
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
+    <%= stylesheet_link_tag 'improvements', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      
+    </head>
+
+  
+    <body>
+   
+    <!-- Application heading partial -->
+     
+    <%= render "shared/application_heading" %>
+    
+    <!-- Navbar partial -->   
+    
+    <%= render "shared/nav", color: 'bg-light'%>
+  
+
+
+
+
+    <%= yield %>
+  
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <!-- Footer partial --> 
+
+    <%= render "shared/footer" %>
+
+    </body>
+</html>
+<!-- End of the Story controller layout -->
+

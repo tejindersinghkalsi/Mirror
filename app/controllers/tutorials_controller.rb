@@ -66,18 +66,17 @@ class TutorialsController < ApplicationController
 
       case current_user.colour
 
-         when "orange"
-         "myhomefour"
+        when "orange"
+        "myhomefour"
 
-         when "black"
-         "myhomethree"
+        when "black"
+        "myhomethree"
 
-         when "green"
-         "myhometwo"
-
-
-         else
-         "myhome"
+        when "green"
+        "myhometwo"
+        
+        else
+        "myhome"
       end
     end
 
