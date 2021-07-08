@@ -14,22 +14,21 @@ class DocipediasController < ApplicationController
     #Layout method
     def determine_layout
 
-      case current_user.colour
-
-         when "orange"
-         "myhomefour"
-
-         when "black"
-         "myhomethree"
-
-         when "green"
-         "myhometwo"
+    case current_user.colour
 
 
+    when "orange"
+    "myhomefour"
 
-         else
-         "myhome"
-      end
+    when "black"
+    "myhomethree"
+
+    when "green"
+    "myhometwo"
+
+    else
+    "myhome"
+    end
     end
 
 

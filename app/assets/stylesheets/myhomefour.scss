@@ -6,6 +6,7 @@
 @import "bootstrap";
 @import "gritter";
 @import "social-share-button";
+@import "font-awesome";
 
 
 
@@ -263,6 +264,7 @@ a:focus {
 
 #show_es {
     height: 270px;
+    border-radius: 0px;
 }
 
 #es_h {
@@ -271,6 +273,7 @@ a:focus {
 
 #show_es_t {
     height: 170px;
+    border-radius: 0px;
 }
 
 #r_1 {
@@ -291,22 +294,6 @@ a:focus {
     text-align: left;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
- 
-}
-
-#footer_text {
-    text-align: right;
-    padding-right: 5px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-top: 5px;
-    color: white;
-}
 
 #article_body_design {
     text-align: justify;
@@ -328,21 +315,6 @@ a:focus {
     width: 100%
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-}
-
-#footer_text {
-    text-align: right;
-    padding-right: 5px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-top: 5px;
-    color: white;
-}
 
 #user_details {
     width: 100%;
@@ -720,13 +692,6 @@ a:focus {
     padding-left: 5px;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 180px;
-}
 
 .container {
     word-wrap: break-word;
@@ -738,14 +703,6 @@ a:focus {
     outline: 0;
 }
 
-#footer_text {
-    text-align: right;
-    padding-right: 5px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-top: 5px;
-    color: white;
-}
 
 #docipedia_table {
     width: 100%;
@@ -904,13 +861,6 @@ a:focus {
     width: 35%;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 30%;
-}
 
 a:hover,
 a:active,
@@ -948,14 +898,6 @@ a:focus {
     color: white;
 }
 
-#footer_text {
-    text-align: right;
-    padding-right: 5px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-top: 5px;
-    color: white;
-}
 
 .container {
     word-wrap: break-word;
@@ -1067,9 +1009,11 @@ a:focus {
 
 #footer {
     height: 30px;
+    margin-top: 35%;
     background-color: navy;
     margin-bottom: 0px;
     padding-bottom: 0px;
+ 
 }
 
 #footer_text {
@@ -1223,22 +1167,6 @@ a:focus {
     padding-left: 5px;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 180px;
-}
-
-#footer_text {
-    text-align: right;
-    padding-right: 5px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-top: 5px;
-    color: white;
-}
 
 #form_container {
     border: 3px solid navy;
@@ -1347,13 +1275,26 @@ a:focus {
 }
 
 #plan_fields {
-    height: 200px;
+    height: 70px;
+    border-radius: 0px;
+}
+#plan_instructions
+{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
 #estimate_av {
-    height: 120px;
-    border: 2px solid #006400;
-    box-shadow: 10px 10px 5px green;
+    height: 100px;
+    border: 1px solid #006400;
+    border-radius: 0px;
+}
+
+#bgroup
+{
+    border-radius: 0px;
+    margin-bottom: 1%;
 }
 
 #trend {
@@ -1672,14 +1613,6 @@ a:focus {
     box-shadow: 10px 10px 5px navy;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 180px;
-    color: black;
-}
 
 #footer_two {
     height: 30px;
@@ -2027,13 +1960,7 @@ a:focus {
     margin-top: 0px;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 180px;
-}
+
 
 #quick_launch_icons {
     margin-left: 15px;
@@ -2222,14 +2149,6 @@ a:focus {
     width: 15%;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 180px;
-}
-
 #member {
     border-collapse: separate;
     border-spacing: 0 3em;
@@ -2328,13 +2247,6 @@ a:focus {
     color: black;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 180px;
-}
 
 html,
 body {
@@ -2649,13 +2561,7 @@ a:focus {
     text-decoration: none;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 180px;
-}
+
 
 #tweet_card {
     border-radius: 0px;
@@ -2875,13 +2781,7 @@ a:focus {
     background-color: red;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 180px;
-}
+
 
 #member {
     border-collapse: separate;
@@ -2918,14 +2818,7 @@ a:focus {
     word-wrap: break-word;
 }
 
-#footer_text {
-    text-align: right;
-    padding-right: 5px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-top: 5px;
-    color: white;
-}
+
 
 #target_options {
     text-align: right;
@@ -3482,13 +3375,7 @@ body:not(.modal) {
     padding-left: 5px;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 180px;
-}
+
 
 a:hover,
 a:active,
@@ -3641,13 +3528,7 @@ a:focus {
     min-width: 98%;
 }
 
-#footer {
-    height: 30px;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    margin-top: 21%;
-}
+
 
 #footer_text {
     text-align: right;

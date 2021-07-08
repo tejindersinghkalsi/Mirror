@@ -15,7 +15,7 @@
   
   <body>
 
-       <%= video_tag( 'prodvid.mp4', id:'background', autoplay: true, loop: true, muted: true, height: '100%', width: '100vw') %>
+       <%= video_tag( 'prodvid.mp4', id:'background', autoplay: true, loop: true, muted: true, height: '32', width: '32') %>
        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
        <div class="col-md-7 p-lg-5 mx-auto my-5">
           <h1 class="display-3 font-weight-normal" id ="prod_head">MIRROR</h1>
@@ -27,7 +27,7 @@
           <br/>
        
           <a class="btn btn-sm btn-outline-secondary" href="/login">LOGIN</a>
-          <%= link_to "PRODUCT GUIDE", @m, class: "btn btn-sm btn-outline-secondary"%>
+
 
           <!-- Modal Button -->
           <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModalLong">
@@ -64,7 +64,7 @@
 
       </div>
         
-      <br/><br/><br/><br/><br/>
+      <br/>
     
       <!-- Feature available first row begins -->
       <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
@@ -127,11 +127,9 @@
     </div><!-- Feature available second row row -->
 
   <%= alerts %> 
-    <br/><br/><br/><br/>
+   
   
-    <!-- Footer partial --> 
-
-    <%= render "shared/footer" %>
+  
 
 
 

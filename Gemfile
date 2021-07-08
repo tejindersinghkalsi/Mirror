@@ -58,6 +58,7 @@ gem 'prawn-table', '~> 0.2.2'
 gem 'countries', '~> 3.1'
 gem 'geocoder', '~> 1.6', '>= 1.6.7'
 gem 'money-rails', '~> 1.14'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

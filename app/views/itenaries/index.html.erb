@@ -85,8 +85,8 @@
         <td><%= itenary.start.to_s(:rfc822) %></td>
         <td><b><%= itenary.planname %></b></td>
      
-        <td><%= link_to 'Preview', itenary %> |
-        <%= link_to 'Edit', edit_itenary_path(itenary) %> |
+        <td><%= link_to 'Preview', itenary %> /
+        <%= link_to 'Edit', edit_itenary_path(itenary) %> /
         <%= link_to 'X', itenary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

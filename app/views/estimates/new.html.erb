@@ -14,6 +14,7 @@
 	<div class = "row">
 	<div class = "col-md-7">
 <h4><b>NEW ESTIMATE</b></h4>
+<hr>
 <br/>
 <br/>
 
@@ -22,6 +23,7 @@
 <div class = "col">
 
        <h4><b>AVAILABLE ESTIMATES</b></h4>
+       <hr>
 	     <br/>
    
        <% @e.each do |estimate| %>
@@ -46,7 +48,7 @@
 
       <hr>
 
-      <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+      <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" id="bgroup">
   
              <button type="button" class="btn btn-outline-secondary"><%= link_to 'Show', estimate %></button>
   
@@ -67,5 +69,7 @@
 </div>
 </div>
 <br/>
-<%= link_to 'HOME', home_path, class: "btn btn-outline-primary" %>
+<br/>
+<br/>
+<%= link_to 'HOME', home_path, class: "btn btn-sm btn-outline-primary" %>
 </div>

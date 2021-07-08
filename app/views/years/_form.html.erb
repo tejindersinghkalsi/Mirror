@@ -32,7 +32,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of January', form, :januaries, class: 'btn btn-success btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of January', form, :januaries, class: 'btn btn-sm btn-success btn-block' %>
   </div>
 </div>
 </div>
@@ -46,7 +46,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of February', form, :februaries, class: 'btn btn-success btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of February', form, :februaries, class: 'btn btn-sm btn-success btn-block' %>
   </div>
 </div>
 </div>
@@ -60,7 +60,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of March', form, :marches, class: 'btn btn-success btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of March', form, :marches, class: 'btn btn-sm btn-success btn-block' %>
   </div>
 </div>
 </div>
@@ -76,7 +76,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of April', form, :aprils, class: 'btn btn-warning btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of April', form, :aprils, class: 'btn btn-sm btn-warning btn-block' %>
   </div>
 </div>
 </div>
@@ -90,7 +90,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of May', form, :mays, class: 'btn btn-warning btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of May', form, :mays, class: 'btn btn-sm btn-warning btn-block' %>
   </div>
 </div>
 </div>
@@ -104,7 +104,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of June', form, :junes, class: 'btn btn-warning btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of June', form, :junes, class: 'btn btn-sm btn-warning btn-block' %>
   </div>
 </div>
 </div>
@@ -121,7 +121,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of July', form, :julies, class: 'btn btn-info btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of July', form, :julies, class: 'btn btn-sm btn-info btn-block' %>
   </div>
 </div>
 </div>
@@ -135,7 +135,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of August', form, :augusts, class: 'btn btn-info btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of August', form, :augusts, class: 'btn btn-sm btn-info btn-block' %>
   </div>
 </div>
 </div>
@@ -149,7 +149,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of September', form, :septembers, class: 'btn btn-info btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of September', form, :septembers, class: 'btn btn-sm btn-info btn-block' %>
   </div>
 </div>
 </div>
@@ -165,7 +165,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of October', form, :octobers, class: 'btn btn-dark btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of October', form, :octobers, class: 'btn btn-sm btn-dark btn-block' %>
   </div>
 </div>
 </div>
@@ -179,7 +179,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of November', form, :novembers, class: 'btn btn-dark btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of November', form, :novembers, class: 'btn btn-sm btn-dark btn-block' %>
   </div>
 </div>
 </div>
@@ -193,7 +193,7 @@
   <% end %>
 
   <div>
-    <%= link_to_add_association 'Add Expense(s) for the month of December', form, :decembers, class: 'btn btn-dark btn-block' %>
+    <%= link_to_add_association 'Add Expense(s) for the month of December', form, :decembers, class: 'btn btn-sm btn-dark btn-block' %>
   </div>
 </div>
 
@@ -203,8 +203,13 @@
 <br/>
   
   <div class="actions">
-    <%= form.submit 'PUBLISH EXPENSE', class: 'btn btn-outline-success' %>
+    <%= form.submit 'PUBLISH EXPENSE', class: 'btn btn-sm btn-outline-success' %>
   </div>
-</div>
-<% end %>
+  <br/>
+  <br/>
+  <br/>
+  <%= link_to 'BACK', years_path, class: 'btn btn-sm btn-outline-primary' %>
+  <%= link_to 'HOME', home_path, class: 'btn btn-sm btn-outline-primary' %>
+  </div>
+  <% end %>
 

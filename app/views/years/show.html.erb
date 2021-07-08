@@ -12,9 +12,9 @@
 <div class = "container" id = "year_details">
 	 <%= alerts %>
 
-	 <div class="card border-secondary mb-3" style="max-width: 70rem;" >
-  <div class="card-header" id = "year_n"><h3 id = "inside_val"><b>YEAR: <%= @year.name %></b></h3></div>
-</div>
+	
+ <h3 id = "inside_val"><b>YEAR: <%= @year.name %></b></h3>
+
 <hr>
 <div class="alert alert-info" role="alert" id = "savings_tab">
  <p> <b>Annual Savings:</b> <%= (@year.Saving*12) %> pa.</p>
@@ -488,9 +488,9 @@
 <br/>
 <br/>
 
-<%= link_to 'BACK', years_path, class: 'btn btn-outline-primary' %>
-<%= link_to 'EDIT', edit_year_path(@year), class: 'btn btn-outline-primary' %> 
-<%= link_to 'HOME', home_path, class: 'btn btn-outline-primary' %>
+<%= link_to 'BACK', years_path, class: 'btn btn-sm btn-outline-primary' %>
+<%= link_to 'EDIT', edit_year_path(@year), class: 'btn btn-sm btn-outline-primary' %> 
+<%= link_to 'HOME', home_path, class: 'btn btn-sm btn-outline-primary' %>
 
 </div>
 

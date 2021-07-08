@@ -9,11 +9,13 @@
  <% y =z.to_i %>
 
 <% if y != current_user.id %>
+<h5><b>ESTIMATE NAME</b></h5>
   <div class="form-group">
     <%= form.text_field :name, placeholder: 'Enter estimate name', :size => 50, class: 'form-content' %>
   </div>
 <br/>
 <%else%>
+<h5><b>ESTIMATE NAME</b></h5>
   <div class="form-group">
     <%= form.text_field :name, placeholder: 'Enter estimate name', :size => 50, :disabled=>true, class: 'form-content' %>
   </div>
@@ -21,10 +23,12 @@
 <%end%>
 
 <% if y != current_user.id %> 
+<h5><b>DESCRIPTION</b></h5>
   <div class="form-group">
     <%= form.text_area :description, placeholder: 'Enter Description/Related information...', cols: "60", rows: "5", class: 'form-content' %>
   </div>
   <%else%>
+  <h5><b>DESCRIPTION</b></h5>
   <div class="form-group">
     <%= form.text_area :description, placeholder: 'Enter Description/Related information...', cols: "60", rows: "5", :disabled=>true, class: 'form-content' %>
   </div>
@@ -77,11 +81,9 @@
   <h5><b>PLAN</b></h5>
   <br/>
   <div class="alert alert-danger" role="alert" id = "plan_fields">
-  <p style="color: black;"> 1. Sample format for resource:<b>"http://www.example.com"</b>.</p>
-  <br/>
-  <p style="color: black;"> 2. Multiplier is the conversion factor w.r.t INR.</p>
-  <br>
-  <p style="color: black;"> 3. Order of Input: Name<b>>></b>Resource<b>>></b>Cost<b>>></b>Multiplier.</p>
+  <p style="color: black;" id="plan_instructions"> 1. Sample format for resource:<b>"http://www.example.com"</b>.</p>
+  <p style="color: black;" id="plan_instructions"> 2. Multiplier is the conversion factor w.r.t INR.</p>
+  <p style="color: black;" id="plan_instructions"> 3. Order of Input: Name<b>>></b>Resource<b>>></b>Cost<b>>></b>Multiplier.</p>
 </div>
   <% if y != current_user.id %> 
 <div>
@@ -89,6 +91,7 @@
     <%= render "tour_fields",f: tour_form %>
     <% end %>
   <div>
+    <br/>
   <%= link_to_add_association 'ADD', form, :tours %>
 </div>
 </div>
@@ -136,6 +139,6 @@
 <br/>
 <hr>
   <div class="actions">
-    <%= form.submit 'SAVE ESTIMATE',  class: 'btn btn-success'%>
+    <%= form.submit 'SAVE ESTIMATE',  class: 'btn btn-sm btn-success'%>
   </div>
 <% end %>
