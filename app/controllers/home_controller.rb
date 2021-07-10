@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     #Before-filters
     before_action :authenticate_user!
     #Petergate authentication-accesses
-    access all: [:home, :accountsettings, :systemaccess, :custom, :expensereport, :targetreport, :bookmark, :news, :yearreport, :bucket_list, :set_bucket_list, :destinations]
+    access all: [:home, :accountsettings, :trips, :systemaccess, :custom, :expensereport, :targetreport, :bookmark, :news, :yearreport, :bucket_list, :set_bucket_list, :destinations]
   
     def news
       @word = Word.all.order("created_at DESC")
@@ -41,6 +41,13 @@ class HomeController < ApplicationController
     def bookmark
       user = current_user.id
       @u = User.find(user)
+    end
+
+    def trips 
+    @bucket_list = Visit.where(user_id: current_user.id)
+      user = current_user.id
+      @u = User.find(user)  
+        @e = (Estimate.where(user_id: current_user.id)).page(params[:page]).per(10)
     end
 
     def set_bucket_list

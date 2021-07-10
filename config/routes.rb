@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get 'destinations' => 'home#destinations', as: 'destinations'
   get 'news' => 'home#news', as: 'news'
 
+
   
  
   

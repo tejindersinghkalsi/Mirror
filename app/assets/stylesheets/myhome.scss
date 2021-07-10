@@ -8,9 +8,51 @@
 @import "social-share-button";
 @import "font-awesome";
 
+/* Footer (Ocean Blue) */
+
+#footer 
+{
+ height: 30px;
+ margin-top: 35%;
+ background-color: navy;
+ margin-bottom: 0px;
+ padding-bottom: 0px;
+ padding-top: 0px;
+}
+
+#footer_text 
+{
+ text-align: right;
+ padding-right: 5px;
+ margin-bottom: 0px;
+ padding-bottom: 0px;
+ padding-top: 5px;
+ color: white;
+}
+
+#estimate_card_body
+{
+    height: 30px;
+}
 
 
 
+
+
+#estimate_card
+{
+    border-radius: 0px;
+    height: 70%;
+}
+
+#estimate_card_in
+{
+    border-radius: 0px;
+    padding-left: 0px;
+    height: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
 #application_name {
     background-color: navy;
@@ -1007,23 +1049,7 @@ a:focus {
     width: 100%
 }
 
-#footer {
-    height: 30px;
-    margin-top: 35%;
-    background-color: navy;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
- 
-}
 
-#footer_text {
-    text-align: right;
-    padding-right: 5px;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-top: 5px;
-    color: white;
-}
 
 #user_details {
     width: 100%;
@@ -3620,4 +3646,27 @@ a:focus {
         float: none;
         border: none;
     }
+}
+
+#bucketlistalertbox
+{
+    border-radius: 0px;
+    padding-left: 0px;
+}
+
+#bucket_list_delete
+{
+    border-radius: 0px;
+    float: right;
+    border: 0px;
+}
+#estimate_non_share_details
+{
+    height: 20%;
+    border-radius: 0px;
+}
+
+#main_estimate_box
+{
+    border-radius: 0px;
 }

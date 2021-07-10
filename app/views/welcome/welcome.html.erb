@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
   <html>  
-  
   <head> 
         
        <title><%= @page_title %></title>
@@ -14,122 +13,52 @@
 
   
   <body>
+       <!-- Rails helper - Video Tag. -->
+       <%= video_tag( 'prodvid.mp4', id:'background', autoplay: true, loop: true, muted: true) %>
 
-       <%= video_tag( 'prodvid.mp4', id:'background', autoplay: true, loop: true, muted: true, height: '32', width: '32') %>
+      
        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
-       <div class="col-md-7 p-lg-5 mx-auto my-5">
-          <h1 class="display-3 font-weight-normal" id ="prod_head">MIRROR</h1>
-      
-          <br/>
-      
-          <h2 id ="prod_sub"><b>SHOWS YOUR REFLECTION</b></h2>
        
-          <br/>
-       
-          <a class="btn btn-sm btn-outline-secondary" href="/login">LOGIN</a>
-          <%= link_to "PRODUCT GUIDE", @m, class: "btn btn-sm btn-outline-secondary"%>
 
-
-          <!-- Modal Button -->
-          <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModalLong">
-            ABOUT
-          </button>
-
-                 
-
-          <!-- Modal Begins -->
-          <div class="modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-          <div class="modal-content">
-          <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">MIRROR</h5> <!-- Modal Head -->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+          <div class="col-md-7 p-lg-5 mx-auto my-5">
+            <h1 class="display-3 font-weight-normal" id ="prod_head">MIRROR</h1>
+            <br/>
+            <h2 id ="prod_sub"><b>SHOWS YOUR REFLECTION</b></h2>
+            <br/>
+            <!-- Available Options (Login, Guide, Version) -->
+            <a class="btn btn-sm btn-outline-secondary" href="/login">LOGIN</a>
+            <%= link_to "PRODUCT GUIDE", @m, class: "btn btn-sm btn-outline-secondary"%>
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModalLong">
+              ABOUT
             </button>
-          </div>
-      
-                  <div class="modal-body" id="tech_details">    <!-- Modal Body -->
-        
-                      <b>Version: 2.0</b><br/>
-                      <b>Released: 03-June-2021</b>
-                  </div>
-
-                  <div class="modal-footer">    <!-- Modal Footer -->
+                <!-- Modal for Version information/details -->
+                <div class="modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">MIRROR</h5> <!-- Version Information Modal Head -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <!-- Version Information Modal Body -->
+                <div class="modal-body" id="tech_details">    
+                  <b>Version: 2.0</b><br/>
+                  <b>Released: 03-June-2021</b>
+                </div>
+                <!-- Version Information Modal Footer -->
+                <div class="modal-footer">    
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-                  </div>
-                  </div>
-                  </div>
-                   <!-- Modal Ends -->
-      </div>
-
-      </div>
-        
-      <br/>
-    
-      <!-- Feature available first row begins -->
-      <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-       
-      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-3 px-md-3 text-white overflow-hidden">
-        
-        <div class="my-3 py-3">
-        
-          <h2 class="display-5">TARGETS</h2><br/>
-          <p class="lead">Mirror helps you setting your personal goals which could be anything from personal, health, educational, social, spiritual etc.</p>
-          <br/><br/><br/>
-
-          
-        
-        </div>
-      
-        
-      </div>
-
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-3 px-md-3 overflow-hidden">
-        <div class="my-3 p-3">
-          
-          <h2 class="display-5">EXPENSES</h2><br/>
-          <p class="lead">Worried about expenditure ? Unable to maintain records ? No worry...Track your day to day expenses.</p>
-          <br/><br/><br/>
-   
-        </div>
-     
-      </div>
-    </div><!-- Feature available first row ends -->
-
-
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3"><!-- Feature available second row begins -->
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-3 px-md-3 overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">BLOG</h2>
-          <br/>
-          <p class="lead">Mirror has a blog feature too !!! Write blogs, spread awareness and showcase your skills !!!</p>
-          <br/>
-          <br/>
-          <br/>
-    
-        </div>
-        
-      </div>
-
-
-      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-3 px-md-3 text-white overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">TRAVEL PLANNING</h2>
-          <br/>
-          <p class="lead">Align your trips/travel plans with your expenses and manage them start to end.</p>
-          <br/>
-          <br/>
-          <br/>
-          
-        </div>
-        
-      </div>
-    </div><!-- Feature available second row row -->
-
-  <%= alerts %> 
-   
-      <%= render "shared/footer" %>
+                </div>
+                </div><!-- Version Information Modal Content ends -->
+                </div>
+                </div> <!-- Version Information Modal Ends -->
+                  
+                </div>
+                </div>
+                <br/>
+                <%= alerts %> 
+                <%= render "shared/footer" %>
 
 
 
