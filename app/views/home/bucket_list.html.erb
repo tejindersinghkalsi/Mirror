@@ -7,7 +7,7 @@
     
 
 <div class="container" id = "headingcontainer">
-<img src= "<%= @u.headingimg.url %>", alt="Girl in a jacket" width="100%" height="auto">
+<img src= "<%= @u.headingimg.url %>", alt="To set the image, navigate to Account Settings >> Custom." width="100%" height="auto">
 <div class="bottom-left"><%= current_user.heading %></div>
  
 </div>
@@ -17,7 +17,7 @@
 
     <div class=".container-fluid" id = "listcon">
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
         <% @bucket_list.each do |mylist| %>
 
      
@@ -25,28 +25,33 @@
         <div class="col">
           <div class="card shadow-sm">
       
-           
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy="1em"><%= mylist.country.upcase %></text><text x="50%" y="80%" fill="#eceeef" dy="1em" id ="schedule_date">#<%= mylist.schedule.strftime("%d-%B-%Y") %></text></svg>
-            
+             <% if mylist.img.present? %>
+            <%= image_tag mylist.img.url %>
+            <%end%>
+         
+
 
             <div class="card-body">
-             
-              <p class="card-text"><%= mylist.description %></p>
+             <center> <b> <i class="fa fa-globe" aria-hidden="true"></i> <%= mylist.country.upcase %></b>, 
+              #<%= mylist.schedule.strftime("%d-%B-%Y") %></center>
+              <br/>
+              <p class="card-text"><i class="fa fa-info" aria-hidden="true"></i> <%= mylist.description %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                 </div>
                 <small class="text-muted"><B>ADDED:</B> <%= mylist.created_at.strftime("%d-%B-%y") %></small>
-                <br/>
+                
 
 
               </div>
-            <br/>
+          
             <hr>
 <%= link_to "VIEW TOP DESTINATIONS", destinations_path(:m => mylist.id), class: "btn btn-sm btn-outline-info" %>
-            </div>
+<%= link_to 'REMOVE', visit_url(mylist), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger' %>
+        
+  </div>
           </div>
-          <br/>
-          <br/>
+       <br/>
         </div>
 
         <%end%>
@@ -56,12 +61,6 @@
       
  
       <hr>
-
-
-  
-
-
-   <br/>
 
     </div>
  

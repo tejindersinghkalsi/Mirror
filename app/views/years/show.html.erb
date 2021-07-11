@@ -17,10 +17,10 @@
 
 <hr>
 <div class="alert alert-info" role="alert" id = "savings_tab">
- <p> <b>Annual Savings:</b> <%= (@year.Saving*12) %> pa.</p>
+ <p> <b>Annual Savings:</b> <i class="fa fa-inr" aria-hidden="true"></i><%= (@year.Saving*12) %> pa.</p>
 </div>
 <div class="alert alert-danger" role="alert" id = "savings_tab">
-  <p> <b>Expected Expenditure:</b> <%= @year.limit %> pa.</p>
+  <p> <b>Expected Expenditure:</b> <i class="fa fa-inr" aria-hidden="true"></i><%= @year.limit %> pa.</p>
 </div>
 <% sav = @year.Saving %>
 <% tt = (sav*12) %>
@@ -33,6 +33,7 @@
 	<%if @year.estimates.present? %>
 
 <% @u.each do |d| %>
+<%if d.share.present? %>
     <%  @m = multiply d %>
 <div class="card" style="width: 14rem;" id = "year_card">
   <div class="card-body">
@@ -48,14 +49,16 @@
     <p class="card-text"><%= d.description %></p>
     <hr id = "l_h">
     
-    <p class="card-text">COST: <%= @m %></p>
+    <p class="card-text">COST: <i class="fa fa-inr" aria-hidden="true"></i><%= @m %></p>
     <a href="<%= estimate_path(d) %>" class="btn btn-primary btn-sm" id = "year_estimate_link">DETAILS</a>
     <%if avail > @m  &&  d.share.present? && d.Recommendation.present? %> 
     <a href="<%= othernew_path %>" class="btn btn-primary btn-sm" id = "year_estimate_link">ITENERARY</a>
     <% end %>
-
+<br/>
   </div>
 </div>
+<%else%>
+<%end%>
 <%end%>
 <%end%>
 <br/>

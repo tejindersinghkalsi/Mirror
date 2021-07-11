@@ -88,7 +88,7 @@ class ItenariesController < ApplicationController
 
     
     def itenary_params
-      params.require(:itenary).permit(:start, :planname, :calender, :longitude, :latitude, :st, :related, subitenaries_attributes: [:id, :begin, :modeoftravel, :location, :activity, :distance, :stay, :_destroy])
+      params.require(:itenary).permit(:start, :planname, :calender, :longitude, :latitude, :relatedwith, :st, :related, subitenaries_attributes: [:id, :begin, :modeoftravel, :location, :activity, :distance, :stay, :_destroy])
     end
 
     #Layout method.

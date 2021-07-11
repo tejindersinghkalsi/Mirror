@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get 'set_bucket_list/' => 'home#set_bucket_list', as: 'set_bucket_list'
   get 'destinations' => 'home#destinations', as: 'destinations'
   get 'news' => 'home#news', as: 'news'
-
+  resources :visits
 
   
  

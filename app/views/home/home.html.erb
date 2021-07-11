@@ -208,9 +208,7 @@
 <div class="vl" id = "homes_vl">
     
       <div class="card-body">
-       <h5 class="card-title" style="color:red;" ><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="purple" class="bi bi-bag-check-fill" viewBox="0 2 22 16">
-  <path fill-rule="evenodd" d="M5.5 3.5a2.5 2.5 0 0 1 5 0V4h-5v-.5zm6 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
-</svg><b>AVAILABLE ESTIMATES</b></h5>
+       <h5 class="card-title" style="color:red;" > <i class="fa fa-list" aria-hidden="true"></i> <b>AVAILABLE ESTIMATES</b></h5>
         <hr>
        <% @estimates.each do |esti| %>
            
@@ -220,7 +218,7 @@
               <% if ((Year.find(@hh).Saving > @m) && (esti.share.blank?)) %>
           
                         <div class="alert alert-primary" role="alert" id = "estimate_non_share_details">
-                                     <h5 class="card-title">ESTIMATE: <%= esti.name.capitalize %></h5><hr>
+                                     <h5 class="card-title"><i class="fa fa-list" aria-hidden="true"></i> ESTIMATE: <%= esti.name.capitalize %></h5><hr>
                                      <h6 class="card-subtitle mb-2 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="navy" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
   <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"/>
   <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"/>
@@ -236,6 +234,7 @@
   <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z"/>
 </svg> Status: <i class="fa fa-check" aria-hidden="true"></i>
 </h6>
+
     
                               
                          </div>

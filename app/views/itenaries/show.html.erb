@@ -9,7 +9,7 @@
 
 <div class = "col-md-8">
 <div class="alert alert-success" role="alert" id = "show_itenary_heading">
-  <b>ITINERARY : <%= @itenary.planname %></b>
+  <b><i class="fa fa-tree" aria-hidden="true"></i> ITINERARY DETAILS</b>
 </div>
 <br/>
 <br/>
@@ -42,14 +42,35 @@
 </div>
 <br/>
 <br/>
-<p>
+<div class="alert alert-primary" role="alert" id = "show_itenary_heading">
   <strong>Starts On:</strong>
   <%= @itenary.start.to_s(:rfc822) %>
-</p>
-<p>
+</div>
+<div class="alert alert-primary" role="alert" id = "show_itenary_heading">
   <strong>Name:</strong>
-  <%= @itenary.planname %>
-</p>
+  <%= @itenary.planname.capitalize %>
+</div>
+<div class="alert alert-primary" role="alert" id = "show_itenary_heading">
+  <strong>Status:</strong>
+  <% d = Date.today %>
+  <% dd = @itenary.start %>
+  <% ddd = @itenary.subitenaries.last %>
+  <% dddd = ddd.begin %>
+  <%if d < dd %>
+  SCHEDULED
+  <%elsif (dddd > d) && (d > dd) %>
+  ONGOING
+  <%end%>
+  <%if d > dddd %>
+  ENDED <i class="fa fa-window-close" aria-hidden="true"></i>
+  <%end%>
+</div>
+<div class="alert alert-primary" role="alert" id = "show_itenary_heading">
+  <strong>Belongs to:</strong>
+  <% estimate =  @itenary.related %>
+  <% mn = Estimate.find(estimate) %>
+  <%= mn.name.capitalize %> estimate
+</div>
 <br/>
 <br/>
 <table class="table">
@@ -67,17 +88,17 @@
     <tr>
       
       <td><i class="fa fa-calendar" aria-hidden="true"></i> <%= t.begin.to_s(:rfc822) %></td>
-      <td><i class="fa fa-street-view"></i> <%= t.location.upcase %></td>
+      <td><i class="fa fa-street-view"></i> <%= t.location.capitalize %></td>
       <% if t.modeoftravel == "AIR" %>
-      <td><i class="fa fa-plane"></i> <%= t.modeoftravel %></td>
+      <td><i class="fa fa-plane"></i> <%= t.modeoftravel.capitalize %></td>
       <%end%>
       <% if t.modeoftravel == "TRAIN" %>
-      <td><i class="fa fa-train" aria-hidden="true"></i> <%= t.modeoftravel %></td>
+      <td><i class="fa fa-train" aria-hidden="true"></i> <%= t.modeoftravel.capitalize %></td>
       <%end%>
       <% if t.modeoftravel == "ROAD" %>
-      <td><i class="fa fa-car" aria-hidden="true"></i> <%= t.modeoftravel %></td>
+      <td><i class="fa fa-car" aria-hidden="true"></i> <%= t.modeoftravel.capitalize %></td>
       <%end%>
-      <td><%= t.activity %></td> 
+      <td><i class="fa fa-road" aria-hidden="true"></i> <%= t.activity.capitalize %></td> 
       <td><i class="fa fa-hotel"></i> <%= t.stay %></td>
        
     </tr>

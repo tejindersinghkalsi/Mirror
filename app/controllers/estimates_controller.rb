@@ -72,21 +72,20 @@ class EstimatesController < ApplicationController
     #Layout method
     def determine_layout
 
-      case current_user.colour
+    case current_user.colour
 
-         when "orange"
-         "myhomefour"
+      when "orange"
+      "myhomefour"
 
-         when "black"
-         "myhomethree"
+      when "black"
+      "myhomethree"
 
-         when "green"
-         "myhometwo"
+      when "green"
+      "myhometwo"
 
-
-
-         else
-        "myhome"
+      else
+      "myhome"
+      
       end
     end
 

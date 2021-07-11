@@ -64,7 +64,7 @@
         </div>
         <div class ="nav-item">
 
-           <%=link_to "ADMINISTRATOR", (rails_admin.dashboard_path if logged_in?(:site_admin)), target: "_blank"%>
+           <%=link_to "ADMINISTRATOR", rails_admin.dashboard_path if logged_in?(:site_admin)%>
 
            <%=link_to "LOGOUT", destroy_user_session_path, method: :delete %>
         </div>
