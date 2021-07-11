@@ -135,7 +135,7 @@
 .bottom-left {
 font-weight: bold;
   font-size:40px;
-  position: absolute;
+  position: sticky;
   bottom: 290px;
   left: 16px;
   background-color: white;
@@ -305,7 +305,7 @@ a:focus {
 }
 
 #show_es {
-    height: 270px;
+    height: auto;
     border-radius: 0px;
 }
 

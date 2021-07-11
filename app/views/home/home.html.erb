@@ -1,12 +1,18 @@
 <%def multiply(qqw) %>
-   <%$result = 0 %>
-<%  qqw.tours.each do |ju|%>
    
-<%   v = (ju.namec * ju.multiplier)%>
-  <% $result = ($result + v)%>
-  <%end%>
-  <%return $result%>
- <%end%>
+   <% $result = 0 %>
+   <% qqw.tours.each do |ju|%>
+   
+      <% v = (ju.namec * ju.multiplier)%>
+      <% $result = ($result + v)%>
+   <%end%>
+ 
+   <%return $result%>
+<%end%>
+
+
+
+
 <% @quizzes.each do |quiz| %>
      
      <% quiz.students.each do |studentt| %>
@@ -213,9 +219,9 @@
        <% @estimates.each do |esti| %>
            
            <% @hh = esti.year_id %>
-           
+           <b><% fgh = Year.find(@hh).Saving*12 %></b>
                <% @m = multiply esti %>
-              <% if ((Year.find(@hh).Saving > @m) && (esti.share.blank?)) %>
+              <% if ((fgh > @m) && (esti.share.blank?)) %>
           
                         <div class="alert alert-primary" role="alert" id = "estimate_non_share_details">
                                      <h5 class="card-title"><i class="fa fa-list" aria-hidden="true"></i> ESTIMATE: <%= esti.name.capitalize %></h5><hr>
