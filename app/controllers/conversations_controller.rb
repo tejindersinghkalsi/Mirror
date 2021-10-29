@@ -44,6 +44,7 @@
              else
              "myhome"
           end
+      end
 
 
     end #End of class.
