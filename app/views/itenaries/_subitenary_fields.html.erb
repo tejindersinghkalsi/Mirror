@@ -12,8 +12,8 @@
                         <th scope="col">DATE</th>
                         <th scope="col">LOCATION</th>
                         <th scope="col">ACTIVITY NAME</th>
-                        <th scope="col">MODE OF TRAVEL</th>
                         <th scope="col">STAY</th>
+                        <th scope="col">MODE OF TRAVEL</th>
                      </tr>
                   </thead>
                  <tbody>
@@ -34,16 +34,15 @@
                 <td td id = "ooi"><div class="form-group">
                    <%= f.text_field :activity, placeholder:"Enter the activity name...", class: 'form-control'%>
                 </div></td>
-
-
-                <td td id = "ooi"><div class="form-group">
-                   <%= f.text_field :modeoftravel, placeholder:"Preffered mode of travel...", class: 'form-control'%>
-                </div></td>
                 
 
                 <td td id = "ooiv"><div class="form-group">
                   
                  <b> <%= f.number_field :stay, placeholder:"Days...", class: 'form-control'%></b>
+                </div></td>
+
+                     <td td id = "ooi"><div class="form-group">
+                  <%= f.select :modeoftravel, ['AIR', 'TRAIN', 'ROAD']%>
                 </div></td>
                
                </tbody>

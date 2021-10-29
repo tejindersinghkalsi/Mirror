@@ -1,35 +1,35 @@
-class DocipediasController < ApplicationController
+    class DocipediasController < ApplicationController
 
-    #Layout
-    layout :determine_layout
+        #Layout
+        layout :determine_layout
 
-    #Before-filters
-    before_action :authenticate_user!
-    
-    #Index action.
-    def index
-  	   @targets = (Target.where.not(doc: nil) and Target.where(user_id: current_user.id)).page(params[:page])
-    end
+        #Before-filters
+        before_action :authenticate_user!
+        
+        #Index action.
+        def index
+      	   @targets = (Target.where.not(doc: nil) and Target.where(user_id: current_user.id)).page(params[:page])
+        end
 
-    #Layout method
-    def determine_layout
+        #Layout method
+        def determine_layout
 
-    case current_user.colour
-
-
-    when "orange"
-    "myhomefour"
-
-    when "black"
-    "myhomethree"
-
-    when "green"
-    "myhometwo"
-
-    else
-    "myhome"
-    end
-    end
+        case current_user.colour
 
 
-end #End of Class.
+        when "orange"
+        "myhomefour"
+
+        when "black"
+        "myhomethree"
+
+        when "green"
+        "myhometwo"
+
+        else
+        "myhome"
+        end
+        end
+
+
+    end #End of Class.

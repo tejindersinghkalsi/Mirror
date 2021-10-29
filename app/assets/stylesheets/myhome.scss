@@ -8,6 +8,12 @@
 @import "social-share-button";
 @import "font-awesome";
 
+
+
+.text {
+  font-family : ‘Raleway’, sans-serif;
+}
+
 /* Footer (Ocean Blue) */
 
 #footer 
@@ -1531,10 +1537,13 @@ a:focus {
 #target_graph
 {
     margin-top: 5%;
+    font-size: 25px;
 }
 #story_graph
 {
     margin-top: 10%;
+     font-size: 25px;
+
 }
 
 #home_vl {
@@ -1548,6 +1557,7 @@ a:focus {
 #expenditure_graph
 {
     margin-top: 10%;
+     font-size: 25px;
 }
 #nvl{
   border-left: 3px solid navy;

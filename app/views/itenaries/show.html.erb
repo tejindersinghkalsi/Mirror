@@ -91,11 +91,11 @@
       <td><i class="fa fa-street-view"></i> <%= t.location.capitalize %></td>
       <% if t.modeoftravel == "AIR" %>
       <td><i class="fa fa-plane"></i> <%= t.modeoftravel.capitalize %></td>
-      <%end%>
-      <% if t.modeoftravel == "TRAIN" %>
+      
+      <% elsif t.modeoftravel == "TRAIN" %>
       <td><i class="fa fa-train" aria-hidden="true"></i> <%= t.modeoftravel.capitalize %></td>
-      <%end%>
-      <% if t.modeoftravel == "ROAD" %>
+      
+      <% else t.modeoftravel == "ROAD" %>
       <td><i class="fa fa-car" aria-hidden="true"></i> <%= t.modeoftravel.capitalize %></td>
       <%end%>
       <td><i class="fa fa-road" aria-hidden="true"></i> <%= t.activity.capitalize %></td> 
