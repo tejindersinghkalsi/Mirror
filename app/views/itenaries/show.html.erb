@@ -124,7 +124,7 @@
 <hr>
 <% @itenary.subitenaries.each do |tm| %>
 
-<i class="fa fa-calendar" aria-hidden="true"></i> <%= tm.begin.to_s(:rfc822) %>, <%= tm.location %>
+<i class="fa fa-calendar" aria-hidden="true"></i> <%= tm.begin.to_s(:rfc822) %>, <%= tm.location.capitalize %>
 <br/>
 <% if tm.id <= @itenary.subitenaries.count %>
 <i class="fa fa-arrow-down" aria-hidden="true"></i>

@@ -6,19 +6,23 @@
     <%= alert_generator error %>
     <% end %>
   <% end %>
+
+
   
 <table class="table table-success table-striped">
   <thead>
     <tr>
       <th scope="col" style="font-size:12px;">DATE</th>
       <th scope="col" style="font-size:12px;">NAME</th>
-      <th scope="col" style="font-size:12px;">STARTING LOCATION(Latitude)</th>
-      <th scope="col" style="font-size:12px;">STARTING LOCATION(Longitude)</th>
+      <th scope="col" style="font-size:12px;">STARTING LOCATION(Latitude, Decimal format)</th>
+      <th scope="col" style="font-size:12px;">STARTING LOCATION(Longitude, Decimal format)</th>
       <th scope="col" style="font-size:12px;">CALENDER</th>
     </tr>
+
   </thead>
   <tbody>
    <tr>
+
     <td><div class="form-group">
     <%= form.date_field :start, :size => 10, class: 'form-content' %>
   </div></td>
@@ -28,7 +32,7 @@
   </div></td>
 
   <td><div class="form-group">
-    <%= form.text_field :lattitude, placeholder: "Starting location lattitude", :size => 30, class: 'form-content' %>
+    <%= form.text_field :latitude, placeholder: "Starting location lattitude", :size => 30, class: 'form-content' %>
   </div></td>
 
   <td><div class="form-group">
@@ -41,7 +45,9 @@
     <%= form.text_field :calender, placeholder: "Add to Calender", :size => 20, class: 'form-content' %>
     </div></td></tr>
     
+
     </tbody>
+   
 
 </table>
       <p><b>SELECT ESTIMATE</b></p>
